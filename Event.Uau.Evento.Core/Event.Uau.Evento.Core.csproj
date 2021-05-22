@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Event\" />
+    <Folder Include="Event\Queries\" />
+    <Folder Include="Event\Queries\GetById\" />
+    <Folder Include="Event\Queries\GetList\" />
+    <Folder Include="Event\Commands\" />
+    <Folder Include="Event\Commands\Create\" />
+    <Folder Include="Event\Commands\Update\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="6.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Event.Uau.Evento.Domain\Event.Uau.Evento.Domain.csproj" />
+    <ProjectReference Include="..\Event.Uau.Evento.Persistence\Event.Uau.Evento.Persistence.csproj" />
+  </ItemGroup>
+</Project>
