@@ -26,7 +26,7 @@ namespace Event.Uau.Evento.Test.Event.Handlers.Commands
                 Date = DateTime.Now.AddDays(10)
             };
 
-            var commandHandler = new CreateEventCommandHandler(eventUauTestBase.Context);
+            var commandHandler = new CreateEventCommandHandler(eventUauTestBase.Context, eventUauTestBase.mapper);
 
             //Act
             var createdEvent = await commandHandler.Handle(command, CancellationToken.None);
@@ -48,7 +48,7 @@ namespace Event.Uau.Evento.Test.Event.Handlers.Commands
                 Date = DateTime.Now.AddMonths(mesesParaAdicionar)
             };
 
-            var commandHandler = new CreateEventCommandHandler(eventUauTestBase.Context);
+            var commandHandler = new CreateEventCommandHandler(eventUauTestBase.Context, eventUauTestBase.mapper);
 
             //Assert
             var actualException = await Assert.ThrowsAsync<Exception>(() =>

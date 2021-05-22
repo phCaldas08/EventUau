@@ -12,9 +12,12 @@
     <Folder Include="Event\Commands\" />
     <Folder Include="Event\Commands\Create\" />
     <Folder Include="Event\Commands\Update\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Helpers\AutoMapper\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MediatR" Version="6.0.0" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Event.Uau.Evento.Domain\Event.Uau.Evento.Domain.csproj" />

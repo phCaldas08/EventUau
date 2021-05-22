@@ -1,8 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace Event.Uau.Evento.Domain.Entities
 {
     public class Event
     {
+        [Key]
         public Guid Key { get; set; }
         public string Name { get; set; }
         public DateTime Date { get; set; }

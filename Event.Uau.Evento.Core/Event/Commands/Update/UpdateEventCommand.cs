@@ -9,7 +9,7 @@ namespace Event.Uau.Evento.Core.Event.Commands.Update
         public string Name { get; set; }
         public DateTime Date { get; set; }
         public DateTime CreateDate { get; set; }
-        public DateTime? UpdateDate { get; set; }
+        public DateTime? UpdateDate { get => DateTime.Now; }
         public string Description { get; set; }
     }
 }

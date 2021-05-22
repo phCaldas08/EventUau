@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "AtzVYnu5P9y0RzpIr4DvW1LURlzmP/PWChJaCyJrnneupGkOWO91Fle+z6Awz/t1m4XermoXpGfaI6l7qugUzQ==",
+  "dgSpecHash": "tjkS0EMtaxEWgFWbsRBd3OgNe5na3+nk4uUyQizprm4LPFnlZt3fibqrju/MUdGdzhVuKXfcoriheyC2MugJxA==",
   "success": true,
   "projectFilePath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/Event.Uau.Evento.Core.csproj",
   "expectedPackageFiles": [
+    "/Users/phcaldas/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/mediatr/6.0.0/mediatr.6.0.0.nupkg.sha512",
+    "/Users/phcaldas/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/microsoft.entityframeworkcore/5.0.6/microsoft.entityframeworkcore.5.0.6.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/microsoft.entityframeworkcore.abstractions/5.0.6/microsoft.entityframeworkcore.abstractions.5.0.6.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/microsoft.entityframeworkcore.analyzers/5.0.6/microsoft.entityframeworkcore.analyzers.5.0.6.nupkg.sha512",
@@ -19,7 +21,8 @@
     "/Users/phcaldas/.nuget/packages/microsoft.extensions.primitives/5.0.0/microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/system.collections.immutable/5.0.0/system.collections.immutable.5.0.0.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/system.componentmodel.annotations/5.0.0/system.componentmodel.annotations.5.0.0.nupkg.sha512",
-    "/Users/phcaldas/.nuget/packages/system.diagnostics.diagnosticsource/5.0.1/system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512"
+    "/Users/phcaldas/.nuget/packages/system.diagnostics.diagnosticsource/5.0.1/system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
+    "/Users/phcaldas/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

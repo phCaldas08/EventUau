@@ -1,0 +1,14 @@
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/bin/Debug/netcoreapp3.1/Event.Uau.Evento.Core.deps.json
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/bin/Debug/netcoreapp3.1/Event.Uau.Evento.Core.dll
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/bin/Debug/netcoreapp3.1/Event.Uau.Evento.Core.pdb
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/bin/Debug/netcoreapp3.1/Event.Uau.Evento.Domain.dll
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/bin/Debug/netcoreapp3.1/Event.Uau.Evento.Persistence.dll
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/bin/Debug/netcoreapp3.1/Event.Uau.Evento.Domain.pdb
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/bin/Debug/netcoreapp3.1/Event.Uau.Evento.Persistence.pdb
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Core.csprojAssemblyReference.cache
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Core.AssemblyInfoInputs.cache
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Core.AssemblyInfo.cs
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Core.csproj.CoreCompileInputs.cache
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Core.csproj.CopyComplete
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Core.dll
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Core.pdb

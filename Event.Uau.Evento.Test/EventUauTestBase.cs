@@ -1,10 +1,13 @@
 ﻿using System;
+using AutoMapper;
+using Event.Uau.Evento.Core.Helpers.AutoMapper;
 using Event.Uau.Evento.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 public class EventUauTestBase : IDisposable
 {
     public readonly EventUauDbContext Context;
+    public readonly IMapper mapper;
 
     public EventUauTestBase()
     {
@@ -13,6 +16,14 @@ public class EventUauTestBase : IDisposable
             .Options;
 
         Context = new EventUauDbContext(options);
+
+
+        var mapperConfig = new MapperConfiguration(mc =>
+        {
+            mc.AddProfile(new MappingProfile());
+        });
+
+        mapper = mapperConfig.CreateMapper();
     }
 
 
