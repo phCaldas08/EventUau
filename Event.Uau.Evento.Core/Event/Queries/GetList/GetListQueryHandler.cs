@@ -33,25 +33,5 @@ namespace Event.Uau.Evento.Core.Event.Queries.GetList
 
             return events;
         }
-
-
-        private bool FilterEvent(Domain.Entities.Event @event, GetListQuery requestQuery)
-        {
-            bool result = true;
-
-            if (requestQuery.StartDate.HasValue && requestQuery.StartDate < @event.Date)
-                result = false;
-
-            if (requestQuery.EndDate.HasValue && requestQuery.EndDate > @event.Date)
-                result = false;
-
-            if (!string.IsNullOrEmpty(requestQuery.textSearch)
-                && !@event.Name.Contains(requestQuery.textSearch, StringComparison.InvariantCultureIgnoreCase)
-                && !@event.Description.Contains(requestQuery.textSearch, StringComparison.InvariantCultureIgnoreCase))
-                result = false;
-
-            return result;
-
-        }
     }
 }
