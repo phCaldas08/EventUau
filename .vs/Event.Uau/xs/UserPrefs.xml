@@ -1,22 +1,32 @@
 ﻿<Properties StartupConfiguration="{69452831-FC58-47E4-B90D-EB28621111CD}|Default">
   <MonoDevelop.Ide.ItemProperties.Evento.Event.Uau.Evento.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Event.Uau.Evento.Core/Event/Queries/GetList/GetListQueryHandler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Event.Uau.Evento.Core/Event/Commands/Update/UpdateEventCommandHandler.cs">
     <Files>
-      <File FileName="Event.Uau.Evento.Test/Event/Handlers/Queries/GetListQuery.cs" Line="122" Column="26" />
-      <File FileName="Event.Uau.Evento.Core/Event/Queries/GetList/GetListQueryHandler.cs" Line="28" Column="104" />
-      <File FileName="Event.Uau.Evento.Test/EventUauTestBase.cs" Line="1" Column="1" />
+      <File FileName="Event.Uau.Evento.Core/Event/Commands/Update/UpdateEventCommandHandler.cs" Line="26" Column="39" />
+      <File FileName="Event.Uau.Evento.Core/Event/Queries/GetList/GetListQueryHandler.cs" Line="26" Column="44" />
+      <File FileName="Event.Uau.Evento.Core/Event/Queries/GetList/GetListQueryValidator.cs" Line="19" Column="25" />
+      <File FileName="Event.Uau.Evento.Core/Event/Queries/GetList/GetListQuery.cs" Line="12" Column="21" />
+      <File FileName="Event.Uau.Evento.Test/Event/Handlers/Queries/GetListQuery.cs" Line="45" Column="51" />
+      <File FileName="Event.Uau.Evento.Test/Event/Handlers/Commands/CreateEventCommand.cs" Line="54" Column="96" />
+      <File FileName="Event.Uau.Evento.Test/Event/Handlers/Commands/UpdateEventCommand.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Event.Uau" expanded="True">
             <Node name="Evento" expanded="True">
+              <Node name="Event.Uau.Evento.API" expanded="True" />
               <Node name="Event.Uau.Evento.Core" expanded="True">
                 <Node name="Event" expanded="True">
-                  <Node name="Queries" expanded="True">
-                    <Node name="GetList" expanded="True">
-                      <Node name="GetListQueryHandler.cs" selected="True" />
+                  <Node name="Commands" expanded="True">
+                    <Node name="Create" expanded="True" />
+                    <Node name="Update" expanded="True">
+                      <Node name="UpdateEventCommandHandler.cs" selected="True" />
                     </Node>
+                  </Node>
+                  <Node name="Queries" expanded="True">
+                    <Node name="GetById" expanded="True" />
+                    <Node name="GetList" expanded="True" />
                   </Node>
                 </Node>
               </Node>
@@ -37,9 +47,10 @@
           <Node name="Event.Uau" expanded="True">
             <Node name="Evento" expanded="True">
               <Node name="Event.Uau.Evento.Test" expanded="True">
-                <Node name="Event.Uau.Evento.Test.Event.Handlers.Queries" expanded="True">
-                  <Node name="GetListQuery" expanded="True" selected="True" />
+                <Node name="Event.Uau.Evento.Test.Event.Handlers.Commands" expanded="True">
+                  <Node name="CreateEventCommand" expanded="True" selected="True" />
                 </Node>
+                <Node name="Event.Uau.Evento.Test.Event.Handlers.Queries" expanded="True" />
               </Node>
             </Node>
           </Node>

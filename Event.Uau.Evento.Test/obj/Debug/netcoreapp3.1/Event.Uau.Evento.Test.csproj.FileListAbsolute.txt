@@ -116,3 +116,6 @@
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Test/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Test.dll
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Test/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Test.pdb
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Test/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Test.genruntimeconfig.cache
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Test/bin/Debug/netcoreapp3.1/FluentValidation.dll
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Test/bin/Debug/netcoreapp3.1/FluentValidation.AspNetCore.dll
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Test/bin/Debug/netcoreapp3.1/FluentValidation.DependencyInjectionExtensions.dll

@@ -51,7 +51,7 @@ namespace Event.Uau.Evento.Test.Event.Handlers.Commands
             var commandHandler = new CreateEventCommandHandler(eventUauTestBase.Context, eventUauTestBase.mapper);
 
             //Assert
-            var actualException = await Assert.ThrowsAsync<Exception>(() =>
+            var actualException = await Assert.ThrowsAsync<FluentValidation.ValidationException>(() =>
                 //Act
                 commandHandler.Handle(command, CancellationToken.None));
         }

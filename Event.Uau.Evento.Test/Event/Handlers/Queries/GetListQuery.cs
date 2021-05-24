@@ -40,7 +40,7 @@ namespace Event.Uau.Evento.Test.Event.Handlers.Queries
             //Act
 
             //Assert
-            await Assert.ThrowsAsync<NullReferenceException>(() =>
+            await Assert.ThrowsAsync<ArgumentNullException>(() =>
                 //Act
                 handler.Handle(null, CancellationToken.None));
         }
@@ -137,7 +137,27 @@ namespace Event.Uau.Evento.Test.Event.Handlers.Queries
 
         }
 
+        [Theory]
+        [InlineData(1, 0, 1)]
+        [InlineData(1, 2, 1)]
+        [InlineData(1, 1, 2)]
+        [InlineData(0, 3, 1)]
+        public async Task ConsultarEventosComPaginacao(int qtdEsperada, int index, int pageSize)
+        {
+            //Arrange
+            var request = new Core.Event.Queries.GetList.GetListQuery
+            {
+                Index = index,
+                PageSize = pageSize
+            };
+            var handler = new GetListQueryHandler(eventUauTestBase.Context);
 
+            //Act
+            var result = await handler.Handle(request, CancellationToken.None);
+
+            //Assert
+            Assert.Equal(qtdEsperada, result.Count());
+        }
 
     }
 }

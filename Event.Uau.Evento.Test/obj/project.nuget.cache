@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "c+ki2GvFhgHRqjI6Zw6us8YwI4YXt2MfohXjTLmdSNc15Nx1v2C18rspCeB/PGpF5ETOwQHKI9bhLnrPtRm/iQ==",
+  "dgSpecHash": "mMhCWtFGArBXEeOqlvY5UNonMt6F/v/2BenFvUHLdZ8WweC9CLJ8UGioYtjFjsxa8FgHh8W0JuWjXK9msfUqXQ==",
   "success": true,
   "projectFilePath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Test/Event.Uau.Evento.Test.csproj",
   "expectedPackageFiles": [
     "/Users/phcaldas/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/coverlet.collector/1.2.0/coverlet.collector.1.2.0.nupkg.sha512",
+    "/Users/phcaldas/.nuget/packages/fluentvalidation/10.1.0/fluentvalidation.10.1.0.nupkg.sha512",
+    "/Users/phcaldas/.nuget/packages/fluentvalidation.aspnetcore/10.1.0/fluentvalidation.aspnetcore.10.1.0.nupkg.sha512",
+    "/Users/phcaldas/.nuget/packages/fluentvalidation.dependencyinjectionextensions/10.1.0/fluentvalidation.dependencyinjectionextensions.10.1.0.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/mediatr/6.0.0/mediatr.6.0.0.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/microsoft.codecoverage/16.5.0/microsoft.codecoverage.16.5.0.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",

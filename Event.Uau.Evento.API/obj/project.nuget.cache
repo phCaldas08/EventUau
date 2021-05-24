@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "jNxIA6rpaIfPhWWQ//cfSu+h070gdyF8YvM/AdcBXkKeEg+Tfcik9WrhGTVu+DDcGnDLa0owQOa1I6UqaTnwHg==",
+  "dgSpecHash": "+e1GX+IJr3sEX1Hwt1/Vw4Q2ZlaqA/AcMiKpIQKkN5baHYB0ki/2TzCc4tG039/Lw5XCOkpfsaDotuMg6zLGuQ==",
   "success": true,
   "projectFilePath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/Event.Uau.Evento.API.csproj",
   "expectedPackageFiles": [
     "/Users/phcaldas/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
+    "/Users/phcaldas/.nuget/packages/fluentvalidation/10.1.0/fluentvalidation.10.1.0.nupkg.sha512",
+    "/Users/phcaldas/.nuget/packages/fluentvalidation.aspnetcore/10.1.0/fluentvalidation.aspnetcore.10.1.0.nupkg.sha512",
+    "/Users/phcaldas/.nuget/packages/fluentvalidation.dependencyinjectionextensions/10.1.0/fluentvalidation.dependencyinjectionextensions.10.1.0.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/mediatr/9.0.0/mediatr.9.0.0.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/mediatr.extensions.microsoft.dependencyinjection/6.0.0/mediatr.extensions.microsoft.dependencyinjection.6.0.0.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
