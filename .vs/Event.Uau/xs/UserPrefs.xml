@@ -1,19 +1,44 @@
 ﻿<Properties StartupConfiguration="{69452831-FC58-47E4-B90D-EB28621111CD}|Default">
   <MonoDevelop.Ide.ItemProperties.Evento.Event.Uau.Evento.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Event.Uau.Evento.Test/Event/Handlers/Commands/CreateEventCommand.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Event.Uau.Evento.Core/Event/Queries/GetList/GetListQueryHandler.cs">
     <Files>
-      <File FileName="Event.Uau.Evento.Test/Event/Handlers/Commands/CreateEventCommand.cs" Line="36" Column="10" />
+      <File FileName="Event.Uau.Evento.Test/Event/Handlers/Queries/GetListQuery.cs" Line="122" Column="26" />
+      <File FileName="Event.Uau.Evento.Core/Event/Queries/GetList/GetListQueryHandler.cs" Line="28" Column="104" />
+      <File FileName="Event.Uau.Evento.Test/EventUauTestBase.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Event.Uau" expanded="True">
             <Node name="Evento" expanded="True">
-              <Node name="Event.Uau.Evento.Test" expanded="True" selected="True">
+              <Node name="Event.Uau.Evento.Core" expanded="True">
+                <Node name="Event" expanded="True">
+                  <Node name="Queries" expanded="True">
+                    <Node name="GetList" expanded="True">
+                      <Node name="GetListQueryHandler.cs" selected="True" />
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="Event.Uau.Evento.Test" expanded="True">
                 <Node name="Event" expanded="True">
                   <Node name="Handlers" expanded="True">
                     <Node name="Commands" expanded="True" />
+                    <Node name="Queries" expanded="True" />
                   </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="Event.Uau" expanded="True">
+            <Node name="Evento" expanded="True">
+              <Node name="Event.Uau.Evento.Test" expanded="True">
+                <Node name="Event.Uau.Evento.Test.Event.Handlers.Queries" expanded="True">
+                  <Node name="GetListQuery" expanded="True" selected="True" />
                 </Node>
               </Node>
             </Node>
