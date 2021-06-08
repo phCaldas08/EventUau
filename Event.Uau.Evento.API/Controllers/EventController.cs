@@ -6,6 +6,7 @@ using Event.Uau.Evento.Core.Event.Commands.Create;
 using Event.Uau.Evento.Core.Event.Commands.Update;
 using Event.Uau.Evento.Core.Event.Queries.GetById;
 using Event.Uau.Evento.Core.Event.Queries.GetList;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 

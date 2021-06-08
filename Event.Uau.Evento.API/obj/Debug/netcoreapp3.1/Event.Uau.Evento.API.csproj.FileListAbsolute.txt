@@ -6,6 +6,9 @@
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/bin/Debug/netcoreapp3.1/Event.Uau.Evento.API.dll
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/bin/Debug/netcoreapp3.1/Event.Uau.Evento.API.pdb
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/bin/Debug/netcoreapp3.1/AutoMapper.dll
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/bin/Debug/netcoreapp3.1/FluentValidation.dll
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/bin/Debug/netcoreapp3.1/FluentValidation.AspNetCore.dll
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/bin/Debug/netcoreapp3.1/FluentValidation.DependencyInjectionExtensions.dll
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/bin/Debug/netcoreapp3.1/MediatR.dll
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/bin/Debug/netcoreapp3.1/MediatR.Extensions.Microsoft.DependencyInjection.dll
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.dll
@@ -32,6 +35,7 @@
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/obj/Debug/netcoreapp3.1/Event.Uau.Evento.API.AssemblyInfoInputs.cache
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/obj/Debug/netcoreapp3.1/Event.Uau.Evento.API.AssemblyInfo.cs
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/obj/Debug/netcoreapp3.1/Event.Uau.Evento.API.csproj.CoreCompileInputs.cache
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/obj/Debug/netcoreapp3.1/Event.Uau.Evento.API.MvcApplicationPartsAssemblyInfo.cs
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/obj/Debug/netcoreapp3.1/Event.Uau.Evento.API.MvcApplicationPartsAssemblyInfo.cache
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/obj/Debug/netcoreapp3.1/staticwebassets/Event.Uau.Evento.API.StaticWebAssets.Manifest.cache
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/obj/Debug/netcoreapp3.1/staticwebassets/Event.Uau.Evento.API.StaticWebAssets.xml
@@ -41,7 +45,3 @@
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/obj/Debug/netcoreapp3.1/Event.Uau.Evento.API.dll
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/obj/Debug/netcoreapp3.1/Event.Uau.Evento.API.pdb
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/obj/Debug/netcoreapp3.1/Event.Uau.Evento.API.genruntimeconfig.cache
-/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/bin/Debug/netcoreapp3.1/FluentValidation.dll
-/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/bin/Debug/netcoreapp3.1/FluentValidation.AspNetCore.dll
-/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/bin/Debug/netcoreapp3.1/FluentValidation.DependencyInjectionExtensions.dll
-/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/obj/Debug/netcoreapp3.1/Event.Uau.Evento.API.MvcApplicationPartsAssemblyInfo.cs
