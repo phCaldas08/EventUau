@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Event.Uau.Autentificacao.API
+namespace Event.Uau.Autenticacao.API
 {
     public class Program
     {

@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authorization;
 
-namespace Event.Uau.Autentificacao.API.Controllers
+namespace Event.Uau.Autenticacao.API.Controllers
 {
     [EnableCors("CorsPolicy")]
     [ApiController]

@@ -13,13 +13,22 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.15" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Event.Uau.Autentificacao.Persistence\Event.Uau.Autentificacao.Persistence.csproj" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Helpers\" />
     <Folder Include="Authentication\" />
-    <Folder Include="Authentication\Commands\" />
-    <Folder Include="Authentication\Commands\Login\" />
-    <Folder Include="Authentication\Commands\Update\" />
+    <Folder Include="Authentication\User\" />
+    <Folder Include="Authentication\User\Commands\" />
+    <Folder Include="Authentication\User\Commands\Create\" />
+    <Folder Include="ViewModel\" />
+    <Folder Include="Helpers\AutoMapper\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Event.Uau.Autentificacao.Persistence\Event.Uau.Autenticacao.Persistence.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Authentication\User\" />
+    <None Remove="Authentication\User\Commands\" />
+    <None Remove="Authentication\User\Commands\Create\" />
+    <None Remove="ViewModel\" />
+    <None Remove="Helpers\AutoMapper\" />
   </ItemGroup>
 </Project>

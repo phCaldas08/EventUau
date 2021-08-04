@@ -9,6 +9,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.6" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Event.Uau.Autentificacao.Domain\Event.Uau.Autentificacao.Domain.csproj" />
+    <ProjectReference Include="..\Event.Uau.Autentificacao.Domain\Event.Uau.Autenticacao.Domain.csproj" />
   </ItemGroup>
 </Project>

@@ -2,10 +2,10 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Event.Uau.Autentificacao.Domain.Entities;
+using Event.Uau.Autenticacao.Domain.Entities;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Event.Uau.Autentificacao.Core.Helpers
+namespace Event.Uau.Autenticacao.Core.Helpers
 {
     public static class TokenService
     {
@@ -16,10 +16,11 @@ namespace Event.Uau.Autentificacao.Core.Helpers
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[] {
-                    new Claim(ClaimTypes.Name, user.Username.ToString()),
+                    new Claim(ClaimTypes.Name, user.UserName.ToString()),
                     new Claim(ClaimTypes.Role, user.Role.ToString())
                 }),
-                Expires = DateTime.Now.AddMinutes(30),
+                Expires = DateTime.UtcNow.AddMinutes(30),
+
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 

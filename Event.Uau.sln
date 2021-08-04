@@ -15,15 +15,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Uau.Evento.Persistenc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Uau.Evento.Test", "Event.Uau.Evento.Test\Event.Uau.Evento.Test.csproj", "{1FADACFF-F9A3-4FCA-93CF-B5D25721F110}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Autentificacao", "Autentificacao", "{69B97D83-3A8A-482A-9B38-36899D5A3277}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Autenticacao", "Autenticacao", "{69B97D83-3A8A-482A-9B38-36899D5A3277}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Uau.Autentificacao.API", "Event.Uau.Autentificacao.API\Event.Uau.Autentificacao.API.csproj", "{76382CA1-D4F4-4C1E-9A0F-7553F20F2824}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Uau.Autenticacao.API", "Event.Uau.Autentificacao.API\Event.Uau.Autenticacao.API.csproj", "{76382CA1-D4F4-4C1E-9A0F-7553F20F2824}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Uau.Autentificacao.Core", "Event.Uau.Autentificacao.Core\Event.Uau.Autentificacao.Core.csproj", "{7BD7BACB-5716-4A1A-8BA5-C555D8EC940C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Uau.Autenticacao.Core", "Event.Uau.Autentificacao.Core\Event.Uau.Autenticacao.Core.csproj", "{7BD7BACB-5716-4A1A-8BA5-C555D8EC940C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Uau.Autentificacao.Domain", "Event.Uau.Autentificacao.Domain\Event.Uau.Autentificacao.Domain.csproj", "{34573E38-B44A-4514-928C-906008125958}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Uau.Autenticacao.Domain", "Event.Uau.Autentificacao.Domain\Event.Uau.Autenticacao.Domain.csproj", "{34573E38-B44A-4514-928C-906008125958}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Uau.Autentificacao.Persistence", "Event.Uau.Autentificacao.Persistence\Event.Uau.Autentificacao.Persistence.csproj", "{D2E44746-09C9-4158-905E-80A27011B690}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Uau.Autenticacao.Persistence", "Event.Uau.Autentificacao.Persistence\Event.Uau.Autenticacao.Persistence.csproj", "{D2E44746-09C9-4158-905E-80A27011B690}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

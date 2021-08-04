@@ -2,25 +2,30 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Event.Uau.Autentificacao.Core.Helpers;
-using Event.Uau.Autentificacao.Persistence;
+using Event.Uau.Autenticacao.Core.Helpers;
+using Event.Uau.Autenticacao.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using FluentValidation;
 
-namespace Event.Uau.Autentificacao.Core.Authentication.Commands.Login
+namespace Event.Uau.Autenticacao.Core.Authentication.User.Commands.Login
 {
     public class LoginCommandHandler : IRequestHandler<LoginCommand, string>
     {
         private readonly EventUauDbContext context;
+        private readonly LoginCommandValidator validations;
 
         public LoginCommandHandler(EventUauDbContext context)
         {
             this.context = context;
+            validations = new LoginCommandValidator(context);
         }
 
         public async Task<string> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
-            var user = await context.Users.FirstOrDefaultAsync(i => i.Username.Equals(request.UserName, StringComparison.CurrentCultureIgnoreCase) && i.Password.Equals(request.Password));
+            validations.ValidateAndThrow(request);
+
+            var user = await context.Users.FirstOrDefaultAsync(i => i.UserName.Equals(request.UserName, StringComparison.CurrentCultureIgnoreCase) && i.Password.Equals(request.Password));
 
             var token = TokenService.GenerateToken(user);
 

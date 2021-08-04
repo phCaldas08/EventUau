@@ -11,5 +11,7 @@ namespace Event.Uau.Evento.Persistence
         }
 
         public DbSet<Domain.Entities.Event> Events { get; set; }
+
+   
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using MediatR;
 
-namespace Event.Uau.Autentificacao.Core.Authentication.Commands.Update
+namespace Event.Uau.Autenticacao.Core.Authentication.User.Commands.Update
 {
     public class UpdateCommand : IRequest<string>
     {

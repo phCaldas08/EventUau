@@ -5,7 +5,7 @@
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/bin/Debug/netcoreapp3.1/Event.Uau.Evento.Persistence.dll
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/bin/Debug/netcoreapp3.1/Event.Uau.Evento.Domain.pdb
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/bin/Debug/netcoreapp3.1/Event.Uau.Evento.Persistence.pdb
-/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Core.csprojAssemblyReference.cache
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Core.csproj.AssemblyReference.cache
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Core.AssemblyInfoInputs.cache
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Core.AssemblyInfo.cs
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Core.csproj.CoreCompileInputs.cache

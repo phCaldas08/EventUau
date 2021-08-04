@@ -1,7 +1,7 @@
 ﻿using System;
 using MediatR;
 
-namespace Event.Uau.Autentificacao.Core.Authentication.Commands.Login
+namespace Event.Uau.Autenticacao.Core.Authentication.User.Commands.Login
 {
     public class LoginCommand : IRequest<string>
     {

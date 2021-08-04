@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Event.Uau.Autentificacao.Core.Helpers;
-using Event.Uau.Autentificacao.Persistence;
+using AutoMapper;
+using Event.Uau.Autenticacao.Core.Helpers;
+using Event.Uau.Autenticacao.Core.Helpers.AutoMapper;
+using Event.Uau.Autenticacao.Persistence;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -16,9 +18,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Event.Uau.Autentificacao.API
+namespace Event.Uau.Autenticacao.API
 {
     public class Startup
     {
@@ -32,26 +35,33 @@ namespace Event.Uau.Autentificacao.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+
+            IMapper mapper = mapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
             services.AddMediatR();
 
             services.AddDbContext<EventUauDbContext>(options =>
-                options.UseInMemoryDatabase("EventUauDBAutentificacao"));
+                options.UseInMemoryDatabase("EventUauDBAutenticacao"));
 
-            services.AddCors(o => o.AddPolicy("CorsPolicy",
-                builder => builder.AllowAnyHeader()
-                .AllowAnyMethod()
-                .AllowAnyOrigin()));
+            services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
+                builder.AllowAnyHeader()
+                       .AllowAnyMethod()
+                       .AllowAnyOrigin()));
 
             services.AddControllers();
 
             var key = Encoding.ASCII.GetBytes(Settings.Secret);
             services.AddAuthentication(x =>
-            {
+            {                
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             })
             .AddJwtBearer(x =>
-            {
+            {                
                 x.RequireHttpsMetadata = false;
                 x.SaveToken = true;
                 x.TokenValidationParameters = new TokenValidationParameters
@@ -59,7 +69,7 @@ namespace Event.Uau.Autentificacao.API
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuer = false,
-                    ValidateAudience = false
+                    ValidateAudience = false,
                 };
             });
 
@@ -71,13 +81,14 @@ namespace Event.Uau.Autentificacao.API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                IdentityModelEventSource.ShowPII = true;
             }
-
-            app.UseCors();
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("CorsPolicy");
 
             app.UseAuthentication();
             app.UseAuthorization();

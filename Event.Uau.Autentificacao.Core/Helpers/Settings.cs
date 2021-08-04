@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Event.Uau.Autentificacao.Core.Helpers
+namespace Event.Uau.Autenticacao.Core.Helpers
 {
     public static class Settings
     {

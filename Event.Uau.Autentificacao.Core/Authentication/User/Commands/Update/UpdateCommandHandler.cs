@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Event.Uau.Autentificacao.Core.Helpers;
-using Event.Uau.Autentificacao.Persistence;
+using Event.Uau.Autenticacao.Core.Helpers;
+using Event.Uau.Autenticacao.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Event.Uau.Autentificacao.Core.Authentication.Commands.Update
+namespace Event.Uau.Autenticacao.Core.Authentication.User.Commands.Update
 {
     public class UpdateCommandHandler : IRequestHandler<UpdateCommand, string>
     {
@@ -19,7 +19,7 @@ namespace Event.Uau.Autentificacao.Core.Authentication.Commands.Update
 
         public async Task<string> Handle(UpdateCommand request, CancellationToken cancellationToken)
         {
-            var user = await context.Users.FirstOrDefaultAsync(i => i.Username.Equals(request.Username, StringComparison.CurrentCultureIgnoreCase) && i.Password.Equals(request.Password));
+            var user = await context.Users.FirstOrDefaultAsync(i => i.UserName.Equals(request.Username, StringComparison.CurrentCultureIgnoreCase) && i.Password.Equals(request.Password));
 
             user.Password = request.NewPassword;
 

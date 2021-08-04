@@ -5,11 +5,12 @@
   </PropertyGroup>
 
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Event.Uau.Autentificacao.API' " />
   <ItemGroup>
     <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Event.Uau.Autentificacao.Core\Event.Uau.Autentificacao.Core.csproj">
+    <ProjectReference Include="..\Event.Uau.Autentificacao.Core\Event.Uau.Autenticacao.Core.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>

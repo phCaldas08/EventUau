@@ -111,7 +111,7 @@
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Test/bin/Debug/netcoreapp3.1/Event.Uau.Evento.Persistence.pdb
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Test/bin/Debug/netcoreapp3.1/Event.Uau.Evento.Core.pdb
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Test/bin/Debug/netcoreapp3.1/Event.Uau.Evento.Domain.pdb
-/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Test/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Test.csprojAssemblyReference.cache
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Test/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Test.csproj.AssemblyReference.cache
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Test/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Test.AssemblyInfoInputs.cache
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Test/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Test.AssemblyInfo.cs
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Test/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Test.csproj.CoreCompileInputs.cache

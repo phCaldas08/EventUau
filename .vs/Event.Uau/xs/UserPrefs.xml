@@ -1,25 +1,35 @@
 ﻿<Properties StartupConfiguration="{69452831-FC58-47E4-B90D-EB28621111CD}|Default">
-  <MonoDevelop.Ide.ItemProperties.Autentificacao.Event.Uau.Autentificacao.API FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.Autentificacao.Event.Uau.Autentificacao.Domain FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Autenticacao.Event.Uau.Autenticacao.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.ItemProperties.Evento.Event.Uau.Evento.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Event.Uau.Autentificacao.Core/Authentication/Commands/Login/LoginCommandHandler.cs">
-    <Files>
-      <File FileName="Event.Uau.Autentificacao.Core/Authentication/Commands/Login/LoginCommandHandler.cs" Line="25" Column="58" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Event.Uau" expanded="True" />
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="Event.Uau" expanded="True" selected="True" />
+          <Node name="Event.Uau" expanded="True">
+            <Node name="Autenticacao" expanded="True">
+              <Node name="Event.Uau.Autenticacao.API" expanded="True">
+                <Node name="Controllers" expanded="True" />
+                <Node name="Properties" expanded="True" />
+              </Node>
+              <Node name="Event.Uau.Autenticacao.Core" expanded="True">
+                <Node name="Authentication" expanded="True">
+                  <Node name="User" expanded="True">
+                    <Node name="Commands" expanded="True">
+                      <Node name="Create" expanded="True" />
+                    </Node>
+                  </Node>
+                </Node>
+                <Node name="Helpers" expanded="True">
+                  <Node name="Settings.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+            <Node name="Evento" expanded="True" />
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Autentificacao.Event.Uau.Autentificacao.Persistence FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <DisabledProjects>
     <String>Event.Uau.Autentificacao.API/Event.Uau.Autentificacao.Persistence/Event.Uau.Autentificacao.Persistence.csproj</String>
@@ -29,5 +39,4 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Autentificacao.Event.Uau.Autentificacao.Core FirstBuild="True" />
 </Properties>
