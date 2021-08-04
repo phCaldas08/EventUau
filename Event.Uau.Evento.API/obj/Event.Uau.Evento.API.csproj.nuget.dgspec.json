@@ -4,6 +4,95 @@
     "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/Event.Uau.Evento.API.csproj": {}
   },
   "projects": {
+    "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Comum.Configuracao/Event.Uau.Comum.Configuracao.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Comum.Configuracao/Event.Uau.Comum.Configuracao.csproj",
+        "projectName": "Event.Uau.Comum.Configuracao",
+        "projectPath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Comum.Configuracao/Event.Uau.Comum.Configuracao.csproj",
+        "packagesPath": "/Users/phcaldas/.nuget/packages/",
+        "outputPath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Comum.Configuracao/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/phcaldas/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.AspNetCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.15, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.302/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.API/Event.Uau.Evento.API.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -26,6 +115,9 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
+              "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Comum.Configuracao/Event.Uau.Comum.Configuracao.csproj": {
+                "projectPath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Comum.Configuracao/Event.Uau.Comum.Configuracao.csproj"
+              },
               "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/Event.Uau.Evento.Core.csproj": {
                 "projectPath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/Event.Uau.Evento.Core.csproj"
               },

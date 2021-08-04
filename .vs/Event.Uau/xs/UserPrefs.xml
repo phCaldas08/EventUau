@@ -1,31 +1,33 @@
-﻿<Properties StartupConfiguration="{69452831-FC58-47E4-B90D-EB28621111CD}|Default">
+﻿<Properties StartupConfiguration="{76382CA1-D4F4-4C1E-9A0F-7553F20F2824}|Event.Uau.Autentificacao.API">
   <MonoDevelop.Ide.ItemProperties.Autenticacao.Event.Uau.Autenticacao.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.ItemProperties.Evento.Event.Uau.Evento.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Event.Uau.Evento.API/Startup.cs">
+    <Files>
+      <File FileName="Event.Uau.Autentificacao.API/Startup.cs" Line="36" Column="1" />
+      <File FileName="Event.Uau.Comum.Configuracao/Startup/StartupConfig.cs" Line="69" Column="22" />
+      <File FileName="Event.Uau.Autentificacao.API/Event.Uau.Autenticacao.API.csproj" Line="1" Column="1" />
+      <File FileName="Event.Uau.Comum.Configuracao/Helpers/Settings.cs" Line="2" Column="47" />
+      <File FileName="Event.Uau.Evento.API/Startup.cs" Line="39" Column="34" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Event.Uau" expanded="True">
-            <Node name="Autenticacao" expanded="True">
-              <Node name="Event.Uau.Autenticacao.API" expanded="True">
-                <Node name="Controllers" expanded="True" />
-                <Node name="Properties" expanded="True" />
-              </Node>
-              <Node name="Event.Uau.Autenticacao.Core" expanded="True">
-                <Node name="Authentication" expanded="True">
-                  <Node name="User" expanded="True">
-                    <Node name="Commands" expanded="True">
-                      <Node name="Create" expanded="True" />
-                    </Node>
-                  </Node>
-                </Node>
-                <Node name="Helpers" expanded="True">
-                  <Node name="Settings.cs" selected="True" />
-                </Node>
+            <Node name="Autenticacao" expanded="True" />
+            <Node name="Comum" expanded="True">
+              <Node name="Event.Uau.Comum.Configuracao" expanded="True" />
+            </Node>
+            <Node name="Evento" expanded="True">
+              <Node name="Event.Uau.Evento.API" expanded="True">
+                <Node name="Startup.cs" selected="True" />
               </Node>
             </Node>
-            <Node name="Evento" expanded="True" />
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="Event.Uau" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>

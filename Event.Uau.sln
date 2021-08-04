@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Uau.Autenticacao.Doma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Uau.Autenticacao.Persistence", "Event.Uau.Autentificacao.Persistence\Event.Uau.Autenticacao.Persistence.csproj", "{D2E44746-09C9-4158-905E-80A27011B690}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Comum", "Comum", "{00DA844B-09D2-4BC9-B5C2-7E61F888A0A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Uau.Comum.Configuracao", "Event.Uau.Comum.Configuracao\Event.Uau.Comum.Configuracao.csproj", "{AB222AF5-DE97-43BF-8E3F-BF6C478FFEE9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +71,10 @@ Global
 		{D2E44746-09C9-4158-905E-80A27011B690}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2E44746-09C9-4158-905E-80A27011B690}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2E44746-09C9-4158-905E-80A27011B690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB222AF5-DE97-43BF-8E3F-BF6C478FFEE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB222AF5-DE97-43BF-8E3F-BF6C478FFEE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB222AF5-DE97-43BF-8E3F-BF6C478FFEE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB222AF5-DE97-43BF-8E3F-BF6C478FFEE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,5 +92,6 @@ Global
 		{7BD7BACB-5716-4A1A-8BA5-C555D8EC940C} = {69B97D83-3A8A-482A-9B38-36899D5A3277}
 		{34573E38-B44A-4514-928C-906008125958} = {69B97D83-3A8A-482A-9B38-36899D5A3277}
 		{D2E44746-09C9-4158-905E-80A27011B690} = {69B97D83-3A8A-482A-9B38-36899D5A3277}
+		{AB222AF5-DE97-43BF-8E3F-BF6C478FFEE9} = {00DA844B-09D2-4BC9-B5C2-7E61F888A0A0}
 	EndGlobalSection
 EndGlobal

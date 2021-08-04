@@ -21,5 +21,8 @@
     <ProjectReference Include="..\Event.Uau.Evento.Persistence\Event.Uau.Evento.Persistence.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\Event.Uau.Comum.Configuracao\Event.Uau.Comum.Configuracao.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 </Project>
