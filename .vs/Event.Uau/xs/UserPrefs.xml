@@ -1,34 +1,26 @@
 ﻿<Properties StartupConfiguration="{76382CA1-D4F4-4C1E-9A0F-7553F20F2824}|Event.Uau.Autentificacao.API">
   <MonoDevelop.Ide.ItemProperties.Autenticacao.Event.Uau.Autenticacao.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Event.Uau.Autentificacao.Core/Autenticacao/Commands/Login/LoginCommandHandler.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="Event.Uau.Autentificacao.API/Controllers/UsuarioController.cs" Line="21" Column="50" />
       <File FileName="Event.Uau.Autentificacao.API/Startup.cs" />
       <File FileName="Event.Uau.Evento.Infrastructure/Integracoes/Autenticacao/UsuarioIntegracao.cs" />
-      <File FileName="Event.Uau.Autentificacao.Core/Usuario/Commands/CadastrarUsuario/CadastrarUsuarioCommand.cs" Line="6" Column="29" />
-      <File FileName="Event.Uau.Autentificacao.Core/Usuario/Commands/CadastrarUsuario/CadastrarUsuarioCommandHandler.cs" Line="36" Column="1" />
-      <File FileName="Event.Uau.Autentificacao.Core/Autenticacao/Commands/Login/LoginCommand.cs" Line="6" Column="18" />
-      <File FileName="Event.Uau.Autentificacao.Core/Autenticacao/Commands/Login/LoginCommandHandler.cs" Line="28" Column="1" />
+      <File FileName="Event.Uau.Autentificacao.Core/Usuario/Commands/CadastrarUsuario/CadastrarUsuarioCommand.cs" />
+      <File FileName="Event.Uau.Autentificacao.Core/Usuario/Commands/CadastrarUsuario/CadastrarUsuarioCommandHandler.cs" />
+      <File FileName="Event.Uau.Autentificacao.Core/Autenticacao/Commands/Login/LoginCommand.cs" />
+      <File FileName="Event.Uau.Autentificacao.Core/Autenticacao/Commands/Login/LoginCommandHandler.cs" Line="32" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Event.Uau" expanded="True">
             <Node name="Autenticacao" expanded="True">
-              <Node name="Event.Uau.Autenticacao.API" expanded="True">
-                <Node name="Controllers" expanded="True" />
-              </Node>
               <Node name="Event.Uau.Autenticacao.Core" expanded="True">
                 <Node name="Autenticacao" expanded="True">
                   <Node name="Commands" expanded="True">
                     <Node name="Login" expanded="True">
                       <Node name="LoginCommandHandler.cs" selected="True" />
                     </Node>
-                  </Node>
-                </Node>
-                <Node name="Usuario" expanded="True">
-                  <Node name="Commands" expanded="True">
-                    <Node name="CadastrarUsuario" expanded="True" />
                   </Node>
                 </Node>
               </Node>
