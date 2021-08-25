@@ -1,7 +1,5 @@
 ﻿using System;
 using AutoMapper;
-using Event.Uau.Autenticacao.Core.Authentication.User.Commands.Create;
-using Event.Uau.Autenticacao.Core.Authentication.User.Commands.Update;
 
 namespace Event.Uau.Autenticacao.Core.Helpers.AutoMapper
 {
@@ -9,9 +7,14 @@ namespace Event.Uau.Autenticacao.Core.Helpers.AutoMapper
     {
         public MappingProfile()
         {
-            CreateMap<Domain.Entities.User, ViewModel.UserViewModel>();
-            CreateMap<CreateCommand, Domain.Entities.User>();
-            CreateMap<UpdateCommand, Domain.Entities.User>();
+            CreateMap<Domain.Entities.Usuario, ViewModel.Autenticacao.UsuarioViewModel>();
+
+            CreateMap<Usuario.Commands.CadastrarUsuario.CadastrarUsuarioCommand, Domain.Entities.Usuario>()
+                .ForMember(i => i.Senha, opt => opt.MapFrom(cadastrar => cadastrar.Senha.ToHash()))
+                .ForMember(i => i.Telefone, opt => opt.MapFrom(cadastrar => cadastrar.Telefone.Replace(" ", string.Empty)
+                                                                                              .Replace("-", string.Empty)
+                                                                                              .Replace("(", string.Empty)
+                                                                                              .Replace(")", string.Empty)));
         }
     }
 }

@@ -5,15 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Event\" />
-    <Folder Include="Event\Queries\" />
-    <Folder Include="Event\Queries\GetById\" />
-    <Folder Include="Event\Queries\GetList\" />
-    <Folder Include="Event\Commands\" />
-    <Folder Include="Event\Commands\Create\" />
-    <Folder Include="Event\Commands\Update\" />
+    <Folder Include="Evento\" />
+    <Folder Include="Evento\Queries\" />
+    <Folder Include="Evento\Queries\BuscaEventoPorId\" />
+    <Folder Include="Evento\Commands\" />
+    <Folder Include="Evento\Commands\CriarEvento\" />
     <Folder Include="Helpers\" />
     <Folder Include="Helpers\AutoMapper\" />
+    <Folder Include="Employee\" />
+    <Folder Include="Employee\Queries\" />
+    <Folder Include="Employee\Queries\GetList\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MediatR" Version="6.0.0" />
@@ -21,7 +22,14 @@
     <PackageReference Include="FluentValidation.AspNetCore" Version="10.1.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Event.Uau.Evento.Domain\Event.Uau.Evento.Domain.csproj" />
+    <None Remove="Employee\" />
+    <None Remove="Employee\Queries\" />
+    <None Remove="Employee\Queries\GetList\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Event.Uau.Comum.Util\Event.Uau.Comum.Util.csproj" />
     <ProjectReference Include="..\Event.Uau.Evento.Persistence\Event.Uau.Evento.Persistence.csproj" />
+    <ProjectReference Include="..\Event.Uau.Evento.Infrastructure\Event.Uau.Evento.Infrastructure.csproj" />
+    <ProjectReference Include="..\Event.Uau.Evento.ViewModel\Event.Uau.Evento.ViewModel.csproj" />
   </ItemGroup>
 </Project>

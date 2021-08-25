@@ -20,7 +20,5 @@
   <ItemGroup>
     <Folder Include="Event\" />
     <Folder Include="Event\Handlers\" />
-    <Folder Include="Event\Handlers\Commands\" />
-    <Folder Include="Event\Handlers\Queries\" />
   </ItemGroup>
 </Project>

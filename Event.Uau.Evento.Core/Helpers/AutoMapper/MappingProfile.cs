@@ -1,7 +1,6 @@
 ﻿using System;
 using AutoMapper;
-using Event.Uau.Evento.Core.Event.Commands.Create;
-using Event.Uau.Evento.Core.Event.Commands.Update;
+using Event.Uau.Evento.Core.Evento.Commands.CriarEvento;
 
 namespace Event.Uau.Evento.Core.Helpers.AutoMapper
 {
@@ -9,8 +8,8 @@ namespace Event.Uau.Evento.Core.Helpers.AutoMapper
     {
         public MappingProfile()
         {
-            CreateMap<CreateEventCommand, Domain.Entities.Event>();
-            CreateMap<UpdateEventCommand, Domain.Entities.Event>();
+            CreateMap<CriarEventoCommand, Domain.Entities.Evento>();
+            CreateMap<Domain.Entities.Evento, ViewModel.Evento.EventoViewModel>();
         }
     }
 }

@@ -9,15 +9,15 @@ namespace Event.Uau.Autenticacao.Core.Helpers
 {
     public static class TokenService
     {
-        public static string GenerateToken(User user)
+        public static string GenerateToken(Domain.Entities.Usuario usuario)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(Settings.Secret);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[] {
-                    new Claim(ClaimTypes.Name, user.UserName.ToString()),
-                    new Claim(ClaimTypes.Role, user.Role.ToString())
+                    new Claim(ClaimTypes.Email, usuario.Email),
+                    new Claim(ClaimTypes.Role, usuario.Cpf)
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(30),
 

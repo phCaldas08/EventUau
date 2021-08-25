@@ -9,13 +9,13 @@ namespace Event.Uau.Autenticacao.Persistence
         {
         }
 
-        public DbSet<Domain.Entities.User> Users { get; set; }
+        public DbSet<Domain.Entities.Usuario> Usuarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Domain.Entities.User>(entity =>
+            modelBuilder.Entity<Domain.Entities.Usuario>(entity =>
             {
-                entity.HasKey(e => e.UserName);
+                entity.HasKey(e => e.Id);
             });
         }
     }

@@ -4,8 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using Event.Uau.Evento.API.Configurations;
 using Event.Uau.Evento.Core.Helpers;
 using Event.Uau.Evento.Core.Helpers.AutoMapper;
+using Event.Uau.Evento.Infrastructure.Integracoes.Autenticacao;
+using Event.Uau.Evento.Infrastructure.Integracoes.Interfaces;
 using Event.Uau.Evento.Persistence;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -37,6 +40,8 @@ namespace Event.Uau.Evento.API
                 services,
                 new MappingProfile(),
                 "EventUauDBEvento");
+
+            services.ConfigureIntegrations();
 
         }
 

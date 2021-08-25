@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>    
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,21 +14,28 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\" />
-    <Folder Include="Authentication\" />
-    <Folder Include="Authentication\User\" />
-    <Folder Include="Authentication\User\Commands\" />
-    <Folder Include="Authentication\User\Commands\Create\" />
-    <Folder Include="ViewModel\" />
     <Folder Include="Helpers\AutoMapper\" />
+    <Folder Include="Autenticacao\" />
+    <Folder Include="Autenticacao\Commands\" />
+    <Folder Include="Autenticacao\Commands\Login\" />
+    <Folder Include="Usuario\" />
+    <Folder Include="Usuario\Commands\" />
+    <Folder Include="Usuario\Queries\" />
+    <Folder Include="Usuario\Queries\BuscaUsuarioPorId\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Helpers\AutoMapper\" />
+    <None Remove="Autenticacao\" />
+    <None Remove="Autenticacao\Commands\" />
+    <None Remove="Autenticacao\Commands\Login\" />
+    <None Remove="Usuario\" />
+    <None Remove="Usuario\Commands\" />
+    <None Remove="Usuario\Queries\" />
+    <None Remove="Usuario\Queries\BuscaUsuarioPorId\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Event.Uau.Autentificacao.Persistence\Event.Uau.Autenticacao.Persistence.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="Authentication\User\" />
-    <None Remove="Authentication\User\Commands\" />
-    <None Remove="Authentication\User\Commands\Create\" />
-    <None Remove="ViewModel\" />
-    <None Remove="Helpers\AutoMapper\" />
+    <ProjectReference Include="..\Event.Uau.Autenticacao.ViewModel\Event.Uau.Autenticacao.ViewModel.csproj" />
+    <ProjectReference Include="..\Event.Uau.Comum.Util\Event.Uau.Comum.Util.csproj" />
   </ItemGroup>
 </Project>

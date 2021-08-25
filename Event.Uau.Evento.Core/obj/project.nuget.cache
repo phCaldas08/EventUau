@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "b3YObNbcs1+eNfa65z6Ye+D8S9xOvE2cTPqlbphyqqpHl+JGTIf9Ymo0ohlMEnUKbfh0jJ+Dhjh5VD5V5qVIug==",
+  "dgSpecHash": "HBmcXa5l5MWsWPGhcF1Ur/zNFI555OoliuaipwQ+lNrip5l7bbliLAbmvnIKzE3MAp4Ek8+cKC/KbumAyCoWdA==",
   "success": true,
   "projectFilePath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/Event.Uau.Evento.Core.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "/Users/phcaldas/.nuget/packages/fluentvalidation/10.1.0/fluentvalidation.10.1.0.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/fluentvalidation.aspnetcore/10.1.0/fluentvalidation.aspnetcore.10.1.0.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/fluentvalidation.dependencyinjectionextensions/10.1.0/fluentvalidation.dependencyinjectionextensions.10.1.0.nupkg.sha512",
+    "/Users/phcaldas/.nuget/packages/flurl/3.0.2/flurl.3.0.2.nupkg.sha512",
+    "/Users/phcaldas/.nuget/packages/flurl.http/3.2.0/flurl.http.3.2.0.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/mediatr/6.0.0/mediatr.6.0.0.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/microsoft.entityframeworkcore/5.0.6/microsoft.entityframeworkcore.5.0.6.nupkg.sha512",
@@ -22,10 +24,14 @@
     "/Users/phcaldas/.nuget/packages/microsoft.extensions.logging.abstractions/5.0.0/microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/microsoft.extensions.options/5.0.0/microsoft.extensions.options.5.0.0.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/microsoft.extensions.primitives/5.0.0/microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "/Users/phcaldas/.nuget/packages/microsoft.netcore.platforms/2.1.2/microsoft.netcore.platforms.2.1.2.nupkg.sha512",
+    "/Users/phcaldas/.nuget/packages/newtonsoft.json/12.0.2/newtonsoft.json.12.0.2.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/system.collections.immutable/5.0.0/system.collections.immutable.5.0.0.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/system.componentmodel.annotations/5.0.0/system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "/Users/phcaldas/.nuget/packages/system.diagnostics.diagnosticsource/5.0.1/system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
-    "/Users/phcaldas/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512"
+    "/Users/phcaldas/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512",
+    "/Users/phcaldas/.nuget/packages/system.runtime.compilerservices.unsafe/4.5.2/system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "/Users/phcaldas/.nuget/packages/system.text.encoding.codepages/4.5.1/system.text.encoding.codepages.4.5.1.nupkg.sha512"
   ],
   "logs": []
 }

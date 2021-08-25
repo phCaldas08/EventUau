@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Evento\" />
+    <None Remove="Autenticacao\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Evento\" />
+    <Folder Include="Autenticacao\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Event.Uau.Comum.ViewModel\Event.Uau.Comum.ViewModel.csproj" />
+  </ItemGroup>
+</Project>

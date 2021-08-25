@@ -28,39 +28,7 @@ public class EventUauTestBase : IDisposable
 
 
         #region Preparar dados fakes
-        var eventsFake = new List<Event.Uau.Evento.Domain.Entities.Event>
-            {
-                new Event.Uau.Evento.Domain.Entities.Event
-                {
-                    CreateDate = DateTime.Now,
-                    Date = DateTime.Today.AddMonths(1),
-                    Description = "Teste descricao 1",
-                    Name = "Teste nome 1",
-                    Key = new Guid("aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeee1"),
-
-                },
-                new Event.Uau.Evento.Domain.Entities.Event
-                {
-                    CreateDate = DateTime.Now,
-                    Date = DateTime.Today.AddMonths(2),
-                    Description = "Teste descricao 2",
-                    Name = "Teste nome 2",
-                    Key = new Guid("aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeee2"),
-
-                },
-                new Event.Uau.Evento.Domain.Entities.Event
-                {
-                    CreateDate = DateTime.Now,
-                    Date = DateTime.Today.AddMonths(3),
-                    Description = "Teste descricao 3",
-                    Name = "Teste nome 3",
-                    Key = new Guid("aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeee3"),
-
-                },
-            };
-
-        Context.Events.AddRange(eventsFake);
-        Context.SaveChanges();
+        
         #endregion
 
     }

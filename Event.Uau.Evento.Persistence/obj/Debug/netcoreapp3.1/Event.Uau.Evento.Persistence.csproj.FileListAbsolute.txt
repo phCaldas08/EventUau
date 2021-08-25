@@ -4,6 +4,7 @@
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Persistence/bin/Debug/netcoreapp3.1/Event.Uau.Evento.Domain.dll
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Persistence/bin/Debug/netcoreapp3.1/Event.Uau.Evento.Domain.pdb
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Persistence/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Persistence.csproj.AssemblyReference.cache
+/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Persistence/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Persistence.GeneratedMSBuildEditorConfig.editorconfig
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Persistence/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Persistence.AssemblyInfoInputs.cache
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Persistence/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Persistence.AssemblyInfo.cs
 /Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Persistence/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Persistence.csproj.CoreCompileInputs.cache

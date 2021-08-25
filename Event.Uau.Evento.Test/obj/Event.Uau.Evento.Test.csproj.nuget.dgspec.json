@@ -4,6 +4,116 @@
     "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Test/Event.Uau.Evento.Test.csproj": {}
   },
   "projects": {
+    "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Comum.Util/Event.Uau.Comum.Util.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Comum.Util/Event.Uau.Comum.Util.csproj",
+        "projectName": "Event.Uau.Comum.Util",
+        "projectPath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Comum.Util/Event.Uau.Comum.Util.csproj",
+        "packagesPath": "/Users/phcaldas/.nuget/packages/",
+        "outputPath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Comum.Util/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/phcaldas/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Comum.ViewModel/Event.Uau.Comum.ViewModel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Comum.ViewModel/Event.Uau.Comum.ViewModel.csproj",
+        "projectName": "Event.Uau.Comum.ViewModel",
+        "projectPath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Comum.ViewModel/Event.Uau.Comum.ViewModel.csproj",
+        "packagesPath": "/Users/phcaldas/.nuget/packages/",
+        "outputPath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Comum.ViewModel/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/phcaldas/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Core/Event.Uau.Evento.Core.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -26,11 +136,17 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Domain/Event.Uau.Evento.Domain.csproj": {
-                "projectPath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Domain/Event.Uau.Evento.Domain.csproj"
+              "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Comum.Util/Event.Uau.Comum.Util.csproj": {
+                "projectPath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Comum.Util/Event.Uau.Comum.Util.csproj"
+              },
+              "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Infrastructure/Event.Uau.Evento.Infrastructure.csproj": {
+                "projectPath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Infrastructure/Event.Uau.Evento.Infrastructure.csproj"
               },
               "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Persistence/Event.Uau.Evento.Persistence.csproj": {
                 "projectPath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Persistence/Event.Uau.Evento.Persistence.csproj"
+              },
+              "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.ViewModel/Event.Uau.Evento.ViewModel.csproj": {
+                "projectPath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.ViewModel/Event.Uau.Evento.ViewModel.csproj"
               }
             }
           }
@@ -73,7 +189,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -125,7 +241,73 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Infrastructure/Event.Uau.Evento.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Infrastructure/Event.Uau.Evento.Infrastructure.csproj",
+        "projectName": "Event.Uau.Evento.Infrastructure",
+        "projectPath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Infrastructure/Event.Uau.Evento.Infrastructure.csproj",
+        "packagesPath": "/Users/phcaldas/.nuget/packages/",
+        "outputPath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/phcaldas/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.ViewModel/Event.Uau.Evento.ViewModel.csproj": {
+                "projectPath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.ViewModel/Event.Uau.Evento.ViewModel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Flurl": {
+              "target": "Package",
+              "version": "[3.0.2, )"
+            },
+            "Flurl.Http": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -191,7 +373,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -268,7 +450,63 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.ViewModel/Event.Uau.Evento.ViewModel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.ViewModel/Event.Uau.Evento.ViewModel.csproj",
+        "projectName": "Event.Uau.Evento.ViewModel",
+        "projectPath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.ViewModel/Event.Uau.Evento.ViewModel.csproj",
+        "packagesPath": "/Users/phcaldas/.nuget/packages/",
+        "outputPath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.ViewModel/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/phcaldas/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Comum.ViewModel/Event.Uau.Comum.ViewModel.csproj": {
+                "projectPath": "/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Comum.ViewModel/Event.Uau.Comum.ViewModel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
         }
       }
     }

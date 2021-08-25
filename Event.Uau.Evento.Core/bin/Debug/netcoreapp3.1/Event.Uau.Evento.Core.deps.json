@@ -9,8 +9,10 @@
       "Event.Uau.Evento.Core/1.0.0": {
         "dependencies": {
           "AutoMapper": "10.1.1",
-          "Event.Uau.Evento.Domain": "1.0.0",
+          "Event.Uau.Comum.Util": "1.0.0",
+          "Event.Uau.Evento.Infrastructure": "1.0.0",
           "Event.Uau.Evento.Persistence": "1.0.0",
+          "Event.Uau.Evento.ViewModel": "1.0.0",
           "FluentValidation.AspNetCore": "10.1.0",
           "MediatR": "6.0.0"
         },
@@ -59,6 +61,27 @@
           "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {
             "assemblyVersion": "9.0.0.0",
             "fileVersion": "10.1.0.0"
+          }
+        }
+      },
+      "Flurl/3.0.2": {
+        "runtime": {
+          "lib/netstandard2.0/Flurl.dll": {
+            "assemblyVersion": "3.0.2.0",
+            "fileVersion": "3.0.2.0"
+          }
+        }
+      },
+      "Flurl.Http/3.2.0": {
+        "dependencies": {
+          "Flurl": "3.0.2",
+          "Newtonsoft.Json": "12.0.2",
+          "System.Text.Encoding.CodePages": "4.5.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Flurl.Http.dll": {
+            "assemblyVersion": "3.2.0.0",
+            "fileVersion": "3.2.0.0"
           }
         }
       },
@@ -197,6 +220,15 @@
           }
         }
       },
+      "Microsoft.NETCore.Platforms/2.1.2": {},
+      "Newtonsoft.Json/12.0.2": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.2.23222"
+          }
+        }
+      },
       "System.Collections.Immutable/5.0.0": {
         "runtime": {
           "lib/netstandard2.0/System.Collections.Immutable.dll": {
@@ -222,9 +254,39 @@
         }
       },
       "System.Reflection.Emit/4.7.0": {},
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {},
+      "System.Text.Encoding.CodePages/4.5.1": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.1.2",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        }
+      },
+      "Event.Uau.Comum.Util/1.0.0": {
+        "dependencies": {
+          "MediatR": "6.0.0"
+        },
+        "runtime": {
+          "Event.Uau.Comum.Util.dll": {}
+        }
+      },
+      "Event.Uau.Comum.ViewModel/1.0.0": {
+        "runtime": {
+          "Event.Uau.Comum.ViewModel.dll": {}
+        }
+      },
       "Event.Uau.Evento.Domain/1.0.0": {
         "runtime": {
           "Event.Uau.Evento.Domain.dll": {}
+        }
+      },
+      "Event.Uau.Evento.Infrastructure/1.0.0": {
+        "dependencies": {
+          "Event.Uau.Evento.ViewModel": "1.0.0",
+          "Flurl": "3.0.2",
+          "Flurl.Http": "3.2.0"
+        },
+        "runtime": {
+          "Event.Uau.Evento.Infrastructure.dll": {}
         }
       },
       "Event.Uau.Evento.Persistence/1.0.0": {
@@ -235,6 +297,14 @@
         },
         "runtime": {
           "Event.Uau.Evento.Persistence.dll": {}
+        }
+      },
+      "Event.Uau.Evento.ViewModel/1.0.0": {
+        "dependencies": {
+          "Event.Uau.Comum.ViewModel": "1.0.0"
+        },
+        "runtime": {
+          "Event.Uau.Evento.ViewModel.dll": {}
         }
       }
     }
@@ -272,6 +342,20 @@
       "sha512": "sha512-1aVcf59z7lzeGxoZEYTLwGATKN5BxPESCEWpnma5r38BEb+LtalxnVkaM6JepWdcWrUIJVnRhOeUY6CjdK9YbA==",
       "path": "fluentvalidation.dependencyinjectionextensions/10.1.0",
       "hashPath": "fluentvalidation.dependencyinjectionextensions.10.1.0.nupkg.sha512"
+    },
+    "Flurl/3.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1/6mqdzGCTdAekbWkVZBTylCV+8g3JUSTXRBngRVR274S+RsAYNRF79GbDoDsPfMKu8VPc9HkQWdBEAncK1PQQ==",
+      "path": "flurl/3.0.2",
+      "hashPath": "flurl.3.0.2.nupkg.sha512"
+    },
+    "Flurl.Http/3.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5S8YiJm5CyRFO418GG9PDrsgmGEaZJtZLUqk3xqBKrfx7W9eKtOSpeji/GwAL+tSgNTALKBPvBKTaT4S83Oo+w==",
+      "path": "flurl.http/3.2.0",
+      "hashPath": "flurl.http.3.2.0.nupkg.sha512"
     },
     "MediatR/6.0.0": {
       "type": "package",
@@ -371,6 +455,20 @@
       "path": "microsoft.extensions.primitives/5.0.0",
       "hashPath": "microsoft.extensions.primitives.5.0.0.nupkg.sha512"
     },
+    "Microsoft.NETCore.Platforms/2.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mOJy3M0UN+LUG21dLGMxaWZEP6xYpQEpLuvuEQBaownaX4YuhH6NmNUlN9si+vNkAS6dwJ//N1O4DmLf2CikVg==",
+      "path": "microsoft.netcore.platforms/2.1.2",
+      "hashPath": "microsoft.netcore.platforms.2.1.2.nupkg.sha512"
+    },
+    "Newtonsoft.Json/12.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
+      "path": "newtonsoft.json/12.0.2",
+      "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
+    },
     "System.Collections.Immutable/5.0.0": {
       "type": "package",
       "serviceable": true,
@@ -399,12 +497,46 @@
       "path": "system.reflection.emit/4.7.0",
       "hashPath": "system.reflection.emit.4.7.0.nupkg.sha512"
     },
+    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
+      "path": "system.runtime.compilerservices.unsafe/4.5.2",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+    },
+    "System.Text.Encoding.CodePages/4.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4J2JQXbftjPMppIHJ7IC+VXQ9XfEagN92vZZNoG12i+zReYlim5dMoXFC1Zzg7tsnKDM7JPo5bYfFK4Jheq44w==",
+      "path": "system.text.encoding.codepages/4.5.1",
+      "hashPath": "system.text.encoding.codepages.4.5.1.nupkg.sha512"
+    },
+    "Event.Uau.Comum.Util/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Event.Uau.Comum.ViewModel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Event.Uau.Evento.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
+    "Event.Uau.Evento.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Event.Uau.Evento.Persistence/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Event.Uau.Evento.ViewModel/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
