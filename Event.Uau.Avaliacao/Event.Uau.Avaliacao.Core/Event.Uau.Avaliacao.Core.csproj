@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.Util\Event.Uau.Comum.Util.csproj" />
+    <ProjectReference Include="..\Event.Uau.Avaliacao.Persistence\Event.Uau.Avaliacao.Persistence.csproj" />
+  </ItemGroup>
+</Project>

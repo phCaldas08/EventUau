@@ -1,9 +1,0 @@
-/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Domain/bin/Debug/netcoreapp3.1/Event.Uau.Evento.Domain.deps.json
-/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Domain/bin/Debug/netcoreapp3.1/Event.Uau.Evento.Domain.dll
-/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Domain/bin/Debug/netcoreapp3.1/Event.Uau.Evento.Domain.pdb
-/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Domain/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Domain.GeneratedMSBuildEditorConfig.editorconfig
-/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Domain/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Domain.AssemblyInfoInputs.cache
-/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Domain/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Domain.AssemblyInfo.cs
-/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Domain/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Domain.csproj.CoreCompileInputs.cache
-/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Domain/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Domain.dll
-/Users/phcaldas/Documents/development/dotnet/Event.Uau/Event.Uau.Evento.Domain/obj/Debug/netcoreapp3.1/Event.Uau.Evento.Domain.pdb

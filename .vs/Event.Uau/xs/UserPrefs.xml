@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{76382CA1-D4F4-4C1E-9A0F-7553F20F2824}|Event.Uau.Autentificacao.API">
   <MonoDevelop.Ide.ItemProperties.Autenticacao.Event.Uau.Autenticacao.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Event.Uau.Autentificacao.API/Controllers/UsuarioController.cs">
     <Files>
       <File FileName="Event.Uau.Autentificacao.API/Controllers/UsuarioController.cs" Line="21" Column="50" />
       <File FileName="Event.Uau.Autentificacao.API/Startup.cs" />
@@ -8,23 +8,13 @@
       <File FileName="Event.Uau.Autentificacao.Core/Usuario/Commands/CadastrarUsuario/CadastrarUsuarioCommand.cs" />
       <File FileName="Event.Uau.Autentificacao.Core/Usuario/Commands/CadastrarUsuario/CadastrarUsuarioCommandHandler.cs" />
       <File FileName="Event.Uau.Autentificacao.Core/Autenticacao/Commands/Login/LoginCommand.cs" />
-      <File FileName="Event.Uau.Autentificacao.Core/Autenticacao/Commands/Login/LoginCommandHandler.cs" Line="32" Column="1" />
+      <File FileName="Event.Uau.Autentificacao.Core/Autenticacao/Commands/Login/LoginCommandHandler.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Event.Uau" expanded="True">
-            <Node name="Autenticacao" expanded="True">
-              <Node name="Event.Uau.Autenticacao.Core" expanded="True">
-                <Node name="Autenticacao" expanded="True">
-                  <Node name="Commands" expanded="True">
-                    <Node name="Login" expanded="True">
-                      <Node name="LoginCommandHandler.cs" selected="True" />
-                    </Node>
-                  </Node>
-                </Node>
-              </Node>
-            </Node>
+            <Node name="Autenticacao" expanded="True" />
           </Node>
         </State>
       </Pad>
