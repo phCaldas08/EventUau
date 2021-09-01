@@ -16,6 +16,11 @@ namespace Event.Uau.Evento.Persistence
         public DbSet<Domain.Entities.Status> Status { get; set; }
         public DbSet<Domain.Entities.StatusContratacao> StatusContratacoes { get; set; }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseLazyLoadingProxies();
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Domain.Entities.Evento>(entity =>
@@ -29,6 +34,10 @@ namespace Event.Uau.Evento.Persistence
                 entity.HasMany(e => e.Funcionarios)
                     .WithOne(e => e.Evento)
                     .HasForeignKey(e => e.IdEvento);
+
+                entity.HasOne(e => e.Status)
+                    .WithMany(e => e.Eventos)
+                    .HasForeignKey(e => e.IdStatus);
             });
 
             modelBuilder.Entity<Domain.Entities.Endereco>(entity => {

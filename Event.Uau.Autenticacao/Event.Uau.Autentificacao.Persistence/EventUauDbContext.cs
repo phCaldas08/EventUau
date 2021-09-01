@@ -11,6 +11,11 @@ namespace Event.Uau.Autenticacao.Persistence
 
         public DbSet<Domain.Entities.Usuario> Usuarios { get; set; }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseLazyLoadingProxies();
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Domain.Entities.Usuario>(entity =>
