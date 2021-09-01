@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Event.Uau.Autenticacao.Core.Helpers
+namespace Event.Uau.Comum.Util.Extensoes
 {
     public static class PasswordValidator
     {

@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Event.Uau.Autenticacao.Core.Helpers
+namespace Event.Uau.Comum.Util.Extensoes
 {
     public static class HashMd5
     {

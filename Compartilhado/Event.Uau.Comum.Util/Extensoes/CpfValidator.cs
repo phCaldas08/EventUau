@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Event.Uau.Autenticacao.Core.Helpers
+namespace Event.Uau.Comum.Util.Extensoes
 {
     public static class CpfValidator
     {

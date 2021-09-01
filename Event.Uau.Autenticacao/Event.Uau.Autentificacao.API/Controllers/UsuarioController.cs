@@ -25,7 +25,7 @@ namespace Event.Uau.Autenticacao.API.Controllers
 
         [HttpPost("{email}/login")]
         [AllowAnonymous]
-        public async Task<ActionResult> Login([FromRoute] string email,[FromBody] LoginCommand body)
+        public async Task<ActionResult> Login([FromRoute] string email, [FromBody] LoginCommand body)
         {
             body.Email = email;
             var user = await Mediator.Send(body);

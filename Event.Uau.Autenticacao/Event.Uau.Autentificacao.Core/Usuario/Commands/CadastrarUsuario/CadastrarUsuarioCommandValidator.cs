@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using FluentValidation;
-using Event.Uau.Autenticacao.Core.Helpers;
+using Event.Uau.Comum.Util.Extensoes;
 
 namespace Event.Uau.Autenticacao.Core.Usuario.Commands.CadastrarUsuario
 {
@@ -41,9 +41,17 @@ namespace Event.Uau.Autenticacao.Core.Usuario.Commands.CadastrarUsuario
                 .Must(cpf => cpf.CpfValido())
                 .WithMessage("CPF inválido.");
 
+            RuleFor(i => i.Cpf)
+                .Must(cpf => !context.Usuarios.Any(i => i.Cpf == cpf))
+                .WithMessage("CPF já cadastrado.");
+
             RuleFor(i => i.Telefone)
                 .Must(telefone => telefone.TelefoneValido())
                 .WithMessage("Telefone inválido.");
+
+            RuleFor(i => i.Telefone.LimparTelefone())
+                .Must(telefone => !context.Usuarios.Any(i => i.Telefone == telefone))
+                .WithMessage("Telefone já cadastrado.");
         }
     }
 }

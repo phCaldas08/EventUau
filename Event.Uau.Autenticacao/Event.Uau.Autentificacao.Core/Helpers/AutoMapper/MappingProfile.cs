@@ -1,5 +1,6 @@
 ﻿using System;
 using AutoMapper;
+using Event.Uau.Comum.Util.Extensoes;
 
 namespace Event.Uau.Autenticacao.Core.Helpers.AutoMapper
 {
@@ -11,10 +12,7 @@ namespace Event.Uau.Autenticacao.Core.Helpers.AutoMapper
 
             CreateMap<Usuario.Commands.CadastrarUsuario.CadastrarUsuarioCommand, Domain.Entities.Usuario>()
                 .ForMember(i => i.Senha, opt => opt.MapFrom(cadastrar => cadastrar.Senha.ToHash()))
-                .ForMember(i => i.Telefone, opt => opt.MapFrom(cadastrar => cadastrar.Telefone.Replace(" ", string.Empty)
-                                                                                              .Replace("-", string.Empty)
-                                                                                              .Replace("(", string.Empty)
-                                                                                              .Replace(")", string.Empty)));
+                .ForMember(i => i.Telefone, opt => opt.MapFrom(cadastrar => cadastrar.Telefone.LimparTelefone()));
         }
     }
 }

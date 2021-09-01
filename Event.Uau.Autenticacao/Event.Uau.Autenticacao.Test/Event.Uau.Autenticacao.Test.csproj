@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="xunit" Version="2.4.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
+    <PackageReference Include="coverlet.collector" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Usuario\" />
+    <None Remove="Usuario\Queries\" />
+    <None Remove="Usuario\Commands\" />
+    <None Remove="Configuracoes\" />
+    <None Remove="Configuracoes\DadosTeste\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Usuario\" />
+    <Folder Include="Usuario\Queries\" />
+    <Folder Include="Usuario\Commands\" />
+    <Folder Include="Configuracoes\" />
+    <Folder Include="Configuracoes\DadosTeste\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Event.Uau.Autentificacao.Core\Event.Uau.Autenticacao.Core.csproj" />
+  </ItemGroup>
+</Project>

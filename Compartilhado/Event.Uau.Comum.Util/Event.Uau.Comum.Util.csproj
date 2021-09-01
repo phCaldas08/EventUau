@@ -7,9 +7,11 @@
   <ItemGroup>
     <None Remove="Mediator\" />
     <None Remove="MediatR" />
+    <None Remove="Extensoes\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Mediator\" />
+    <Folder Include="Extensoes\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MediatR" Version="6.0.0" />

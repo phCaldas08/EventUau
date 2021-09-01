@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using Event.Uau.Autenticacao.Core.Helpers;
 using Event.Uau.Autenticacao.Persistence;

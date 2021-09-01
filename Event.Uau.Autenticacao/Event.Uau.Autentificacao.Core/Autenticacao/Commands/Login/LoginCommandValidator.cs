@@ -1,8 +1,6 @@
-﻿using System;
-using System.Linq;
-using Event.Uau.Autenticacao.Core.Helpers;
+﻿using System.Linq;
+using Event.Uau.Comum.Util.Extensoes;
 using FluentValidation;
-using MediatR;
 
 namespace Event.Uau.Autenticacao.Core.Authentication.Autenticacao.Commands.Login
 {
