@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace Event.Uau.Autenticacao.API.Controllers
 {
@@ -19,8 +20,14 @@ namespace Event.Uau.Autenticacao.API.Controllers
     {
         private IMediator mediator;
 
-        protected IMediator Mediator => mediator ?? (mediator = HttpContext.RequestServices.GetService<IMediator>());
+        protected IMediator Mediator => mediator ??= HttpContext.RequestServices.GetService<IMediator>();
 
         protected string UserName => User.Identity.Name;
+
+        override public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
+        {
+            await Mediator.Send(new Core.Inicializacao.Commands.InicializacaoCommand());
+            await next();
+        }
     }
 }

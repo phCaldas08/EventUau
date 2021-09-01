@@ -22,6 +22,9 @@
     <Folder Include="Usuario\Commands\" />
     <Folder Include="Usuario\Queries\" />
     <Folder Include="Usuario\Queries\BuscaUsuarioPorId\" />
+    <Folder Include="Inicializacao\" />
+    <Folder Include="Inicializacao\Commands\" />
+    <Folder Include="Helpers\DadosFakes\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Helpers\AutoMapper\" />
@@ -32,6 +35,9 @@
     <None Remove="Usuario\Commands\" />
     <None Remove="Usuario\Queries\" />
     <None Remove="Usuario\Queries\BuscaUsuarioPorId\" />
+    <None Remove="Inicializacao\" />
+    <None Remove="Inicializacao\Command\" />
+    <None Remove="Helpers\DadosFakes\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.Util\Event.Uau.Comum.Util.csproj" />
