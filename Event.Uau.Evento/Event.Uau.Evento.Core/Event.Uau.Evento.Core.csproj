@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Especialidade\Commands\" />
     <Folder Include="Evento\" />
     <Folder Include="Evento\Queries\" />
     <Folder Include="Evento\Queries\BuscaEventoPorId\" />

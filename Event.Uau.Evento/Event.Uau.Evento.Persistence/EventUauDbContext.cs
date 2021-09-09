@@ -15,6 +15,7 @@ namespace Event.Uau.Evento.Persistence
         public DbSet<Domain.Entities.FuncionarioEvento> Funcionarios { get; set; }
         public DbSet<Domain.Entities.Status> Status { get; set; }
         public DbSet<Domain.Entities.StatusContratacao> StatusContratacoes { get; set; }
+        public DbSet<Domain.Entities.Especialidade> Especialidades { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -53,6 +54,10 @@ namespace Event.Uau.Evento.Persistence
             });
 
             modelBuilder.Entity<Domain.Entities.StatusContratacao>(entity => {
+                entity.HasKey(e => e.Id);
+            });
+
+            modelBuilder.Entity<Domain.Entities.Especialidade>(entity => {
                 entity.HasKey(e => e.Id);
             });
 
