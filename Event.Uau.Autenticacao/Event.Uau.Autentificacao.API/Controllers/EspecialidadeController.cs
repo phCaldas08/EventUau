@@ -11,7 +11,7 @@ namespace Event.Uau.Autenticacao.API.Controllers
     [Route("api/[controller]")]
     [EnableCors("CorsPolicy")]
     [ApiController]
-    public class SpecialtyController : BaseController
+    public class EspecialidadeController : BaseController
     {
 
         [HttpGet("{idEspecialidade}")]
