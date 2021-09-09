@@ -10,7 +10,6 @@ namespace Event.Uau.Evento.Core.Helpers.AutoMapper
         {
             CreateMap<CriarEventoCommand, Domain.Entities.Evento>();
             CreateMap<Domain.Entities.Evento, ViewModel.Evento.EventoViewModel>();
-            CreateMap<Domain.Entities.Especialidade, ViewModel.Especialidade.EspecialidadeViewModel>();
         }
     }
 }
