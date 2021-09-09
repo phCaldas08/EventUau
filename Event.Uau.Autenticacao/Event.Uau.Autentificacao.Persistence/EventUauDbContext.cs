@@ -10,6 +10,7 @@ namespace Event.Uau.Autenticacao.Persistence
         }
 
         public DbSet<Domain.Entities.Usuario> Usuarios { get; set; }
+        public DbSet<Domain.Entities.Especialidade> Especialidades { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -20,6 +21,10 @@ namespace Event.Uau.Autenticacao.Persistence
         {
             modelBuilder.Entity<Domain.Entities.Usuario>(entity =>
             {
+                entity.HasKey(e => e.Id);
+            });
+
+            modelBuilder.Entity<Domain.Entities.Especialidade>(entity => {
                 entity.HasKey(e => e.Id);
             });
         }
