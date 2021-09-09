@@ -34,6 +34,7 @@ namespace Event.Uau.Autenticacao.API.Controllers
         }
 
         [HttpGet("{idUsuario}")]
+        [AllowAnonymous]
         public async Task<ActionResult> BuscaUsuarioPorId([FromRoute] int idUsuario)
         {
             var request = new BuscaUsuarioPorIdQuery { IdUsuario = idUsuario };

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Event.Uau.Autenticacao.Core.Especialidade.Queries.BuscaEspecialidadePorId;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,6 +16,7 @@ namespace Event.Uau.Autenticacao.API.Controllers
     {
 
         [HttpGet("{idEspecialidade}")]
+        [AllowAnonymous]
         public async Task<IActionResult> BuscaEspecialidadePorId([FromRoute] int idEspecialidade)
         {
             var query = new BuscaEspecialidadePorIdQuery { IdEspecialidade = idEspecialidade };
