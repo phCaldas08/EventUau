@@ -5,9 +5,22 @@ namespace Event.Uau.Evento.Core.Evento.Commands.CriarEvento
 {
     public class CriarEventoCommand : EventUauRequest<ViewModel.Evento.EventoViewModel>
     {
-        public string Name { get; set; }
-        public DateTime Date { get; set; }
-        public string Description { get; set; }
-        public DateTime CreateDate { get => DateTime.Now; }
+        public int Id { get; set; }
+
+        public int Numero { get; set; }
+
+        public string Nome { get; set; }
+
+        public string Descricao { get; set; }
+
+        public DateTime DataCriacao { get => DateTime.Now; }
+
+        public DateTime DataInicio { get; set; }
+
+        public DateTime DataTermino { get; set; }
+
+        public decimal DuracaoMinima { get; set; }
+
+        public decimal DuracaoMaxima { get; set; }
     }
 }

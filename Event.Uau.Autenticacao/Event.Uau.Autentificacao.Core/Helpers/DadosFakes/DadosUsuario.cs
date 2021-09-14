@@ -18,8 +18,7 @@ namespace Event.Uau.Autenticacao.Core.Helpers.DadosFakes
                     Cpf = "230.146.490-31",
                     DataNascimento = DateTime.Today.AddYears(-18),
                     Email = "teste@teste.com",
-                    Nome = "Teste",
-                    SobreNome = "De Oliveira",
+                    Nome = "Teste de Oliveira",
                     Telefone = "(11) 91234-1234",
                 }
             };

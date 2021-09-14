@@ -6,5 +6,7 @@ namespace Event.Uau.Comum.Util.Mediator
     public class EventUauRequest<T> : IRequest<T>
     {
         public string Token { get; set; }
+
+        public int IdUsuarioLogado { get; set; }
     }
 }

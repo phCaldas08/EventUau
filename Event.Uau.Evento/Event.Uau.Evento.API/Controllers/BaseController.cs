@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authorization;
+using Event.Uau.Comum.Configuracao.Helpers;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace Event.Uau.Evento.API.Controllers
 {
@@ -19,8 +16,13 @@ namespace Event.Uau.Evento.API.Controllers
     {
         private IMediator mediator;
 
-        protected IMediator Mediator => mediator ?? (mediator = HttpContext.RequestServices.GetService<IMediator>());
+        protected IMediator Mediator => mediator ??= HttpContext.RequestServices.GetService<IMediator>();
 
-        protected string UserName => User.Identity.Name;
+        private string token;
+
+        protected string Token => token ??= Request.Headers["Authorization"].ToString().Substring(7, Request.Headers["Authorization"].ToString().Length - 7);
+
+        protected int IdUsuarioLogado => Token.ConsultarId() ?? 0;
+
     }
 }

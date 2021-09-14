@@ -15,6 +15,7 @@
     <Folder Include="Employee\" />
     <Folder Include="Employee\Queries\" />
     <Folder Include="Employee\Queries\GetList\" />
+    <Folder Include="Evento\Queries\ListarEventos\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MediatR" Version="6.0.0" />
@@ -25,6 +26,7 @@
     <None Remove="Employee\" />
     <None Remove="Employee\Queries\" />
     <None Remove="Employee\Queries\GetList\" />
+    <None Remove="Evento\Queries\ListarEventos\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.Util\Event.Uau.Comum.Util.csproj" />
