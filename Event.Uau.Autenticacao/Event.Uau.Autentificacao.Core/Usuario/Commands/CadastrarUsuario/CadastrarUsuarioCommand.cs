@@ -7,8 +7,6 @@ namespace Event.Uau.Autenticacao.Core.Usuario.Commands.CadastrarUsuario
     {
         public string Nome { get; set; }
 
-        public string SobreNome { get; set; }
-
         public string Email { get; set; }
 
         public string Cpf { get; set; }

@@ -33,9 +33,11 @@ namespace Event.Uau.Evento.Core.Evento.Commands.CriarEvento
 
             await eventUauDbContext.SaveChangesAsync(cancellationToken);
 
-            var eventoViewModel = mapper.Map<ViewModel.Evento.EventoViewModel>(newEvent);
-
-            return eventoViewModel;
+            return await mediator.Send(new Queries.BuscaEventoPorId.BuscaEventoPorIdQuery {
+                IdEvento = newEvent.Id,
+                IdUsuarioLogado = request.IdUsuarioLogado,
+                Token = request.Token
+            });
         }
     }
 }

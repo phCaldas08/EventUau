@@ -5,7 +5,7 @@ namespace Event.Uau.Evento.Domain.Entities
     { 
         public int IdEvento { get; set; }
 
-        public int IdFuncionario { get; set; }
+        public int IdUsuario { get; set; }
 
         public decimal Salario { get; set; }
 

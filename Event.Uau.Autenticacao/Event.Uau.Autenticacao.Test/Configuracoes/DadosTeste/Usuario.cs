@@ -15,10 +15,9 @@ namespace Event.Uau.Autenticacao.Test.Configuracoes.DadosTeste
                     DataNascimento = DateTime.Today.AddYears(-18),
                     Email = "teste@teste.com.br",
                     Endereco = "Rua Teste",
-                    Nome = "Teste",
+                    Nome = "Teste da Silva",
                     SobreMim = string.Empty,
                     Senha = "@Teste123",
-                    SobreNome = "da Silva",
                     Status = string.Empty,
                     Telefone = "11912345678",
                     ValorPorHora = 20

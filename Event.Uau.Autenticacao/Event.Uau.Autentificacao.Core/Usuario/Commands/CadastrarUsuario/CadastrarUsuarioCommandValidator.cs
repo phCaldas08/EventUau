@@ -33,10 +33,6 @@ namespace Event.Uau.Autenticacao.Core.Usuario.Commands.CadastrarUsuario
                 .Length(2, 250)
                 .WithMessage("O nome deve ter entre 2 e 250 letras.");
 
-            RuleFor(i => i.SobreNome)
-                .Length(2, 250)
-                .WithMessage("O sobrenome deve ter entre 2 e 250 letras.");
-
             RuleFor(i => i.Cpf)
                 .Must(cpf => cpf.CpfValido())
                 .WithMessage("CPF inválido.");

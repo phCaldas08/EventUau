@@ -44,7 +44,7 @@ namespace Event.Uau.Evento.Core.Evento.Queries.BuscaEventoPorId
         {
             eventoViewModel.Usuario = await usuarioIntegracao.BuscaUsuarioPorId(evento.IdUsuario, token);
 
-            foreach(var funcionario in await usuarioIntegracao.BuscaUsuariosPorIds(evento.Funcionarios.Select(i => i.IdFuncionario), token))
+            foreach(var funcionario in await usuarioIntegracao.BuscaUsuariosPorIds(evento.Funcionarios.Select(i => i.IdUsuario), token))
             {
                 eventoViewModel.FuncionariosEvento.FirstOrDefault(i => i.IdUsuario == funcionario.Id).Funcionario = funcionario;
             }
