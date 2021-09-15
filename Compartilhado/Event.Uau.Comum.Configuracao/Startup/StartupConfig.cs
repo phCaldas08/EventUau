@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Event.Uau.Comum.Configuracao.Helpers;
+using Event.Uau.Comum.Configuracao.Middleware;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -79,6 +80,8 @@ namespace Event.Uau.Comum.Configuracao.Startup
             app.UseRouting();
 
             app.UseCors("CorsPolicy");
+
+            app.UseCustomExceptionHandler();
 
             app.UseAuthentication();
             app.UseAuthorization();

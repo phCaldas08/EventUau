@@ -17,7 +17,6 @@ namespace Event.Uau.Evento.Core.Evento.Commands.CriarEvento
                 .Must(i => i.DataTermino > i.DataInicio)
                 .WithMessage("A data de início deve ser menor que a data do término.");
 
-            RuleFor(i => i.)
         }
     }
 }
