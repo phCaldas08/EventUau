@@ -54,8 +54,9 @@ namespace Event.Uau.Evento.Core.Evento.Queries.ListarEventos
         private async Task BuscarFuncionarios(List<ResumoEventoViewModel> eventos, string token)
         {
             foreach (var e in eventos)
-                foreach (var f in e.Funcionarios)
-                    f.Funcionario = await usuarioIntegracao.BuscaUsuarioPorId(f.IdUsuario, token);
+                if(e.Funcionarios?.Any() ?? false)
+                    foreach (var f in e.Funcionarios)
+                        f.Funcionario = await usuarioIntegracao.BuscaUsuarioPorId(f.IdUsuario, token);
         }
     }
 }
