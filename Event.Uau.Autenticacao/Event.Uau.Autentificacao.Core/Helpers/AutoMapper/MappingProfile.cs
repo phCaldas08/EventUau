@@ -16,8 +16,7 @@ namespace Event.Uau.Autenticacao.Core.Helpers.AutoMapper
 
             CreateMap<Domain.Entities.Especialidade, ViewModel.Especialidade.EspecialidadeViewModel>();
 
-            CreateMap<Especialidade.Commands.CadastrarEspecialidade.CadastrarEspecialidadeCommand, ViewModel.Especialidade.EspecialidadeViewModel>()
-                .ForMember(i => i.Descricao, opt => opt.MapFrom(cadastrar => cadastrar.Descricao));
+            CreateMap<Especialidade.Commands.CadastrarEspecialidade.CadastrarEspecialidadeCommand, Domain.Entities.Especialidade>();
         }
     }
 }
