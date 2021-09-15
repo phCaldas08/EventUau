@@ -41,12 +41,12 @@ namespace Event.Uau.Evento.ViewModel.Evento
 
         public List<FuncionarioEventoViewModel> FuncionariosContratados
         {
-            get => FuncionariosEvento.Where(i => i.Contratado).ToList();
+            get => FuncionariosEvento?.Where(i => i.Contratado).ToList() ?? null;
         }
 
         public List<FuncionarioEventoViewModel> FuncionarioMatch
         {
-            get => FuncionariosEvento.Where(i => !i.Contratado).ToList();
+            get => FuncionariosEvento?.Where(i => !i.Contratado).ToList() ?? null;
         }
     }
 }
