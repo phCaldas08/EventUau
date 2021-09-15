@@ -16,7 +16,7 @@ namespace Event.Uau.Comum.Configuracao.Helpers
                 var handler = new JwtSecurityTokenHandler();
                 JwtSecurityToken tokenS = handler.ReadToken(token) as JwtSecurityToken;
 
-                if (int.TryParse(tokenS.Claims.FirstOrDefault(claim => claim.Type == "Sid").Value, out int _id))
+                if (int.TryParse(tokenS.Claims.FirstOrDefault(claim => claim.Type.Contains("sid", StringComparison.CurrentCultureIgnoreCase)).Value, out int _id))
                     id = _id;
             }
 

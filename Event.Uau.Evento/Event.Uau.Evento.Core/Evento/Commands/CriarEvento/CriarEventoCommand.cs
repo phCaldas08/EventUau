@@ -5,8 +5,6 @@ namespace Event.Uau.Evento.Core.Evento.Commands.CriarEvento
 {
     public class CriarEventoCommand : EventUauRequest<ViewModel.Evento.EventoViewModel>
     {
-        public int Id { get; set; }
-
         public int Numero { get; set; }
 
         public string Nome { get; set; }
