@@ -8,13 +8,15 @@ namespace Event.Uau.Evento.Core.Evento.Commands.CriarEvento
     {
         public CriarEventoCommandValidator()
         {
-            RuleFor(x => x.Date)
-                .GreaterThan(DateTime.Now);
+            RuleFor(i => i.Descricao)
+                .MinimumLength(3)
+                .MaximumLength(255)
+                .WithMessage("A descrição do evento deve ter entre 3 e 255 letras.");
 
-            RuleFor(x => x.Name)
-                .NotNull()
-                .NotEmpty()
-                .MinimumLength(3);
+            RuleFor(i => i)
+                .Must(i => i.DataTermino > i.DataInicio)
+                .WithMessage("A data de início deve ser menor que a data do término.");
+
         }
     }
 }

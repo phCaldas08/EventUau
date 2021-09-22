@@ -1,14 +1,14 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using Event.Uau.Evento.Persistence;
+using Event.Uau.Evento.ViewModel.Evento;
 using FluentValidation;
 using MediatR;
 
 namespace Event.Uau.Evento.Core.Evento.Commands.CriarEvento
 {
-    public class CriarEventoCommandHandler : IRequestHandler<CriarEventoCommand, ViewModel.Evento.EventoViewModel>
+    public class CriarEventoCommandHandler : IRequestHandler<CriarEventoCommand, EventoViewModel>
     {
         private readonly EventUauDbContext eventUauDbContext;
         private readonly IMapper mapper;
@@ -23,7 +23,7 @@ namespace Event.Uau.Evento.Core.Evento.Commands.CriarEvento
             this.validator = new CriarEventoCommandValidator();
         }
 
-        public async Task<ViewModel.Evento.EventoViewModel> Handle(CriarEventoCommand request, CancellationToken cancellationToken)
+        public async Task<EventoViewModel> Handle(CriarEventoCommand request, CancellationToken cancellationToken)
         {
             validator.ValidateAndThrow(request);
 
@@ -33,9 +33,12 @@ namespace Event.Uau.Evento.Core.Evento.Commands.CriarEvento
 
             await eventUauDbContext.SaveChangesAsync(cancellationToken);
 
-            var eventoViewModel = mapper.Map<ViewModel.Evento.EventoViewModel>(newEvent);
+            return await mediator.Send(new Queries.BuscaEventoPorId.BuscaEventoPorIdQuery {
+                IdEvento = newEvent.Id,
+                IdUsuarioLogado = request.IdUsuarioLogado,
+                Token = request.Token
+            });
 
-            return eventoViewModel;
         }
     }
 }

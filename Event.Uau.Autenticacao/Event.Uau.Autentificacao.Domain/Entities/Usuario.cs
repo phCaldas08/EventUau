@@ -7,8 +7,6 @@ namespace Event.Uau.Autenticacao.Domain.Entities
 
         public string Nome { get; set; }
 
-        public string SobreNome { get; set; }
-
         public string Email { get; set; }
 
         public string Cpf { get; set; }
@@ -25,6 +23,6 @@ namespace Event.Uau.Autenticacao.Domain.Entities
 
         public string Status { get; set; }
 
-        public decimal ValorPorHora { get; set; }
+        public virtual Parceiro Parceiro { get; set; }
     }
 }

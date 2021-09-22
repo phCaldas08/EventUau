@@ -45,7 +45,7 @@ namespace Event.Uau.Evento.Persistence
             });
 
             modelBuilder.Entity<Domain.Entities.FuncionarioEvento>(entity => {
-                entity.HasKey(e => new { e.IdEvento, e.IdFuncionario });
+                entity.HasKey(e => new { e.IdEvento, e.IdUsuario });
             });
 
             modelBuilder.Entity<Domain.Entities.Status>(entity => {

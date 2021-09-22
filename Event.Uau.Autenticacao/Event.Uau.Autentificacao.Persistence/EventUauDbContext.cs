@@ -1,4 +1,5 @@
 ﻿using System;
+using Event.Uau.Autenticacao.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 namespace Event.Uau.Autenticacao.Persistence
 {
@@ -9,8 +10,9 @@ namespace Event.Uau.Autenticacao.Persistence
         {
         }
 
-        public DbSet<Domain.Entities.Usuario> Usuarios { get; set; }
-        public DbSet<Domain.Entities.Especialidade> Especialidades { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Parceiro> Parceiros { get; set; }
+        public DbSet<Especialidade> Especialidades { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -19,14 +21,23 @@ namespace Event.Uau.Autenticacao.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Domain.Entities.Usuario>(entity =>
+            modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.Id);
             });
 
-            modelBuilder.Entity<Domain.Entities.Especialidade>(entity => {
+            modelBuilder.Entity<Parceiro>(entity => {
+                entity.HasKey(e => e.IdUsuario);
+
+                entity.HasOne(e => e.Usuario)
+                    .WithOne(e => e.Parceiro)
+                    .HasForeignKey<Parceiro>(e => e.IdUsuario);
+            });
+            
+            modelBuilder.Entity<Especialidade>(entity => {
                 entity.HasKey(e => e.Id);
             });
+            
         }
     }
 }

@@ -14,9 +14,18 @@ namespace Event.Uau.Autenticacao.Core.Helpers.AutoMapper
                 .ForMember(i => i.Senha, opt => opt.MapFrom(cadastrar => cadastrar.Senha.ToHash()))
                 .ForMember(i => i.Telefone, opt => opt.MapFrom(cadastrar => cadastrar.Telefone.LimparTelefone()));
 
+            CreateMap<Parceiro.Commands.CadastrarParceiro.CadastrarParceiroCommand, Domain.Entities.Parceiro>()
+                .ForMember(i => i.IdUsuario, opt => opt.MapFrom(cadastrar => cadastrar.IdUsuarioLogado));
+
+            CreateMap<Domain.Entities.Parceiro, ViewModel.Autenticacao.ParceiroViewModel>();
+
+            CreateMap<Domain.Entities.Parceiro, ViewModel.Autenticacao.ParceiroResumoViewModel>()
+                .ForMember(i => i.Nome, opt => opt.MapFrom(i => i.Usuario.Nome));                
+            
             CreateMap<Domain.Entities.Especialidade, ViewModel.Especialidade.EspecialidadeViewModel>();
 
             CreateMap<Especialidade.Commands.CadastrarEspecialidade.CadastrarEspecialidadeCommand, Domain.Entities.Especialidade>();
+
         }
     }
 }
