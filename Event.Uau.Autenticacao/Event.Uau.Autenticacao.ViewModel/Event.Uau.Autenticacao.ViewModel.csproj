@@ -10,4 +10,7 @@
   <ItemGroup>
     <Folder Include="Autenticacao\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.ViewModel\Event.Uau.Comum.ViewModel.csproj" />
+  </ItemGroup>
 </Project>

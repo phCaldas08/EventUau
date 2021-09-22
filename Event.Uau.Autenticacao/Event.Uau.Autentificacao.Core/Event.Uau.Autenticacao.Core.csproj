@@ -24,6 +24,12 @@
     <Folder Include="Inicializacao\" />
     <Folder Include="Inicializacao\Commands\" />
     <Folder Include="Helpers\DadosFakes\" />
+    <Folder Include="Parceiro\" />
+    <Folder Include="Parceiro\Commands\" />
+    <Folder Include="Parceiro\Commands\CadastrarParceiro\" />
+    <Folder Include="Parceiro\Queries\" />
+    <Folder Include="Parceiro\Queries\BuscarParceiroPorIdUsuario\" />
+    <Folder Include="Parceiro\Queries\BuscarParceiros\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Helpers\AutoMapper\" />
@@ -37,6 +43,12 @@
     <None Remove="Inicializacao\" />
     <None Remove="Inicializacao\Command\" />
     <None Remove="Helpers\DadosFakes\" />
+    <None Remove="Parceiro\" />
+    <None Remove="Parceiro\Commands\" />
+    <None Remove="Parceiro\Commands\CadastrarParceiro\" />
+    <None Remove="Parceiro\Queries\" />
+    <None Remove="Parceiro\Queries\BuscarParceiroPorIdUsuario\" />
+    <None Remove="Parceiro\Queries\BuscarParceiros\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.Util\Event.Uau.Comum.Util.csproj" />

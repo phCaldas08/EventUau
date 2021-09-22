@@ -19,6 +19,5 @@ namespace Event.Uau.Autenticacao.ViewModel.Autenticacao
 
         public string Status { get; set; }
 
-        public decimal ValorPorHora { get; set; }
     }
 }

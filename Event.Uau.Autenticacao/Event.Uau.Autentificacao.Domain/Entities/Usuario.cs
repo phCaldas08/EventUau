@@ -23,6 +23,6 @@ namespace Event.Uau.Autenticacao.Domain.Entities
 
         public string Status { get; set; }
 
-        public decimal ValorPorHora { get; set; }
+        public virtual Parceiro Parceiro { get; set; }
     }
 }
