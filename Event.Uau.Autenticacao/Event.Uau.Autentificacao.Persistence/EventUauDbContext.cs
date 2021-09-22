@@ -12,6 +12,7 @@ namespace Event.Uau.Autenticacao.Persistence
 
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Parceiro> Parceiros { get; set; }
+        public DbSet<Especialidade> Especialidades { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -32,6 +33,11 @@ namespace Event.Uau.Autenticacao.Persistence
                     .WithOne(e => e.Parceiro)
                     .HasForeignKey<Parceiro>(e => e.IdUsuario);
             });
+            
+            modelBuilder.Entity<Especialidade>(entity => {
+                entity.HasKey(e => e.Id);
+            });
+            
         }
     }
 }

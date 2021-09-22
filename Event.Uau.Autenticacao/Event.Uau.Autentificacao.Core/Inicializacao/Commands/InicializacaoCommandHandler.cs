@@ -26,6 +26,9 @@ namespace Event.Uau.Autenticacao.Core.Inicializacao.Commands
 
             if (!await context.Parceiros.AnyAsync())
                 await mediator.CarregarParceirosAsync();
+                
+            if (!await context.Especialidades.AnyAsync())
+                await mediator.CarregarEspecialidadesAsync();
 
             return 0;
         }
