@@ -12,20 +12,22 @@
     <Folder Include="Evento\Commands\CriarEvento\" />
     <Folder Include="Helpers\" />
     <Folder Include="Helpers\AutoMapper\" />
-    <Folder Include="Employee\" />
-    <Folder Include="Employee\Queries\" />
-    <Folder Include="Employee\Queries\GetList\" />
     <Folder Include="Evento\Queries\ListarEventos\" />
+    <Folder Include="Funcionario\" />
+    <Folder Include="Funcionario\Commands\" />
+    <Folder Include="Funcionario\Commands\EnviarPropostaFuncionario\" />
+    <Folder Include="Funcionario\Queries\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="10.1.0" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Employee\" />
-    <None Remove="Employee\Queries\" />
-    <None Remove="Employee\Queries\GetList\" />
     <None Remove="Evento\Queries\ListarEventos\" />
+    <None Remove="Funcionario\" />
+    <None Remove="Funcionario\Commands\" />
+    <None Remove="Funcionario\Commands\AdicionarFuncionarioEvento\" />
+    <None Remove="Funcionario\Queries\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.Util\Event.Uau.Comum.Util.csproj" />

@@ -20,5 +20,7 @@ namespace Event.Uau.Evento.Core.Evento.Commands.CriarEvento
         public decimal DuracaoMinima { get; set; }
 
         public decimal DuracaoMaxima { get; set; }
+
+        public ViewModel.Evento.EnderecoViewModel Endereco { get; set; }
     }
 }

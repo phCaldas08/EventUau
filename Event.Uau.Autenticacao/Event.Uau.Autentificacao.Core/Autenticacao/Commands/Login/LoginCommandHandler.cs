@@ -5,21 +5,25 @@ using Event.Uau.Autenticacao.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using FluentValidation;
+using AutoMapper;
+using Event.Uau.Autenticacao.ViewModel.Autenticacao;
 
 namespace Event.Uau.Autenticacao.Core.Authentication.Autenticacao.Commands.Login
 {
-    public class LoginCommandHandler : IRequestHandler<LoginCommand, string>
+    public class LoginCommandHandler : IRequestHandler<LoginCommand, LoginViewModel>
     {
         private readonly EventUauDbContext context;
+        private readonly IMapper mapper;
         private readonly LoginCommandValidator validations;
 
-        public LoginCommandHandler(EventUauDbContext context)
+        public LoginCommandHandler(EventUauDbContext context, IMapper mapper)
         {
             this.context = context;
+            this.mapper = mapper;
             validations = new LoginCommandValidator(context);
         }
 
-        public async Task<string> Handle(LoginCommand request, CancellationToken cancellationToken)
+        public async Task<LoginViewModel> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
             validations.ValidateAndThrow(request);
 
@@ -27,7 +31,13 @@ namespace Event.Uau.Autenticacao.Core.Authentication.Autenticacao.Commands.Login
 
             var token = TokenService.GenerateToken(usuario);
 
-            return token;
+            var usuarioViewModel = new LoginViewModel
+            {
+                Token = token,
+                Usuario = mapper.Map<UsuarioViewModel>(usuario)
+            };
+
+            return usuarioViewModel;
         }
     }
 }
