@@ -12,15 +12,19 @@ namespace Event.Uau.Autenticacao.Core.Especialidade.Commands.CadastrarEspecialid
     {
         private readonly EventUauDbContext context;
         private readonly IMapper mapper;
+        private readonly CadastrarEspecialidadeCommandValidator validation;
 
         public CadastrarEspecialidadeCommandHandler(EventUauDbContext context, IMapper mapper)
         {
             this.context = context;
             this.mapper = mapper;
+            this.validation = new CadastrarEspecialidadeCommandValidator(context);
         }
 
         public async Task<ViewModel.Especialidade.EspecialidadeViewModel> Handle(CadastrarEspecialidadeCommand request, CancellationToken cancellationToken)
         {
+            validation.ValidateAndThrow(request);
+
             var especialidade = mapper.Map<Domain.Entities.Especialidade>(request);
 
             await context.Especialidades.AddAsync(especialidade);
