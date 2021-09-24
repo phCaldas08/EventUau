@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.1.0" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.15" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="UploadArquivos\" />
+    <None Remove="UploadArquivos\Commands\" />
+    <None Remove="UploadArquivos\Commands\UploadArquivos\" />
+    <None Remove="AutoMapper\" />
+    <None Remove="Arquivo\Queries\" />
+    <None Remove="Arquivo\Queries\DownloadArquivos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Arquivo\" />
+    <Folder Include="Arquivo\Commands\" />
+    <Folder Include="Arquivo\Commands\UploadArquivos\" />
+    <Folder Include="AutoMapper\" />
+    <Folder Include="Arquivo\Queries\" />
+    <Folder Include="Arquivo\Queries\DownloadArquivos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.Util\Event.Uau.Comum.Util.csproj" />
+    <ProjectReference Include="..\Event.Uau.Upload.Persistence\Event.Uau.Upload.Persistence.csproj" />
+    <ProjectReference Include="..\Event.Uau.Upload.ViewModel\Event.Uau.Upload.ViewModel.csproj" />
+  </ItemGroup>
+</Project>
