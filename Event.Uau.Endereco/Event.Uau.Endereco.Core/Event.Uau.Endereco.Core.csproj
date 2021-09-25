@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.Util\Event.Uau.Comum.Util.csproj" />
+    <ProjectReference Include="..\Event.Uau.Endereco.Persistence\Event.Uau.Endereco.Persistence.csproj" />
+    <ProjectReference Include="..\Event.Uau.Endereco.ViewModel\Event.Uau.Endereco.ViewModel.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Enderecos\" />
+    <None Remove="Enderecos\Commands\" />
+    <None Remove="Enderecos\Commands\CadastrarEndereco\" />
+    <None Remove="Enderecos\Queries\" />
+    <None Remove="Enderecos\Queries\BuscarEnderecoPorId\" />
+    <None Remove="Enderecos\Queries\BuscarEnderecos\" />
+    <None Remove="Enderecos\Commands\AtualizarEndereco\" />
+    <None Remove="Init\" />
+    <None Remove="Init\Commands\" />
+    <None Remove="Init\Commands\CarregarDados\" />
+    <None Remove="TipoEndereco\" />
+    <None Remove="TiposEnderecos\Command\" />
+    <None Remove="TiposEnderecos\Queries\" />
+    <None Remove="TiposEnderecos\Commands\CadastrarTipoEndereco\" />
+    <None Remove="TiposEnderecos\Queries\BuscarTipoEnderecoPorId\" />
+    <None Remove="Helpers\" />
+    <None Remove="Helpers\DadosFakes\" />
+    <None Remove="Helpers\AutoMapper\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Enderecos\" />
+    <Folder Include="Enderecos\Commands\" />
+    <Folder Include="Enderecos\Commands\CadastrarEndereco\" />
+    <Folder Include="Enderecos\Queries\" />
+    <Folder Include="Enderecos\Queries\BuscarEnderecoPorId\" />
+    <Folder Include="Enderecos\Queries\BuscarEnderecos\" />
+    <Folder Include="Enderecos\Commands\AtualizarEndereco\" />
+    <Folder Include="Inicializacao\" />
+    <Folder Include="Inicializacao\Commands\" />
+    <Folder Include="Inicializacao\Commands\CarregarDados\" />
+    <Folder Include="TiposEnderecos\" />
+    <Folder Include="TiposEnderecos\Commands\" />
+    <Folder Include="TiposEnderecos\Queries\" />
+    <Folder Include="TiposEnderecos\Commands\CadastrarTipoEndereco\" />
+    <Folder Include="TiposEnderecos\Queries\BuscarTipoEnderecoPorId\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Helpers\DadosFakes\" />
+    <Folder Include="Helpers\AutoMapper\" />
+  </ItemGroup>
+</Project>
