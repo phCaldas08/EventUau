@@ -17,6 +17,7 @@
     <None Remove="AutoMapper\" />
     <None Remove="Arquivo\Queries\" />
     <None Remove="Arquivo\Queries\DownloadArquivos\" />
+    <None Remove="Arquivo\Commands\DeletarArquivo\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Arquivo\" />
@@ -25,6 +26,7 @@
     <Folder Include="AutoMapper\" />
     <Folder Include="Arquivo\Queries\" />
     <Folder Include="Arquivo\Queries\DownloadArquivos\" />
+    <Folder Include="Arquivo\Commands\DeletarArquivo\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.Util\Event.Uau.Comum.Util.csproj" />

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
+using Event.Uau.Upload.Core.Arquivo.Commands.DeletarArquivo;
 using Event.Uau.Upload.Core.Arquivo.Commands.UploadArquivos;
 using Event.Uau.Upload.Core.Arquivo.Queries.DownloadArquivos;
 using Microsoft.AspNetCore.Cors;
@@ -47,6 +48,22 @@ namespace Event.Uau.Upload.API.Controllers
             var result = await Mediator.Send(query);
 
             return File(result.Conteudo, result.TipoConteudo, result.Nome);
+        }
+
+        [HttpDelete("{idContexto}/{contexto}")]
+        public async Task<ActionResult> DeletarArquivo([FromRoute] int idContexto, [FromRoute] string contexto)
+        {
+            var command = new DeletarArquivoCommand
+            {
+                Contexto = contexto,
+                IdContexto = idContexto,
+                IdUsuarioLogado = IdUsuarioLogado,
+                Token = Token,
+            };
+
+            await Mediator.Send(command);
+
+            return Ok();
         }
     }
 }
