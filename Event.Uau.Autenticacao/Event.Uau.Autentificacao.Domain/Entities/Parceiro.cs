@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace Event.Uau.Autenticacao.Domain.Entities
 {
     public class Parceiro
@@ -8,5 +10,7 @@ namespace Event.Uau.Autenticacao.Domain.Entities
         public decimal ValorHora { get; set; }
 
         public virtual Usuario Usuario { get; set; }
+
+        public virtual List<Especialidade> Especialidade{ get; set; }
     }
 }

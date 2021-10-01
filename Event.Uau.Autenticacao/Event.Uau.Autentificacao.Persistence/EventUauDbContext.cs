@@ -37,7 +37,13 @@ namespace Event.Uau.Autenticacao.Persistence
             modelBuilder.Entity<Especialidade>(entity => {
                 entity.HasKey(e => e.Id);
             });
-            
+
+            modelBuilder.Entity<Parceiro>(entity => {
+                entity.HasKey(e => e.IdUsuario);
+
+                entity.HasMany(e => e.Especialidade);
+            });
+
         }
     }
 }
