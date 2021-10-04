@@ -11,6 +11,6 @@ namespace Event.Uau.Autenticacao.Domain.Entities
 
         public virtual Usuario Usuario { get; set; }
 
-        public virtual List<Especialidade> Especialidade{ get; set; }
+        public virtual List<Especialidade> Especialidades { get; set; }
     }
 }

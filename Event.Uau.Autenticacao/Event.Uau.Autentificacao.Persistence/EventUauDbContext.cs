@@ -32,16 +32,12 @@ namespace Event.Uau.Autenticacao.Persistence
                 entity.HasOne(e => e.Usuario)
                     .WithOne(e => e.Parceiro)
                     .HasForeignKey<Parceiro>(e => e.IdUsuario);
+
+                entity.HasMany(e => e.Especialidades);
             });
             
             modelBuilder.Entity<Especialidade>(entity => {
                 entity.HasKey(e => e.Id);
-            });
-
-            modelBuilder.Entity<Parceiro>(entity => {
-                entity.HasKey(e => e.IdUsuario);
-
-                entity.HasMany(e => e.Especialidade);
             });
 
         }
