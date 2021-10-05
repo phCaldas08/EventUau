@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
+using Event.Uau.Endereco.Infrastructure.Cep.Interfaces;
 using FluentValidation;
 
 namespace Event.Uau.Endereco.Core.Enderecos.Commands.CadastrarEndereco
 {
     public class CadastrarEnderecoCommandValidator : AbstractValidator<CadastrarEnderecoCommand>
     {
-        public CadastrarEnderecoCommandValidator(Persistence.EventUauDbContext context)
+        public CadastrarEnderecoCommandValidator(Persistence.EventUauDbContext context, ICepIntegracao cepIntegracao)
         {
             RuleFor(endereco => endereco)
                 .Must(endereco => !context.Enderecos.Any(i => i.TipoEndereco.Descricao.Equals(endereco.TipoEndereco.Descricao, StringComparison.CurrentCultureIgnoreCase)
@@ -19,11 +21,6 @@ namespace Event.Uau.Endereco.Core.Enderecos.Commands.CadastrarEndereco
             RuleFor(endereco => endereco.TipoEndereco)
                 .Must(tipoEndereco => context.TiposEnderecos.Any(i => i.Descricao.Equals(tipoEndereco.Descricao, StringComparison.CurrentCultureIgnoreCase)))
                 .WithMessage("Tipo de endereço não encontrado.");
-
-            RuleFor(i => i.Nome)
-                .NotEmpty()
-                .Length(3, 255)
-                .WithMessage("O endereço é obrigatório.");
 
             RuleFor(i => i.Numero)
                 .NotEmpty()
@@ -44,6 +41,10 @@ namespace Event.Uau.Endereco.Core.Enderecos.Commands.CadastrarEndereco
                 .NotEmpty()
                 .Length(3, 255)
                 .WithMessage("A longitude é obrigatória.");
+
+            RuleFor(i => i.Cep)
+                .MustAsync((cep, c) => Task.Run(async () => await cepIntegracao.BuscarEnderecoPorCep(cep) != null))
+                .WithMessage("CEP não encontrado.");
         }
     }
 }

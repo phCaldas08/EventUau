@@ -30,6 +30,7 @@
     <Folder Include="Parceiro\Queries\" />
     <Folder Include="Parceiro\Queries\BuscarParceiroPorIdUsuario\" />
     <Folder Include="Parceiro\Queries\BuscarParceiros\" />
+    <Folder Include="Usuario\Commands\AtualizarUsuario\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Helpers\AutoMapper\" />
@@ -49,6 +50,7 @@
     <None Remove="Parceiro\Queries\" />
     <None Remove="Parceiro\Queries\BuscarParceiroPorIdUsuario\" />
     <None Remove="Parceiro\Queries\BuscarParceiros\" />
+    <None Remove="Usuario\Commands\AtualizarUsuario\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.Util\Event.Uau.Comum.Util.csproj" />

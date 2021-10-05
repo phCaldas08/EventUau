@@ -24,6 +24,8 @@ namespace Event.Uau.Autenticacao.Core.Helpers.AutoMapper
             
             CreateMap<Domain.Entities.Especialidade, ViewModel.Especialidade.EspecialidadeViewModel>();
 
+            CreateMap<Usuario.Commands.AtualizarUsuario.AtualizarUsuarioCommand, Domain.Entities.Usuario>();
+
             CreateMap<Especialidade.Commands.CadastrarEspecialidade.CadastrarEspecialidadeCommand, Domain.Entities.Especialidade>();
 
         }
