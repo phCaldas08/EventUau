@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Event.Uau.Autenticacao.Core.Authentication.Autenticacao.Commands.Login;
+using Event.Uau.Autenticacao.Core.Usuario.Commands.AtualizarUsuario;
 using Event.Uau.Autenticacao.Core.Usuario.Commands.CadastrarUsuario;
 using Event.Uau.Autenticacao.Core.Usuario.Queries.BuscaUsuarioPorId;
 using Microsoft.AspNetCore.Authorization;
@@ -41,6 +42,17 @@ namespace Event.Uau.Autenticacao.API.Controllers
             var usuario = await Mediator.Send(request);
 
             return Ok(usuario);
+        }
+
+        [HttpPut]
+        public async Task<ActionResult> AtualizarUsuario([FromBody] AtualizarUsuarioCommand body)
+        {
+            body.IdUsuarioLogado = IdUsuarioLogado;
+            body.Token = Token;
+
+            var result = await Mediator.Send(body);
+
+            return Ok(result);
         }
     }
 }

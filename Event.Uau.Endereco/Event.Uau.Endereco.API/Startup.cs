@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Event.Uau.Endereco.API.Configuracoes.Integracoes;
 using Event.Uau.Endereco.Core.Helpers.AutoMapper;
 using Event.Uau.Endereco.Persistence;
 using Microsoft.AspNetCore.Builder;
@@ -30,6 +31,8 @@ namespace Event.Uau.Endereco.API
                 services,
                 new MappingProfile(),
                 "EnderecoDb");
+
+            services.ConfigureCepIntegracao(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

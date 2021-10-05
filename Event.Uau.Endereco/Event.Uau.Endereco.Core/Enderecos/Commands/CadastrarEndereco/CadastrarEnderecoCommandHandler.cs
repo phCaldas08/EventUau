@@ -8,6 +8,7 @@ using Event.Uau.Endereco.ViewModel.Endereco;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using FluentValidation;
+using Event.Uau.Endereco.Infrastructure.Cep.Interfaces;
 
 namespace Event.Uau.Endereco.Core.Enderecos.Commands.CadastrarEndereco
 {
@@ -16,14 +17,16 @@ namespace Event.Uau.Endereco.Core.Enderecos.Commands.CadastrarEndereco
         private readonly EventUauDbContext context;
         private readonly IMapper mapper;
         private readonly IMediator mediator;
+        private readonly ICepIntegracao cepIntegracao;
         private readonly CadastrarEnderecoCommandValidator validator;
 
-        public CadastrarEnderecoCommandHandler(EventUauDbContext context, IMapper mapper, IMediator mediator)
+        public CadastrarEnderecoCommandHandler(EventUauDbContext context, IMapper mapper, IMediator mediator, ICepIntegracao cepIntegracao)
         {
             this.context = context;
             this.mapper = mapper;
             this.mediator = mediator;
-            this.validator = new CadastrarEnderecoCommandValidator(context);
+            this.cepIntegracao = cepIntegracao;
+            this.validator = new CadastrarEnderecoCommandValidator(context, cepIntegracao);
         }
 
         public async Task<EnderecoViewModel> Handle(CadastrarEnderecoCommand request, CancellationToken cancellationToken)
@@ -33,6 +36,13 @@ namespace Event.Uau.Endereco.Core.Enderecos.Commands.CadastrarEndereco
             var endereco = mapper.Map<Domain.Entities.Endereco>(request);
 
             endereco.TipoEndereco = await context.TiposEnderecos.FirstOrDefaultAsync(i => i.Descricao.Equals(request.TipoEndereco.Descricao, StringComparison.CurrentCultureIgnoreCase));
+
+            var cep = await cepIntegracao.BuscarEnderecoPorCep(request.Cep);
+
+            endereco.Bairro = cep.Bairro;
+            endereco.Cidade = cep.Cidade;
+            endereco.Logradouro = cep.Endereco;
+            endereco.Estado = cep.Estado;
 
             await context.Enderecos.AddAsync(endereco, cancellationToken);
 

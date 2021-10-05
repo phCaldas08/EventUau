@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Cep\" />
+    <None Remove="Cep\Interfaces\" />
+    <None Remove="Cep\Integracao\" />
+    <None Remove="Cep\Models\" />
+    <None Remove="Cep\Models\Saida\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Cep\" />
+    <Folder Include="Cep\Interfaces\" />
+    <Folder Include="Cep\Integracao\" />
+    <Folder Include="Cep\Models\" />
+    <Folder Include="Cep\Models\Saida\" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <PackageReference Include="Flurl" Version="3.0.2" />
+    <PackageReference Include="Flurl.Http" Version="3.2.0" />
+  </ItemGroup>
+</Project>

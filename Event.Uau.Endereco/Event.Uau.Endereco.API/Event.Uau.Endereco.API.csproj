@@ -12,9 +12,13 @@
 
   <ItemGroup>
     <None Remove="Controllers\" />
+    <None Remove="Configuration\" />
+    <None Remove="Configuration\Integracoes\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Configuracoes\" />
+    <Folder Include="Configuracoes\Integracoes\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.Configuracao\Event.Uau.Comum.Configuracao.csproj">

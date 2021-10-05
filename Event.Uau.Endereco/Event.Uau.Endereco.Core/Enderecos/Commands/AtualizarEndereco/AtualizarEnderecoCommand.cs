@@ -16,8 +16,6 @@ namespace Event.Uau.Endereco.Core.Enderecos.Commands.AtualizarEndereco
 
         public string Cep { get; set; }
 
-        public string Nome { get; set; }
-
         public string Numero { get; set; }
 
         public string Complemento { get; set; }

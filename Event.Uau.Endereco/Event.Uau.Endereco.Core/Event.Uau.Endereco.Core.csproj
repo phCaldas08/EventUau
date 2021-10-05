@@ -11,6 +11,7 @@
     <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.Util\Event.Uau.Comum.Util.csproj" />
     <ProjectReference Include="..\Event.Uau.Endereco.Persistence\Event.Uau.Endereco.Persistence.csproj" />
     <ProjectReference Include="..\Event.Uau.Endereco.ViewModel\Event.Uau.Endereco.ViewModel.csproj" />
+    <ProjectReference Include="..\Event.Uau.Endereco.Infrastructure\Event.Uau.Endereco.Infrastructure.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Enderecos\" />
