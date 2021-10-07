@@ -9,17 +9,31 @@ namespace Event.Uau.Evento.Infrastructure.Integracoes.Autenticacao
 {
     public class UsuarioIntegracao : Interfaces.IUsuarioIntegracao
     {
+        private readonly string url;
+
+        public UsuarioIntegracao(string url)
+        {
+            this.url = url;
+        }
+
         public async Task<UsuarioViewModel> BuscaUsuarioPorId(int idUsuario, string token)
         {
             UsuarioViewModel usuario = null;
 
-            var flurlResult = await $"https://localhost:6001/api/usuario/{idUsuario}"
-                .WithOAuthBearerToken(token)
-                .GetAsync();
+            try
+            {
+                var flurlResult = await $"{url}/usuario/{idUsuario}"
+                    .WithOAuthBearerToken(token)
+                    .GetAsync();
 
 
-            if(flurlResult.StatusCode == 200)
-                usuario = await flurlResult.GetJsonAsync<UsuarioViewModel>();
+                if (flurlResult.StatusCode == 200)
+                    usuario = await flurlResult.GetJsonAsync<UsuarioViewModel>();
+            }
+            catch
+            {
+                usuario = null;
+            }
 
             return usuario;
         }

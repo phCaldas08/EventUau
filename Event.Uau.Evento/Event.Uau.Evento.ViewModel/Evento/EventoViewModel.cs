@@ -34,8 +34,6 @@ namespace Event.Uau.Evento.ViewModel.Evento
 
         public Autenticacao.UsuarioViewModel Usuario { get; set; }
 
-        public EnderecoViewModel Endereco { get; set; }
-
         public StatusViewModel Status { get; set; }
 
 

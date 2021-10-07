@@ -1,17 +1,15 @@
 ﻿using System;
-using Event.Uau.Comum.Util.Mediator;
-
-namespace Event.Uau.Evento.Core.Evento.Commands.CriarEvento
+namespace Event.Uau.Evento.ViewModel.Evento
 {
-    public class CriarEventoCommand : EventUauRequest<ViewModel.Evento.EventoViewModel>
+    public class PropostaEventoViewModel
     {
+        public int Id { get; set; }
+
         public int Numero { get; set; }
 
         public string Nome { get; set; }
 
         public string Descricao { get; set; }
-
-        public DateTime DataCriacao { get => DateTime.Now; }
 
         public DateTime DataInicio { get; set; }
 
@@ -20,5 +18,9 @@ namespace Event.Uau.Evento.Core.Evento.Commands.CriarEvento
         public decimal DuracaoMinima { get; set; }
 
         public decimal DuracaoMaxima { get; set; }
+
+        public string Observacao { get; set; }
+
+        public decimal ValorProposta { get; set; }
     }
 }
