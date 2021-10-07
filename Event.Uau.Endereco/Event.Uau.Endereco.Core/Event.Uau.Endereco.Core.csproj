@@ -32,6 +32,7 @@
     <None Remove="Helpers\" />
     <None Remove="Helpers\DadosFakes\" />
     <None Remove="Helpers\AutoMapper\" />
+    <None Remove="Enderecos\Commands\ExcluirEndereco\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Enderecos\" />
@@ -52,5 +53,6 @@
     <Folder Include="Helpers\" />
     <Folder Include="Helpers\DadosFakes\" />
     <Folder Include="Helpers\AutoMapper\" />
+    <Folder Include="Enderecos\Commands\ExcluirEndereco\" />
   </ItemGroup>
 </Project>

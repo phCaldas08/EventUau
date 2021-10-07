@@ -16,9 +16,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Configurations\" />
+    <None Remove="Configurations\Integrations\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Configurations\" />
+    <Folder Include="Configurations\Integrations\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.Configuracao\Event.Uau.Comum.Configuracao.csproj">

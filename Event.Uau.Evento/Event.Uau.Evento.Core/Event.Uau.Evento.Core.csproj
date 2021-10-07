@@ -14,9 +14,9 @@
     <Folder Include="Helpers\AutoMapper\" />
     <Folder Include="Evento\Queries\ListarEventos\" />
     <Folder Include="Funcionario\" />
-    <Folder Include="Funcionario\Commands\" />
-    <Folder Include="Funcionario\Commands\EnviarPropostaFuncionario\" />
-    <Folder Include="Funcionario\Queries\" />
+    <Folder Include="Proposta\" />
+    <Folder Include="Proposta\Commands\" />
+    <Folder Include="Proposta\Queries\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
@@ -25,9 +25,10 @@
   <ItemGroup>
     <None Remove="Evento\Queries\ListarEventos\" />
     <None Remove="Funcionario\" />
-    <None Remove="Funcionario\Commands\" />
     <None Remove="Funcionario\Commands\AdicionarFuncionarioEvento\" />
-    <None Remove="Funcionario\Queries\" />
+    <None Remove="Proposta\" />
+    <None Remove="Proposta\Commands\" />
+    <None Remove="Proposta\Queries\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.Util\Event.Uau.Comum.Util.csproj" />

@@ -15,16 +15,5 @@ namespace Event.Uau.Evento.API.Controllers
     [ApiController]
     public class FuncionariosController : BaseController
     {
-
-        [HttpPost("propostas")]
-        public async Task<IActionResult> BuscaEventoPorId([FromRoute] BuscaEventoPorIdQuery query)
-        {
-            query.IdUsuarioLogado = IdUsuarioLogado;
-            query.Token = Token;
-
-            var result = await Mediator.Send(query);
-
-            return Ok(result);
-        }
     }
 }

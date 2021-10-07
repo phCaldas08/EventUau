@@ -2,7 +2,7 @@
 using Event.Uau.Comum.Util.Mediator;
 using Event.Uau.Evento.ViewModel.Evento;
 
-namespace Event.Uau.Evento.Core.Funcionario.Commands.EnviarPropostaFuncionario
+namespace Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario
 {
     public class EnviarPropostaFuncionarioCommand : EventUauRequest<FuncionarioEventoViewModel>
     {

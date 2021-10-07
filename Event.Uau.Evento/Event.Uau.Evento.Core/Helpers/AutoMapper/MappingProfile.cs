@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using Event.Uau.Evento.Core.Evento.Commands.CriarEvento;
-using Event.Uau.Evento.Core.Funcionario.Commands.EnviarPropostaFuncionario;
+using Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario;
 
 namespace Event.Uau.Evento.Core.Helpers.AutoMapper
 {
@@ -18,10 +18,6 @@ namespace Event.Uau.Evento.Core.Helpers.AutoMapper
 
             CreateMap<Domain.Entities.Evento, ViewModel.Evento.ResumoEventoViewModel>();
 
-            CreateMap<Domain.Entities.Endereco, ViewModel.Evento.EnderecoViewModel>();
-
-            CreateMap<ViewModel.Evento.EnderecoViewModel, Domain.Entities.Endereco>();
-
             CreateMap<Domain.Entities.FuncionarioEvento, ViewModel.Evento.FuncionarioEventoViewModel>();
 
             CreateMap<EnviarPropostaFuncionarioCommand, Domain.Entities.FuncionarioEvento>()
@@ -29,6 +25,12 @@ namespace Event.Uau.Evento.Core.Helpers.AutoMapper
                 .ForMember(i => i.Contratado, opt => opt.MapFrom(i => false));
 
             CreateMap<Domain.Entities.FuncionarioEvento, ViewModel.Evento.FuncionarioEventoViewModel>();
+
+            CreateMap<Domain.Entities.FuncionarioEvento, ViewModel.Evento.PropostaEventoViewModel>()
+                .ForMember(i => i.ValorProposta, opt => opt.MapFrom(i => i.Salario));
+
+            CreateMap<Domain.Entities.Evento, ViewModel.Evento.PropostaEventoViewModel>();
+                
         }
     }
 }

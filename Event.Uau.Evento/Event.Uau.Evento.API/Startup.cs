@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Event.Uau.Evento.API.Configurations;
+using Event.Uau.Evento.API.Configurations.Integrations;
 using Event.Uau.Evento.Core.Helpers;
 using Event.Uau.Evento.Core.Helpers.AutoMapper;
 using Event.Uau.Evento.Infrastructure.Integracoes.Autenticacao;
@@ -41,7 +42,7 @@ namespace Event.Uau.Evento.API
                 new MappingProfile(),
                 "EventUauDBEvento");
 
-            services.ConfigureIntegrations();
+            services.ConfigureIntegracoesAutenticacao(Configuration);
 
         }
 
