@@ -13,8 +13,6 @@ namespace Event.Uau.Autenticacao.Domain.Entities
 
         public string Senha { get; set; }
 
-        public string Endereco { get; set; }
-
         public string Telefone { get; set; }
 
         public string SobreMim { get; set; }

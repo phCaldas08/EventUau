@@ -11,5 +11,7 @@ namespace Event.Uau.Autenticacao.Core.Usuario.Commands.AtualizarUsuario
         public string Telefone { get; set; }
 
         public DateTime DataNascimento { get; set; }
+
+        public string SobreMim { get; set; }
     }
 }
