@@ -7,17 +7,17 @@ using Event.Uau.Autenticacao.Core.Especialidade.Commands.CadastrarEspecialidade;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Event.Uau.Autenticacao.Core.Especialidade.Queries.BuscarEspecialidades;
 
 namespace Event.Uau.Autenticacao.API.Controllers
 {
     [Route("api/[controller]")]
     [EnableCors("CorsPolicy")]
     [ApiController]
-    public class EspecialidadeController : BaseController
+    public class EspecialidadesController : BaseController
     {
 
         [HttpGet("{idEspecialidade}")]
-        [AllowAnonymous]
         public async Task<IActionResult> BuscaEspecialidadePorId([FromRoute] int idEspecialidade)
         {
             var query = new BuscaEspecialidadePorIdQuery { IdEspecialidade = idEspecialidade };
@@ -28,12 +28,21 @@ namespace Event.Uau.Autenticacao.API.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
         public async Task<ActionResult> CriarEspecialidade([FromBody] CadastrarEspecialidadeCommand body)
         {
             var especialidade = await Mediator.Send(body);
 
             return Ok(especialidade);
+        }
+
+        public async Task<ActionResult> BuscarEspecialidades([FromQuery] BuscarEspecialidadesQuery query)
+        {
+            query.Token = Token;
+            query.IdUsuarioLogado = IdUsuarioLogado;
+
+            var result = await Mediator.Send(query);
+
+            return Ok(result);
         }
 
     }

@@ -8,5 +8,9 @@ namespace Event.Uau.Autenticacao.Domain.Entities
     {
         public int Id { get; set; }
         public string Descricao { get; set; }
+
+        public virtual List<Parceiro> Parceiros { get; set; }
+
+        public virtual List<ParceiroEspecialidade> ParceiroEspecialidades { get; set; }
     }
 }

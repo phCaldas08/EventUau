@@ -8,7 +8,7 @@ using MediatR;
 
 namespace Event.Uau.Autenticacao.Core.Especialidade.Commands.CadastrarEspecialidade
 {
-    public class CadastrarEspecialidadeCommandHandler : IRequestHandler<CadastrarEspecialidadeCommand, ViewModel.Especialidade.EspecialidadeViewModel>
+    public class CadastrarEspecialidadeCommandHandler : IRequestHandler<CadastrarEspecialidadeCommand, ViewModel.Autenticacao.EspecialidadeViewModel>
     {
         private readonly EventUauDbContext context;
         private readonly IMapper mapper;
@@ -21,7 +21,7 @@ namespace Event.Uau.Autenticacao.Core.Especialidade.Commands.CadastrarEspecialid
             this.validation = new CadastrarEspecialidadeCommandValidator(context);
         }
 
-        public async Task<ViewModel.Especialidade.EspecialidadeViewModel> Handle(CadastrarEspecialidadeCommand request, CancellationToken cancellationToken)
+        public async Task<ViewModel.Autenticacao.EspecialidadeViewModel> Handle(CadastrarEspecialidadeCommand request, CancellationToken cancellationToken)
         {
             validation.ValidateAndThrow(request);
 
@@ -31,7 +31,7 @@ namespace Event.Uau.Autenticacao.Core.Especialidade.Commands.CadastrarEspecialid
 
             await context.SaveChangesAsync(cancellationToken);
 
-            var result = mapper.Map<ViewModel.Especialidade.EspecialidadeViewModel>(especialidade);
+            var result = mapper.Map<ViewModel.Autenticacao.EspecialidadeViewModel>(especialidade);
 
             return result;
         }
