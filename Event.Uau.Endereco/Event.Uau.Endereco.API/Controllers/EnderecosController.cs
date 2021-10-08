@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Event.Uau.Endereco.Core.Enderecos.Commands.AtualizarEndereco;
 using Event.Uau.Endereco.Core.Enderecos.Commands.CadastrarEndereco;
+using Event.Uau.Endereco.Core.Enderecos.Commands.ExcluirEndereco;
 using Event.Uau.Endereco.Core.Enderecos.Queries.BuscarEnderecoPorId;
 using Event.Uau.Endereco.Core.Enderecos.Queries.BuscarEnderecos;
 using Event.Uau.Endereco.ViewModel.Endereco;
@@ -70,6 +71,23 @@ namespace Event.Uau.Endereco.API.Controllers
             body.IdExterno = idExterno;
 
             var result = await Mediator.Send(body);
+
+            return Ok(result);
+        }
+
+        [HttpDelete("{idEndereco}")]
+        public async Task<ActionResult> ExcluirEndereco([FromRoute] string tipoEndereco, [FromRoute] int idExterno, [FromRoute] int idEndereco)
+        {
+            var command = new ExcluirEnderecoCommand
+            {
+                IdEndereco = idEndereco,
+                IdExterno = idExterno,
+                IdUsuarioLogado = IdUsuarioLogado,
+                TipoEndereco = tipoEndereco,
+                Token = Token,
+            };
+
+            var result = await Mediator.Send(command);
 
             return Ok(result);
         }

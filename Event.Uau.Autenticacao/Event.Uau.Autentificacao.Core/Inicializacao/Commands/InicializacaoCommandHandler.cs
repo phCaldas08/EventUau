@@ -21,14 +21,15 @@ namespace Event.Uau.Autenticacao.Core.Inicializacao.Commands
 
         public async Task<int> Handle(InicializacaoCommand request, CancellationToken cancellationToken)
         {
-            if(!await context.Usuarios.AnyAsync())
+
+            if (!await context.Especialidades.AnyAsync())
+                await mediator.CarregarEspecialidadesAsync();
+
+            if (!await context.Usuarios.AnyAsync())
                 await mediator.CarregarUsuariosAsync();
 
             if (!await context.Parceiros.AnyAsync())
                 await mediator.CarregarParceirosAsync();
-                
-            if (!await context.Especialidades.AnyAsync())
-                await mediator.CarregarEspecialidadesAsync();
 
             return 0;
         }

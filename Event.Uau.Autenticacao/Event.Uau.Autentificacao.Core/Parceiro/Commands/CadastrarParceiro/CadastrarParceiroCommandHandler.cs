@@ -7,6 +7,7 @@ using MediatR;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Event.Uau.Autenticacao.Core.Parceiro.Queries.BuscarParceiroPorIdUsuario;
+using System.Linq;
 
 namespace Event.Uau.Autenticacao.Core.Parceiro.Commands.CadastrarParceiro
 {
@@ -32,6 +33,9 @@ namespace Event.Uau.Autenticacao.Core.Parceiro.Commands.CadastrarParceiro
             var usuario = await context.Usuarios.FirstOrDefaultAsync(i => i.Id == request.IdUsuarioLogado);
 
             usuario.Parceiro = mapper.Map<Domain.Entities.Parceiro>(request);
+
+            if((request.IdsEspecialidades?.Any()).GetValueOrDefault(false))
+                usuario.Parceiro.Especialidades = await context.Especialidades.Where(i => request.IdsEspecialidades.Contains(i.Id)).ToListAsync();
 
             await context.SaveChangesAsync(cancellationToken);
 

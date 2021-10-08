@@ -9,6 +9,6 @@ namespace Event.Uau.Autenticacao.ViewModel.Autenticacao
 
         public decimal ValorHora { get; set; }
 
-        public List<string> Especialidades { get; set; }
+        public List<EspecialidadeViewModel> Especialidades { get; set; }
     }
 }

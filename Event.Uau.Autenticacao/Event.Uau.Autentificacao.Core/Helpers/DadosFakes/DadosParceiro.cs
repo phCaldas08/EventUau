@@ -14,7 +14,18 @@ namespace Event.Uau.Autenticacao.Core.Helpers.DadosFakes
                 new Parceiro.Commands.CadastrarParceiro.CadastrarParceiroCommand
                 {
                     IdUsuarioLogado = 2,
-                    ValorHora = 10
+                    ValorHora = 10,
+                    Especialidades = new List<ViewModel.Autenticacao.EspecialidadeViewModel>
+                    {
+                        new ViewModel.Autenticacao.EspecialidadeViewModel
+                        {
+                            Id = 1,
+                        },
+                        new ViewModel.Autenticacao.EspecialidadeViewModel
+                        {
+                            Id = 2,
+                        }
+                    }
                 },
             };
 

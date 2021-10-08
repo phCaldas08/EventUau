@@ -19,6 +19,11 @@ namespace Event.Uau.Autenticacao.Core.Parceiro.Commands.CadastrarParceiro
             RuleFor(i => i.ValorHora)
                 .GreaterThanOrEqualTo(0)
                 .WithMessage("O valor deve ser positivo e maior que zero.");
+
+            RuleFor(i => i.Especialidades.Select(i => i.Id))
+                .Must(especialidades => especialidades.All(e => context.Especialidades.Any(i => i.Id == e)))
+                .When(i => (i.Especialidades?.Any()).GetValueOrDefault(false))
+                .WithMessage("Especialidades não encontrada.");
         }
     }
 }

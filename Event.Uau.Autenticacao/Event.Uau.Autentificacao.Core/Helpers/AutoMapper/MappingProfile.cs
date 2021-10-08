@@ -15,14 +15,15 @@ namespace Event.Uau.Autenticacao.Core.Helpers.AutoMapper
                 .ForMember(i => i.Telefone, opt => opt.MapFrom(cadastrar => cadastrar.Telefone.LimparTelefone()));
 
             CreateMap<Parceiro.Commands.CadastrarParceiro.CadastrarParceiroCommand, Domain.Entities.Parceiro>()
-                .ForMember(i => i.IdUsuario, opt => opt.MapFrom(cadastrar => cadastrar.IdUsuarioLogado));
+                .ForMember(i => i.IdUsuario, opt => opt.MapFrom(cadastrar => cadastrar.IdUsuarioLogado))
+                .ForMember(i => i.Especialidades, opt => opt.Ignore());
 
             CreateMap<Domain.Entities.Parceiro, ViewModel.Autenticacao.ParceiroViewModel>();
 
             CreateMap<Domain.Entities.Parceiro, ViewModel.Autenticacao.ParceiroResumoViewModel>()
                 .ForMember(i => i.Nome, opt => opt.MapFrom(i => i.Usuario.Nome));                
             
-            CreateMap<Domain.Entities.Especialidade, ViewModel.Especialidade.EspecialidadeViewModel>();
+            CreateMap<Domain.Entities.Especialidade, ViewModel.Autenticacao.EspecialidadeViewModel>();
 
             CreateMap<Usuario.Commands.AtualizarUsuario.AtualizarUsuarioCommand, Domain.Entities.Usuario>();
 

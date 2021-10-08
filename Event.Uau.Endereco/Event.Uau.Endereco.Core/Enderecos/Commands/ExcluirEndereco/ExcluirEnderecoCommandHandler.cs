@@ -23,7 +23,11 @@ namespace Event.Uau.Endereco.Core.Enderecos.Commands.ExcluirEndereco
                                         && i.IdExterno == request.IdExterno
                                         && i.TipoEndereco.Descricao.Equals(request.TipoEndereco, StringComparison.CurrentCultureIgnoreCase));
 
-            context.Enderecos.Dele
+            context.Enderecos.Remove(endereco);
+
+            await context.SaveChangesAsync(cancellationToken);
+
+            return true;
         }
     }
 }
