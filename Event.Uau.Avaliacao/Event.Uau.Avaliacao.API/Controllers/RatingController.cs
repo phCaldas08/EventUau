@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Event.Uau.Avaliacao.API.Controllers;
 using Event.Uau.Avaliacao.Core.Rating.Commands.CadastrarRating;
+using Event.Uau.Avaliacao.Core.Rating.Queries.BuscarRatingPorId;
 using Event.Uau.Avaliacao.Core.Rating.Queries.BuscarRatings;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
@@ -23,22 +24,20 @@ namespace Event.Uau.Endereco.API.Controllers
             return Ok(result);
         }
 
-        //[HttpGet("{idEndereco}")]
-        //public async Task<ActionResult> BuscarEnderecoPorId([FromRoute] string tipoEndereco, [FromRoute] int idExterno, [FromRoute] int idEndereco)
-        //{
-        //    var query = new BuscarEnderecoPorIdQuery
-        //    {
-        //        IdExterno = idExterno,
-        //        IdUsuarioLogado = IdUsuarioLogado,
-        //        IdEndereco = idEndereco,
-        //        TipoEndereco = new TipoEnderecoViewModel { Descricao = tipoEndereco },
-        //        Token = Token
-        //    };
+        [HttpGet("{idRating}")]
+        public async Task<ActionResult> BuscarRatingPorId([FromRoute] int idRating)
+        {
+            var query = new BuscarRatingPorIdQuery
+            {
+                IdUsuarioLogado = IdUsuarioLogado,
+                Token = Token,
+                IdRating = idRating
+            };
 
-        //    var result = await Mediator.Send(query);
+            var result = await Mediator.Send(query);
 
-        //    return Ok(result);
-        //}
+            return Ok(result);
+        }
 
         [HttpPost]
         public async Task<ActionResult> CadastrarRating([FromBody] CadastrarRatingCommand body)

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Event.Uau.Avaliacao.Persistence;
-using Event.Uau.Rating.ViewModel.Rating;
+using Event.Uau.Avaliacao.ViewModel.Rating;
 using MediatR;
 using System;
 using System.Collections.Generic;

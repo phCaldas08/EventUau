@@ -2,7 +2,8 @@
 using AutoMapper;
 using Event.Uau.Avaliacao.Core.Rating.Commands.CadastrarRating;
 using Event.Uau.Comum.Util.Extensoes;
-using Event.Uau.Rating.ViewModel.Rating;
+//using Event.Uau.Avaliacao.ViewModel.Rating;
+using Event.Uau.Avaliacao.ViewModel.Rating;
 
 namespace Event.Uau.Avaliacao.Core.Helpers.AutoMapper
 {

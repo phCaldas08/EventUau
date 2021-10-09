@@ -1,5 +1,4 @@
 ﻿using Event.Uau.Comum.ViewModel;
-using Event.Uau.Rating.ViewModel.Rating;
 using System;
 using System.Collections.Generic;
 using System.Text;

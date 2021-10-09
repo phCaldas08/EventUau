@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Event.Uau.Rating.ViewModel.Rating
+namespace Event.Uau.Avaliacao.ViewModel.Rating
 {
     public class RatingViewModel
     {
