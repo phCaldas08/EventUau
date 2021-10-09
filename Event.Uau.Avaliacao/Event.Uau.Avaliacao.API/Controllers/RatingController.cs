@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Event.Uau.Avaliacao.API.Controllers;
 using Event.Uau.Avaliacao.Core.Rating.Commands.CadastrarRating;
+using Event.Uau.Avaliacao.Core.Rating.Queries.BuscarRatings;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,21 +12,16 @@ namespace Event.Uau.Endereco.API.Controllers
     [ApiController]
     public class RatingController : BaseController
     {
-        //[HttpGet]
-        //public async Task<ActionResult> BuscarEnderecos([FromRoute] string tipoEndereco, [FromRoute] int idExterno)
-        //{
-        //    var query = new BuscarEnderecosQuery
-        //    {
-        //        IdExterno = idExterno,
-        //        IdUsuarioLogado = IdUsuarioLogado,
-        //        TipoEndereco = new TipoEnderecoViewModel { Descricao = tipoEndereco },
-        //        Token = Token
-        //    };
+        [HttpGet]
+        public async Task<ActionResult> BuscarRatings([FromQuery] BuscarRatingsQuery query)
+        {
+            query.IdUsuarioLogado = IdUsuarioLogado;
+            query.Token = Token;
 
-        //    var result = await Mediator.Send(query);
+            var result = await Mediator.Send(query);
 
-        //    return Ok(result);
-        //}
+            return Ok(result);
+        }
 
         //[HttpGet("{idEndereco}")]
         //public async Task<ActionResult> BuscarEnderecoPorId([FromRoute] string tipoEndereco, [FromRoute] int idExterno, [FromRoute] int idEndereco)
