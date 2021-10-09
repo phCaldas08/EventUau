@@ -11,5 +11,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.Util\Event.Uau.Comum.Util.csproj" />
     <ProjectReference Include="..\Event.Uau.Avaliacao.Persistence\Event.Uau.Avaliacao.Persistence.csproj" />
+    <ProjectReference Include="..\Event.Uau.Avaliacao.ViewModel\Event.Uau.Avaliacao.ViewModel.csproj" />
   </ItemGroup>
 </Project>
