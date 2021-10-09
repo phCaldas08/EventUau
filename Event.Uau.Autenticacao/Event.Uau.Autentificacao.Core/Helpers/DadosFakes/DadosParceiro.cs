@@ -12,7 +12,6 @@ namespace Event.Uau.Autenticacao.Core.Helpers.DadosFakes
             var query = new Especialidade.Queries.BuscaEspecialidadePorId.BuscaEspecialidadePorIdQuery { IdEspecialidade = 1 };
             var result = await mediator.Send(query);
 
-
             var commands = new List<Parceiro.Commands.CadastrarParceiro.CadastrarParceiroCommand>
             {
                 new Parceiro.Commands.CadastrarParceiro.CadastrarParceiroCommand
