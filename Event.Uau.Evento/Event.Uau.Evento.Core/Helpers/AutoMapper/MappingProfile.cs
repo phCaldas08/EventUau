@@ -14,7 +14,8 @@ namespace Event.Uau.Evento.Core.Helpers.AutoMapper
             CreateMap<CriarEventoCommand, Domain.Entities.Evento>()
                 .ForMember(i => i.IdUsuario, opt => opt.MapFrom(i => i.IdUsuarioLogado));
 
-            CreateMap<Domain.Entities.Evento, ViewModel.Evento.EventoViewModel>();
+            CreateMap<Domain.Entities.Evento, ViewModel.Evento.EventoViewModel>()
+                .ForMember(i => i.FuncionariosEvento, opt => opt.MapFrom(i => i.Funcionarios));
 
             CreateMap<Domain.Entities.Evento, ViewModel.Evento.ResumoEventoViewModel>();
 

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Event.Uau.Evento.ViewModel.Autenticacao;
 using Flurl;
@@ -38,9 +40,33 @@ namespace Event.Uau.Evento.Infrastructure.Integracoes.Autenticacao
             return usuario;
         }
 
-        public async Task<IEnumerable<UsuarioViewModel>> BuscaUsuariosPorIds(IEnumerable<int> idsUsuarios, string token)
+        public async Task<ListaUsuarioViewModel> BuscaUsuariosPorIds(IEnumerable<int> idsUsuarios, string token)
         {
-            throw new NotImplementedException();
+            ListaUsuarioViewModel usuarios = null;
+
+            try
+            {
+                var queryParams = new
+                {
+                    idsUsuarios,
+                    indice = 0,
+                    tamanhoPagina = idsUsuarios.Count()
+                };
+
+                var flurlResult = await $"{url}/usuario"
+                    .WithOAuthBearerToken(token)
+                    .SendJsonAsync(HttpMethod.Get, queryParams);
+
+
+                if (flurlResult.StatusCode == 200)
+                    usuarios = await flurlResult.GetJsonAsync<ListaUsuarioViewModel>();
+            }
+            catch(Exception e)
+            {
+                usuarios = null;
+            }
+
+            return usuarios;
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Event.Uau.Autenticacao.Core.Authentication.Autenticacao.Commands.Login;
 using Event.Uau.Autenticacao.Core.Usuario.Commands.AtualizarUsuario;
 using Event.Uau.Autenticacao.Core.Usuario.Commands.CadastrarUsuario;
+using Event.Uau.Autenticacao.Core.Usuario.Queries.BuscarUsuarios;
 using Event.Uau.Autenticacao.Core.Usuario.Queries.BuscaUsuarioPorId;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
@@ -15,6 +16,18 @@ namespace Event.Uau.Autenticacao.API.Controllers
     [ApiController]
     public class UsuarioController : BaseController
     {
+
+        [HttpGet]
+        public async Task<ActionResult> BuscarUsuarios([FromBody] BuscarUsuariosQuery query)
+        {
+            query.IdUsuarioLogado = IdUsuarioLogado;
+            query.Token = Token;
+
+            var result = await Mediator.Send(query);
+
+            return Ok(result);
+        }
+
         [HttpPost]
         [AllowAnonymous]
         public async Task<ActionResult> CriarUsuario([FromBody] CadastrarUsuarioCommand body)
