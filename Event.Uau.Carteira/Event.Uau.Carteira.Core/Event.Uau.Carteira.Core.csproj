@@ -1,0 +1,66 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.1.0" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.15" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.Util\Event.Uau.Comum.Util.csproj" />
+    <ProjectReference Include="..\Event.Uau.Carteira.Persistence\Event.Uau.Carteira.Persistence.csproj" />
+    <ProjectReference Include="..\Event.Uau.Carteira.ViewModel\Event.Uau.Carteira.ViewModel.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Helpers\" />
+    <None Remove="Helpers\AutoMapper\" />
+    <None Remove="Carteira\" />
+    <None Remove="Carteira\Commads\" />
+    <None Remove="Carteira\Commads\CadastrarCarteira\" />
+    <None Remove="Carteira\Queries\" />
+    <None Remove="Carteira\Queries\BuscarCarteiraPorUsuario\" />
+    <None Remove="Inicializacao\" />
+    <None Remove="Operacao\" />
+    <None Remove="Operacao\Commands\" />
+    <None Remove="Operacao\Commands\RealizarOperacao\" />
+    <None Remove="Operacao\Queries\" />
+    <None Remove="Operacao\Queries\BuscarOperacaoPorId\" />
+    <None Remove="Inicializacao\Commands\" />
+    <None Remove="Helpers\DadosFake\" />
+    <None Remove="TipoOperacao\" />
+    <None Remove="TipoOperacao\Commands\" />
+    <None Remove="TipoOperacao\Commands\CadastrarTipoOperacao\" />
+    <None Remove="TipoOperacao\Queries\" />
+    <None Remove="TipoOperacao\Queries\BuscarTipoOperacaoPorId\" />
+    <None Remove="Operacao\Commands\OperacaoEvento\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+    <Folder Include="Helpers\AutoMapper\" />
+    <Folder Include="Carteira\" />
+    <Folder Include="Carteira\Commads\" />
+    <Folder Include="Carteira\Commads\CadastrarCarteira\" />
+    <Folder Include="Carteira\Queries\" />
+    <Folder Include="Carteira\Queries\BuscarCarteiraPorUsuario\" />
+    <Folder Include="Inicializacao\" />
+    <Folder Include="Operacao\" />
+    <Folder Include="Operacao\Commands\" />
+    <Folder Include="Operacao\Commands\RealizarOperacao\" />
+    <Folder Include="Operacao\Queries\" />
+    <Folder Include="Operacao\Queries\BuscarOperacaoPorId\" />
+    <Folder Include="Inicializacao\Commands\" />
+    <Folder Include="Helpers\DadosFake\" />
+    <Folder Include="TipoOperacao\" />
+    <Folder Include="TipoOperacao\Commands\" />
+    <Folder Include="TipoOperacao\Commands\CadastrarTipoOperacao\" />
+    <Folder Include="TipoOperacao\Queries\" />
+    <Folder Include="TipoOperacao\Queries\BuscarTipoOperacaoPorId\" />
+    <Folder Include="Operacao\Commands\CriarOperacaoEvento\" />
+  </ItemGroup>
+</Project>
