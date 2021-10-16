@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using Event.Uau.Autenticacao.API.Configurations.Integrations;
 using Event.Uau.Autenticacao.Core.Helpers;
 using Event.Uau.Autenticacao.Core.Helpers.AutoMapper;
 using Event.Uau.Autenticacao.Persistence;
@@ -38,8 +39,11 @@ namespace Event.Uau.Autenticacao.API
             Comum.Configuracao.Startup.StartupConfig.ConfigureServices<EventUauDbContext>(
                 services,
                 new MappingProfile(),
-                "EventUauDBAutenticacao");
-                        
+                "EventUauDBAutenticacao",
+                typeof(Core.Inicializacao.Commands.InicializacaoCommand));
+
+            services.ConfigureIntegracoesCarteira(Configuration);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

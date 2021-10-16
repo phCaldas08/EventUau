@@ -13,5 +13,16 @@
     <ProjectReference Include="..\Event.Uau.Autentificacao.Core\Event.Uau.Autenticacao.Core.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\Event.Uau.Autenticacao.Infrastructure\Event.Uau.Autenticacao.Infrastructure.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Configurations\" />
+    <None Remove="Configurations\Integration\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configurations\" />
+    <Folder Include="Configurations\Integrations\" />
   </ItemGroup>
 </Project>

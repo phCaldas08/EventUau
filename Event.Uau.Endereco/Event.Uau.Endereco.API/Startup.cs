@@ -30,7 +30,8 @@ namespace Event.Uau.Endereco.API
             Comum.Configuracao.Startup.StartupConfig.ConfigureServices<EventUauDbContext>(
                 services,
                 new MappingProfile(),
-                "EnderecoDb");
+                "EnderecoDb",
+                typeof(Core.Inicializacao.Commands.CarregarDados.CarregarDadosCommand));
 
             services.ConfigureCepIntegracao(Configuration);
         }
