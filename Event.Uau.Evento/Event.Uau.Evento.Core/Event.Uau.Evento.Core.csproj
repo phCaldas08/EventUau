@@ -10,7 +10,6 @@
     <Folder Include="Evento\Queries\BuscaEventoPorId\" />
     <Folder Include="Evento\Commands\" />
     <Folder Include="Evento\Commands\CriarEvento\" />
-    <Folder Include="Helpers\" />
     <Folder Include="Helpers\AutoMapper\" />
     <Folder Include="Evento\Queries\ListarEventos\" />
     <Folder Include="Funcionario\" />
