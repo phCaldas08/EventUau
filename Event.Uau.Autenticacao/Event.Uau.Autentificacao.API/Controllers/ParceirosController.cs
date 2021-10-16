@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Event.Uau.Autenticacao.Core.Parceiro.Commands.AtualizarParceiro;
 using Event.Uau.Autenticacao.Core.Parceiro.Commands.CadastrarParceiro;
 using Event.Uau.Autenticacao.Core.Parceiro.Queries.BuscarParceiroPorIdUsuario;
 using Event.Uau.Autenticacao.Core.Parceiro.Queries.BuscarParceiros;
@@ -46,5 +47,18 @@ namespace Event.Uau.Autenticacao.API.Controllers
 
             return Ok(parceiro);
         }
+
+        [HttpPut("{idUsuario}")]
+        public async Task<ActionResult> AtualizarUsuario([FromRoute] int idUsuario, [FromBody] AtualizarParceiroCommand body)
+        {
+            body.IdUsuario = idUsuario;
+            body.IdUsuarioLogado = IdUsuarioLogado;
+            body.Token = Token;
+
+            var result = await Mediator.Send(body);
+
+            return Ok(result);
+        }
+
     }
 }

@@ -24,8 +24,6 @@
     <Folder Include="Inicializacao\" />
     <Folder Include="Inicializacao\Commands\" />
     <Folder Include="Helpers\DadosFakes\" />
-    <Folder Include="Parceiro\" />
-    <Folder Include="Parceiro\Commands\" />
     <Folder Include="Parceiro\Commands\CadastrarParceiro\" />
     <Folder Include="Parceiro\Queries\" />
     <Folder Include="Parceiro\Queries\BuscarParceiroPorIdUsuario\" />

@@ -18,6 +18,10 @@ namespace Event.Uau.Autenticacao.Core.Helpers.AutoMapper
                 .ForMember(i => i.IdUsuario, opt => opt.MapFrom(cadastrar => cadastrar.IdUsuarioLogado))
                 .ForMember(i => i.Especialidades, opt => opt.Ignore());
 
+            CreateMap<Parceiro.Commands.AtualizarParceiro.AtualizarParceiroCommand, Domain.Entities.Parceiro>()
+                .ForMember(i => i.IdUsuario, opt => opt.MapFrom(cadastrar => cadastrar.IdUsuarioLogado))
+                .ForMember(i => i.Especialidades, opt => opt.Ignore());
+
             CreateMap<Domain.Entities.Parceiro, ViewModel.Autenticacao.ParceiroViewModel>();
 
             CreateMap<Domain.Entities.Parceiro, ViewModel.Autenticacao.ParceiroResumoViewModel>()
