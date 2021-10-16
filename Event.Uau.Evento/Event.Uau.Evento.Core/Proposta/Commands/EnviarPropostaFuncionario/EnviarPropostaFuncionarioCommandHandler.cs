@@ -1,8 +1,6 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
-using Event.Uau.Evento.Infrastructure.Integracoes.Autenticacao;
 using Event.Uau.Evento.Infrastructure.Integracoes.Interfaces;
 using Event.Uau.Evento.ViewModel.Evento;
 using FluentValidation;
@@ -15,13 +13,15 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario
         private Persistence.EventUauDbContext context;
         private IMapper mapper;
         private IParceiroIntegracao parceiroIntegracao;
+        private readonly IPropostaIntegracao propostaIntegracao;
         private readonly EnviarPropostaFuncionarioCommandValidator validator;
 
-        public EnviarPropostaFuncionarioCommandHandler(Persistence.EventUauDbContext context, IMapper mapper, IParceiroIntegracao parceiroIntegracao)
+        public EnviarPropostaFuncionarioCommandHandler(Persistence.EventUauDbContext context, IMapper mapper, IParceiroIntegracao parceiroIntegracao, IPropostaIntegracao propostaIntegracao)
         {
             this.context = context;
             this.mapper = mapper;
             this.parceiroIntegracao = parceiroIntegracao;
+            this.propostaIntegracao = propostaIntegracao;
             this.validator = new EnviarPropostaFuncionarioCommandValidator(context, parceiroIntegracao);
         }
 
@@ -35,13 +35,25 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario
 
             await context.SaveChangesAsync(cancellationToken);
 
-            var funcionarioViewModel = mapper.Map<FuncionarioEventoViewModel>(funcionario);
+            try
+            {
+                await propostaIntegracao.EnviarPropostaParaCarteira(request.IdEvento, request.Usuario.Id, request.Salario, request.Token);
 
-            var parceiro = await parceiroIntegracao.BuscarParceiroPorIdUsuario(request.Usuario.Id, request.Token);
+                var funcionarioViewModel = mapper.Map<FuncionarioEventoViewModel>(funcionario);
 
-            funcionarioViewModel.Funcionario = parceiro.Usuario;
+                var parceiro = await parceiroIntegracao.BuscarParceiroPorIdUsuario(request.Usuario.Id, request.Token);
 
-            return funcionarioViewModel;
+                funcionarioViewModel.Funcionario = parceiro.Usuario;
+
+                return funcionarioViewModel;
+            }
+            catch
+            {
+                context.Funcionarios.Remove(funcionario);
+                await context.SaveChangesAsync();
+
+                throw;
+            }
         }
     }
 }

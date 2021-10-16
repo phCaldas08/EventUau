@@ -9,7 +9,7 @@ namespace Event.Uau.Carteira.ViewModel.Carteira
 
         public DateTime DataHora { get; set; }
 
-        public int? IdEvento { get; set; }
+        public int? IdEvento { get => OperacaoEventoPagador?.IdEvento ?? OperacaoEventoRecebedor?.IdEvento; }
 
         [JsonIgnore]
         public decimal ValorInicial { get; set; }
@@ -18,5 +18,11 @@ namespace Event.Uau.Carteira.ViewModel.Carteira
 
         [JsonIgnore]
         public TipoOperacaoViewModel TipoOperacao { get; set; }
+
+        [JsonIgnore]
+        public OperacaoEventoViewModel OperacaoEventoRecebedor { get; set; }
+
+        [JsonIgnore]
+        public OperacaoEventoViewModel OperacaoEventoPagador { get; set; }
     }
 }

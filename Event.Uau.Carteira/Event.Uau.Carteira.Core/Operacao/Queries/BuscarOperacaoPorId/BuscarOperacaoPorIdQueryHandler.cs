@@ -29,7 +29,7 @@ namespace Event.Uau.Carteira.Core.Operacao.Queries.BuscarOperacaoPorId
 
             var operacao = await context.Operacoes.FirstOrDefaultAsync(i => i.Id == request.IdOperacao && i.IdUsuario == request.IdUsuarioLogado);
 
-            var operacaoViewModel = mapper.Map<OperacaoViewModel>(request);
+            var operacaoViewModel = mapper.Map<OperacaoViewModel>(operacao);
 
             return operacaoViewModel;
         }

@@ -37,12 +37,6 @@ namespace Event.Uau.Carteira.Core.Helpers.DadosFake
                     IdUsuarioLogado = 1,
                     TipoOperacao = "RESERVA_PAGAMENTO",
                     Valor = 70,
-                },
-                new RealizarOperacaoCommand
-                {
-                    IdUsuarioLogado = 1,
-                    TipoOperacao = "RESERVA_RECEBIMENTO",
-                    Valor = 20
                 }
             };
 

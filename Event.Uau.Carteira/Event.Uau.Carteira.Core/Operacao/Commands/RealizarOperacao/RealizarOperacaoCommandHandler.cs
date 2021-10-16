@@ -22,7 +22,7 @@ namespace Event.Uau.Carteira.Core.Operacao.Commands.RealizarOperacao
             this.context = context;
             this.mapper = mapper;
             this.mediator = mediator;
-            this.validator = new RealizarOperacaoCommandValidator(context);
+            this.validator = new RealizarOperacaoCommandValidator(context, mapper);
         }
 
         public async Task<OperacaoViewModel> Handle(RealizarOperacaoCommand request, CancellationToken cancellationToken)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Event.Uau.Comum.Util.Exceptions;
 
 namespace Event.Uau.Comum.Configuracao.Helpers
 {
@@ -23,6 +24,13 @@ namespace Event.Uau.Comum.Configuracao.Helpers
         {
             Erro = exception.Message + exception.InnerException?.Message;
             TipoErro = exception.GetType().ToString();
+        }
+
+        public ExceptionBody(EventUauBadRequestException eventUauBadRequest)
+        {
+            this.Erro = eventUauBadRequest.Erro;
+            this.Mensagens = eventUauBadRequest.Mensagens;
+            this.TipoErro = eventUauBadRequest.TipoErro;
         }
     }
 }

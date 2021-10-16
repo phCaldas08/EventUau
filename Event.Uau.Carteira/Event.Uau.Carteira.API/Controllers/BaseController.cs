@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Event.Uau.Comum.Configuracao.Helpers;
+using Event.Uau.Carteira.Core.Carteira.Commads.CadastrarCarteira;
 
 namespace Event.Uau.Carteira.API.Controllers
 {
@@ -34,7 +35,24 @@ namespace Event.Uau.Carteira.API.Controllers
         override public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
             await Mediator.Send(new Core.Inicializacao.Commands.InicializacaoCommand());
+            await CadastraCarteira();
+
             await next();
+        }
+
+        private async Task CadastraCarteira()
+        {
+            try
+            {
+                var commandCarteira = new CadastrarCarteiraCommand
+                {
+                    IdUsuarioLogado = IdUsuarioLogado,
+                    Token = Token,
+                };
+
+                await Mediator.Send(commandCarteira);
+            }
+            catch { }
         }
     }
 }

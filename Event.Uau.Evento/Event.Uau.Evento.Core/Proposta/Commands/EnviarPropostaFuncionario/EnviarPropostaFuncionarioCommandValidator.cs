@@ -32,6 +32,7 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario
                                                         && i.Evento.DataInicio.AddHours(-2) < evento.DataInicio
                                                         && i.Evento.DataTermino.AddHours(2) > evento.DataInicio);
                 })
+                .When(obj => context.Eventos.Any(i => i.Id == obj.IdEvento && i.IdUsuario == obj.IdUsuarioLogado && i.DataInicio.AddHours(-2) > DateTime.Now))
                 .WithMessage("O parceiro já foi contratado para outra festa neste período.");
 
             RuleFor(i => new { i.IdEvento, i.Usuario.Id })

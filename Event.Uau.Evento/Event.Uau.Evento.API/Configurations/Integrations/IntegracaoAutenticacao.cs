@@ -8,12 +8,14 @@ namespace Event.Uau.Evento.API.Configurations.Integrations
 {
     public static class IntegracaoAutenticacao
     {
-        public static void ConfigureIntegracoesAutenticacao(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection ConfigureIntegracoesAutenticacao(this IServiceCollection services, IConfiguration configuration)
         {
             var url = configuration.GetSection("UrlAutenticacao").Value;
 
             services.AddSingleton<IUsuarioIntegracao>(new UsuarioIntegracao(url));
             services.AddSingleton<IParceiroIntegracao>(new ParceiroIntegracao(url));
+
+            return services;
         }
     }
 }

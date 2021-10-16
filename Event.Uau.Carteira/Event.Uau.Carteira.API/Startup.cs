@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Event.Uau.Carteira.API.Configurations.Integrations;
 
 namespace Event.Uau.Carteira.API
 {
@@ -30,7 +31,12 @@ namespace Event.Uau.Carteira.API
             Comum.Configuracao.Startup.StartupConfig.ConfigureServices<EventUauDbContext>(
                 services,
                 new MappingProfile(),
-                "EventUauDBCarteira");
+                "EventUauDBCarteira",
+                typeof(Core.Inicializacao.Commands.InicializacaoCommand));
+
+            services.ConfigureAutenticacaoIntegrations(Configuration)
+                .ConfigureEventoIntegrations(Configuration);
+            
 
         }
 

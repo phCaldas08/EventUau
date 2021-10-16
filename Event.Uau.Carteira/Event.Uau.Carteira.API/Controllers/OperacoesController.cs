@@ -14,18 +14,17 @@ namespace Event.Uau.Carteira.API.Controllers
     [ApiController]
     public class OperacoesController : BaseController
     {
-        [HttpPost("{TipoOperacao}")]
-        public async Task<ActionResult> RealizarOperacao([FromBody] RealizarOperacaoCommand body)
+        [HttpPost("{tipoOperacao}")]
+        public async Task<ActionResult> RealizarOperacao([FromRoute] string tipoOperacao, [FromBody] RealizarOperacaoCommand body)
         {
             body.IdUsuarioLogado = IdUsuarioLogado;
             body.Token = Token;
+            body.TipoOperacao = tipoOperacao;
 
             var result = await Mediator.Send(body);
 
             return Ok(result);
         }
 
-        [HttpPost("prosposta")]
-        
     }
 }

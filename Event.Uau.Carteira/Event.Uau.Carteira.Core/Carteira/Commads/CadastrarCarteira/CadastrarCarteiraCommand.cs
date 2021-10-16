@@ -5,8 +5,5 @@ namespace Event.Uau.Carteira.Core.Carteira.Commads.CadastrarCarteira
 {
     public class CadastrarCarteiraCommand  : EventUauRequest<int>
     {
-        public CadastrarCarteiraCommand()
-        {
-        }
     }
 }

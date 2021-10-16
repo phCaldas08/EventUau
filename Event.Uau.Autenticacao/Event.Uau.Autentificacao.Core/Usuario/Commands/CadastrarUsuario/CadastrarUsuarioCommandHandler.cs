@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
+using Event.Uau.Autenticacao.Core.Helpers;
+using Event.Uau.Autenticacao.Infrastructure.Integracoes.Interfaces;
 using Event.Uau.Autenticacao.Persistence;
 using FluentValidation;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace Event.Uau.Autenticacao.Core.Usuario.Commands.CadastrarUsuario
 {

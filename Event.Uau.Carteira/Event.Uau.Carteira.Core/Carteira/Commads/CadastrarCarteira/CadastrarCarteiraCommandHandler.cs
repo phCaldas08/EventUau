@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
+using Event.Uau.Carteira.Infrastructure.Integracoes.Interfaces;
 using Event.Uau.Carteira.Persistence;
 using FluentValidation;
 using MediatR;
@@ -13,6 +14,7 @@ namespace Event.Uau.Carteira.Core.Carteira.Commads.CadastrarCarteira
         private readonly EventUauDbContext context;
         private readonly IMapper mapper;
         private readonly IMediator mediator;
+        private readonly IUsuarioIntegracao usuarioIntegracao;
         private readonly CadastrarCarteiraCommandValidator validator;
 
         public CadastrarCarteiraCommandHandler(EventUauDbContext context, IMapper mapper, IMediator mediator)

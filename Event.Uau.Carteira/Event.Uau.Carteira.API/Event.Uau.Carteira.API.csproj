@@ -7,9 +7,13 @@
 
   <ItemGroup>
     <None Remove="Controllers\" />
+    <None Remove="Configuration\" />
+    <None Remove="Configurations\Integration\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Configurations\" />
+    <Folder Include="Configurations\Integrations\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Event.Uau.Carteira.Core\Event.Uau.Carteira.Core.csproj">

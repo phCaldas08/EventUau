@@ -16,6 +16,7 @@
     <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.Util\Event.Uau.Comum.Util.csproj" />
     <ProjectReference Include="..\Event.Uau.Carteira.Persistence\Event.Uau.Carteira.Persistence.csproj" />
     <ProjectReference Include="..\Event.Uau.Carteira.ViewModel\Event.Uau.Carteira.ViewModel.csproj" />
+    <ProjectReference Include="..\Event.Uau.Carteira.Infrastructure\Event.Uau.Carteira.Infrastructure.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Helpers\" />
@@ -39,6 +40,9 @@
     <None Remove="TipoOperacao\Queries\" />
     <None Remove="TipoOperacao\Queries\BuscarTipoOperacaoPorId\" />
     <None Remove="Operacao\Commands\OperacaoEvento\" />
+    <None Remove="PropostaEvento\" />
+    <None Remove="PropostaEvento\Commands\" />
+    <None Remove="PropostaEvento\Commands\CriarOperacaoEvento\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\" />
@@ -61,6 +65,8 @@
     <Folder Include="TipoOperacao\Commands\CadastrarTipoOperacao\" />
     <Folder Include="TipoOperacao\Queries\" />
     <Folder Include="TipoOperacao\Queries\BuscarTipoOperacaoPorId\" />
-    <Folder Include="Operacao\Commands\CriarOperacaoEvento\" />
+    <Folder Include="PropostaEvento\" />
+    <Folder Include="PropostaEvento\Commands\" />
+    <Folder Include="PropostaEvento\Commands\CriarOperacaoEvento\" />
   </ItemGroup>
 </Project>

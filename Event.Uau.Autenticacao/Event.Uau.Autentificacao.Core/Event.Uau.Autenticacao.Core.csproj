@@ -60,5 +60,6 @@
     <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.Util\Event.Uau.Comum.Util.csproj" />
     <ProjectReference Include="..\Event.Uau.Autentificacao.Persistence\Event.Uau.Autenticacao.Persistence.csproj" />
     <ProjectReference Include="..\Event.Uau.Autenticacao.ViewModel\Event.Uau.Autenticacao.ViewModel.csproj" />
+    <ProjectReference Include="..\Event.Uau.Autenticacao.Infrastructure\Event.Uau.Autenticacao.Infrastructure.csproj" />
   </ItemGroup>
 </Project>
