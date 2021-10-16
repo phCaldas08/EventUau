@@ -69,7 +69,57 @@ namespace Event.Uau.Autenticacao.Core.Helpers.DadosFakes
                     DataNascimento = DateTime.Today.AddYears(-50),
                     Email = "gabrielmarques@parceiros.com",
                     Nome = "Gabriel Marques",
-                    Telefone = "(11) 91234-4325",
+                    Telefone = "(11) 91234-4325"
+                },
+                new Usuario.Commands.CadastrarUsuario.CadastrarUsuarioCommand
+                {
+                    ConfirmarSenha = "@Parceiro123",
+                    Senha = "@Parceiro123",
+                    Cpf = "147.188.370-14",
+                    DataNascimento = DateTime.Today.AddYears(-35),
+                    Email = "dilanferreira@parceiros.com",
+                    Nome = "Dilan Ferreira",
+                    Telefone = "(11) 95425-4325",
+                },
+                new Usuario.Commands.CadastrarUsuario.CadastrarUsuarioCommand
+                {
+                    ConfirmarSenha = "@Parceiro123",
+                    Senha = "@Parceiro123",
+                    Cpf = "624.092.220-05",
+                    DataNascimento = DateTime.Today.AddYears(-42),
+                    Email = "rebeccakeil@parceiros.com",
+                    Nome = "Rebecca Keil",
+                    Telefone = "(11) 94324-4325",
+                },
+                new Usuario.Commands.CadastrarUsuario.CadastrarUsuarioCommand
+                {
+                    ConfirmarSenha = "@Parceiro123",
+                    Senha = "@Parceiro123",
+                    Cpf = "428.484.220-09",
+                    DataNascimento = DateTime.Today.AddYears(-44),
+                    Email = "hazaeljanes@parceiros.com",
+                    Nome = "Hazael Janes",
+                    Telefone = "(11) 94323-4325",
+                },
+                new Usuario.Commands.CadastrarUsuario.CadastrarUsuarioCommand
+                {
+                    ConfirmarSenha = "@Parceiro123",
+                    Senha = "@Parceiro123",
+                    Cpf = "210.583.070-61",
+                    DataNascimento = DateTime.Today.AddYears(-23),
+                    Email = "eliseufraga@parceiros.com",
+                    Nome = "Eliseu Fraga",
+                    Telefone = "(11) 94322-4325",
+                },
+                new Usuario.Commands.CadastrarUsuario.CadastrarUsuarioCommand
+                {
+                    ConfirmarSenha = "@Parceiro123",
+                    Senha = "@Parceiro123",
+                    Cpf = "895.035.900-60",
+                    DataNascimento = DateTime.Today.AddYears(-39),
+                    Email = "simarabastos@parceiros.com",
+                    Nome = "Simara Bastos",
+                    Telefone = "(11) 94321-4325",
                 }
             };
 
