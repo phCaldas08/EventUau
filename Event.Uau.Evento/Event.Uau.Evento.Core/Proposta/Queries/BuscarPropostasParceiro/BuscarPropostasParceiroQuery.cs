@@ -6,5 +6,6 @@ namespace Event.Uau.Evento.Core.Proposta.Queries.BuscarPropostasParceiro
 {
     public class BuscarPropostasParceiroQuery : EventUauPaginacaoRequest<ListaPropostaEventoViewModel>
     {
+        public string StatusContratacao { get; set; }
     }
 }

@@ -46,6 +46,10 @@ namespace Event.Uau.Evento.Persistence
 
             modelBuilder.Entity<Domain.Entities.FuncionarioEvento>(entity => {
                 entity.HasKey(e => new { e.IdEvento, e.IdUsuario });
+
+                entity.HasOne(i => i.StatusContratacao)
+                    .WithMany(i => i.Funcionarios)
+                    .HasForeignKey(i => i.IdStatusContratacao);
             });
 
             modelBuilder.Entity<Domain.Entities.Status>(entity => {

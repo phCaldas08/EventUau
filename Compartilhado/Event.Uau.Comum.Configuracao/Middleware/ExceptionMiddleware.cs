@@ -7,6 +7,7 @@ using FluentValidation;
 using Event.Uau.Comum.Configuracao.Helpers;
 using Newtonsoft.Json;
 using Event.Uau.Comum.Util.Exceptions;
+using Flurl.Http;
 
 namespace Event.Uau.Comum.Configuracao.Middleware
 {
@@ -30,6 +31,13 @@ namespace Event.Uau.Comum.Configuracao.Middleware
             if(exception is ValidationException validationException)
             {
                 body = new ExceptionBody(validationException);
+                context.Response.StatusCode = 400;
+            }
+            else if(exception is FlurlHttpException flurlHttpException)
+            {
+                var eventUauException = await flurlHttpException.GetResponseJsonAsync<EventUauBadRequestException>();
+
+                body = new ExceptionBody(eventUauException);
                 context.Response.StatusCode = 400;
             }
             else if(exception is EventUauBadRequestException eventUauBadRequest)

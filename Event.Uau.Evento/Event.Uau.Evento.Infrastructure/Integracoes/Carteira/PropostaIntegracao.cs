@@ -27,6 +27,8 @@ namespace Event.Uau.Evento.Infrastructure.Integracoes.Carteira
                 .WithOAuthBearerToken(token)
                 .PostJsonAsync(body);
 
+            var exception = requestResult.ResponseMessage;
+
             return requestResult.StatusCode switch
             {
                 200 => true,

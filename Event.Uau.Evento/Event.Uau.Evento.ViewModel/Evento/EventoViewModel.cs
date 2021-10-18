@@ -39,12 +39,12 @@ namespace Event.Uau.Evento.ViewModel.Evento
 
         public List<FuncionarioEventoViewModel> FuncionariosContratados
         {
-            get => FuncionariosEvento?.Where(i => i.Contratado).ToList() ?? null;
+            get => FuncionariosEvento?.Where(i => i.StatusContratacao.Id.Equals("AC", StringComparison.CurrentCultureIgnoreCase)).ToList() ?? null;
         }
 
         public List<FuncionarioEventoViewModel> FuncionarioMatch
         {
-            get => FuncionariosEvento?.Where(i => !i.Contratado).ToList() ?? null;
+            get => FuncionariosEvento?.Where(i => i.StatusContratacao.Id.Equals("PEN", StringComparison.CurrentCultureIgnoreCase)).ToList() ?? null;
         }
     }
 }

@@ -17,6 +17,16 @@
     <Folder Include="Proposta\" />
     <Folder Include="Proposta\Commands\" />
     <Folder Include="Proposta\Queries\" />
+    <Folder Include="Inicializacao\" />
+    <Folder Include="Inicializacao\Commands\" />
+    <Folder Include="Helpers\DadosFakes\" />
+    <Folder Include="StatusContratacao\" />
+    <Folder Include="StatusContratacao\Commands\" />
+    <Folder Include="StatusContratacao\Queries\" />
+    <Folder Include="StatusContratacao\Commands\CadastrarStatusContratacao\" />
+    <Folder Include="StatusContratacao\Queries\BuscarStatusContratacaoPorId\" />
+    <Folder Include="Proposta\Commands\AceitarProposta\" />
+    <Folder Include="Proposta\Queries\BuscarPropostaPorId\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
@@ -29,6 +39,16 @@
     <None Remove="Proposta\" />
     <None Remove="Proposta\Commands\" />
     <None Remove="Proposta\Queries\" />
+    <None Remove="Inicializacao\" />
+    <None Remove="Inicializacao\Commands\" />
+    <None Remove="Helpers\DadosFakes\" />
+    <None Remove="StatusContratacao\" />
+    <None Remove="StatusContratacao\Commands\" />
+    <None Remove="StatusContratacao\Queries\" />
+    <None Remove="StatusContratacao\Commands\CadastrarStatusContratacao\" />
+    <None Remove="StatusContratacao\Queries\BuscarStatusContratacaoPorId\" />
+    <None Remove="Proposta\Commands\AceitarProposta\" />
+    <None Remove="Proposta\Queries\BuscarPropostaPorId\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.Util\Event.Uau.Comum.Util.csproj" />

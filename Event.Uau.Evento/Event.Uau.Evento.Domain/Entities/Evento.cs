@@ -35,8 +35,6 @@ namespace Event.Uau.Evento.Domain.Entities
 
         public virtual Status Status { get; set; }
 
-        public virtual StatusContratacao StatusContratacao { get; set; }
-
         public virtual Endereco Endereco { get; set; }
 
         public virtual List<FuncionarioEvento> Funcionarios { get; set; }

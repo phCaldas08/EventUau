@@ -23,7 +23,7 @@ namespace Event.Uau.Evento.Core.Helpers.AutoMapper
 
             CreateMap<EnviarPropostaFuncionarioCommand, Domain.Entities.FuncionarioEvento>()
                 .ForMember(i => i.IdUsuario, opt => opt.MapFrom(i => i.Usuario.Id))
-                .ForMember(i => i.Contratado, opt => opt.MapFrom(i => false));
+                .ForMember(i => i.IdStatusContratacao, opt => opt.MapFrom(i => "PEN"));
 
             CreateMap<Domain.Entities.FuncionarioEvento, ViewModel.Evento.FuncionarioEventoViewModel>();
 
@@ -31,6 +31,10 @@ namespace Event.Uau.Evento.Core.Helpers.AutoMapper
                 .ForMember(i => i.ValorProposta, opt => opt.MapFrom(i => i.Salario));
 
             CreateMap<Domain.Entities.Evento, ViewModel.Evento.PropostaEventoViewModel>();
+
+            CreateMap<StatusContratacao.Commands.CadastrarStatusContratacao.CadastrarStatusContratacaoCommand, Domain.Entities.StatusContratacao>();
+
+            CreateMap<Domain.Entities.StatusContratacao, ViewModel.Evento.StatusContratacaoViewModel>();
                 
         }
     }
