@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Event.Uau.Evento.Core.Proposta.Commands.AceitarProposta;
 using Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
@@ -16,6 +17,18 @@ namespace Event.Uau.Evento.API.Controllers
 
         [HttpPost]
         public async Task<IActionResult> EnviarProposta([FromRoute] int idEvento, [FromBody] EnviarPropostaFuncionarioCommand command)
+        {
+            command.IdUsuarioLogado = IdUsuarioLogado;
+            command.Token = Token;
+            command.IdEvento = idEvento;
+
+            var result = await Mediator.Send(command);
+
+            return Ok(result);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> AceitarProposta([FromRoute] int idEvento, [FromBody] AceitarPropostaCommand command)
         {
             command.IdUsuarioLogado = IdUsuarioLogado;
             command.Token = Token;

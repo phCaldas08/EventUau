@@ -28,7 +28,7 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario
                     var evento = context.Eventos.FirstOrDefault(i => i.Id == obj.IdEvento);
 
                     return !context.Funcionarios.Any(i => i.IdUsuario == obj.Id
-                                                        && i.Contratado
+                                                        && i.StatusContratacao.Id.Equals("AC", StringComparison.CurrentCultureIgnoreCase)
                                                         && i.Evento.DataInicio.AddHours(-2) < evento.DataInicio
                                                         && i.Evento.DataTermino.AddHours(2) > evento.DataInicio);
                 })

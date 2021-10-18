@@ -7,12 +7,12 @@ namespace Event.Uau.Evento.ViewModel.Evento
     {
         public decimal Salario { get; set; }
 
-        public bool Contratado { get; set; }
-
         public Autenticacao.UsuarioViewModel Funcionario { get; set; }
 
         [JsonIgnore]
         public int IdUsuario { get; set; }
+
+        public StatusContratacaoViewModel StatusContratacao { get; set; }
 
     }
 }

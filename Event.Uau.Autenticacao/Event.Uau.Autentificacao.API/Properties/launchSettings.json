@@ -17,13 +17,21 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
+    "Event.Uau.Autenticacao.API": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:11609;http://localhost:13401",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
     "Event.Uau.Autentificacao.API": {
       "commandName": "Project",
       "launchUrl": "weatherforecast",
+      "applicationUrl": "https://localhost:6001;http://localhost:20655",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "applicationUrl": "https://localhost:6001;http://localhost:20655"
+      }
     }
   }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
+using Event.Uau.Evento.Core.Proposta.Queries.BuscarPropostaPorId;
 using Event.Uau.Evento.Infrastructure.Integracoes.Interfaces;
 using Event.Uau.Evento.ViewModel.Evento;
 using FluentValidation;
@@ -12,16 +13,16 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario
     {
         private Persistence.EventUauDbContext context;
         private IMapper mapper;
-        private IParceiroIntegracao parceiroIntegracao;
         private readonly IPropostaIntegracao propostaIntegracao;
+        private readonly IMediator mediator;
         private readonly EnviarPropostaFuncionarioCommandValidator validator;
 
-        public EnviarPropostaFuncionarioCommandHandler(Persistence.EventUauDbContext context, IMapper mapper, IParceiroIntegracao parceiroIntegracao, IPropostaIntegracao propostaIntegracao)
+        public EnviarPropostaFuncionarioCommandHandler(Persistence.EventUauDbContext context, IMapper mapper, IParceiroIntegracao parceiroIntegracao, IPropostaIntegracao propostaIntegracao, IMediator mediator)
         {
             this.context = context;
             this.mapper = mapper;
-            this.parceiroIntegracao = parceiroIntegracao;
             this.propostaIntegracao = propostaIntegracao;
+            this.mediator = mediator;
             this.validator = new EnviarPropostaFuncionarioCommandValidator(context, parceiroIntegracao);
         }
 
@@ -39,13 +40,9 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario
             {
                 await propostaIntegracao.EnviarPropostaParaCarteira(request.IdEvento, request.Usuario.Id, request.Salario, request.Token);
 
-                var funcionarioViewModel = mapper.Map<FuncionarioEventoViewModel>(funcionario);
+                var query = new BuscaProspostaPorIdQuery { IdEvento = request.IdEvento, IdUsuarioLogado = request.Usuario.Id, Token = request.Token };
 
-                var parceiro = await parceiroIntegracao.BuscarParceiroPorIdUsuario(request.Usuario.Id, request.Token);
-
-                funcionarioViewModel.Funcionario = parceiro.Usuario;
-
-                return funcionarioViewModel;
+                return  await mediator.Send(query);
             }
             catch
             {

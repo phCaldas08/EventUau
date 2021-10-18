@@ -32,8 +32,12 @@ namespace Event.Uau.Evento.Core.Proposta.Queries.BuscarPropostasParceiro
             var tamanho = request.TamanhoPagina;
 
             var propostasQuery = context.Funcionarios
-                .Where(i => i.IdUsuario == request.IdUsuarioLogado && !i.Contratado && i.Evento.DataInicio > DateTime.Now)
-                .OrderBy(i => i.Evento.DataInicio);
+                .Where(i => i.IdUsuario == request.IdUsuarioLogado && i.Evento.DataInicio > DateTime.Now);
+
+            if (!string.IsNullOrWhiteSpace(request.StatusContratacao))
+                propostasQuery = propostasQuery.Where(i => i.StatusContratacao.Descricao.Equals(request.StatusContratacao, StringComparison.CurrentCultureIgnoreCase));
+
+            var propostasOrdenadas = propostasQuery.OrderBy(i => i.Evento.DataInicio);
 
             var tamanhoTotal = propostasQuery.Count();
 
