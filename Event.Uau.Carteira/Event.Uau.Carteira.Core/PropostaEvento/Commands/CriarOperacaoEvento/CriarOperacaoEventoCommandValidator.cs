@@ -35,6 +35,7 @@ namespace Event.Uau.Carteira.Core.ProspostaEvento.Commands.CriarOperacaoEvento
                 .MustAsync((request, c) => SaldoDisponivelAsync(request, context, mapper))
                 .WithMessage("Saldo insuficiente para essa operação.");
 
+
         }
 
         private async Task<bool> SaldoDisponivelAsync(CriarOperacaoEventoCommand request, Persistence.EventUauDbContext context, IMapper mapper)

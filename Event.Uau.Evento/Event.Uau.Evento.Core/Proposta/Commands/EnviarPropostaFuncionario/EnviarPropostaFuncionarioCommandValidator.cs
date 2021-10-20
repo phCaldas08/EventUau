@@ -20,7 +20,10 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario
                 .WithMessage("O salário deve ser entre R$10 e R$10.000");
 
             RuleFor(i => new { i.IdEvento, i.IdUsuarioLogado })
-                .Must(obj => context.Eventos.Any(i => i.Id == obj.IdEvento && i.IdUsuario == obj.IdUsuarioLogado && i.DataInicio.AddHours(-2) > DateTime.Now))
+                .Must(obj => context.Eventos.Any(i => i.Id == obj.IdEvento
+                                                    && i.IdUsuario == obj.IdUsuarioLogado
+                                                    //&& i.DataInicio.AddHours(-2) > DateTime.Now
+                                                    && (i.Status.Id.Equals("CRIADO", StringComparison.CurrentCultureIgnoreCase) || i.Status.Id.Equals("CONTRATANDO", StringComparison.CurrentCultureIgnoreCase))))
                 .WithMessage("Nenhum evento encontrado.");
 
             RuleFor(i => new { i.IdEvento, i.Usuario.Id })

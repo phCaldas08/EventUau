@@ -9,9 +9,12 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.AceitarProposta
     {
         public AceitarPropostaCommandValidator(EventUauDbContext context)
         {
-            RuleFor(i => i.IdEvento)
-                .Must(idEvento => context.Eventos.Any(i => i.Id == idEvento && i.DataInicio > DateTime.Today.AddHours(-3)))
-                .WithMessage("Evento não encontrado.");
+            RuleFor(i => new { i.IdEvento, i.IdUsuarioLogado })
+                .Must(obj => context.Eventos.Any(i => i.Id == obj.IdEvento
+                                                    && i.IdUsuario == obj.IdUsuarioLogado
+                                                    && i.DataInicio.AddHours(-2) > DateTime.Now
+                                                    && (i.Status.Id.Equals("CRIADO", StringComparison.CurrentCultureIgnoreCase) || i.Status.Id.Equals("CONTRATANDO", StringComparison.CurrentCultureIgnoreCase))))
+                .WithMessage("Nenhum evento encontrado.");
 
             RuleFor(i => i)
                 .Must(request => context.Funcionarios.Any(i => i.IdEvento == request.IdEvento && i.IdUsuario == request.IdUsuarioLogado && i.IdStatusContratacao.Equals("PEN", StringComparison.CurrentCultureIgnoreCase)))

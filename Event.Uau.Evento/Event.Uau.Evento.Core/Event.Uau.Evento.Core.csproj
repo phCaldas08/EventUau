@@ -27,6 +27,9 @@
     <Folder Include="StatusContratacao\Queries\BuscarStatusContratacaoPorId\" />
     <Folder Include="Proposta\Commands\AceitarProposta\" />
     <Folder Include="Proposta\Queries\BuscarPropostaPorId\" />
+    <Folder Include="Evento\Commands\FinalizarEvento\" />
+    <Folder Include="Status\" />
+    <Folder Include="Evento\Commands\AlterarStatusEvento\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
@@ -49,6 +52,10 @@
     <None Remove="StatusContratacao\Queries\BuscarStatusContratacaoPorId\" />
     <None Remove="Proposta\Commands\AceitarProposta\" />
     <None Remove="Proposta\Queries\BuscarPropostaPorId\" />
+    <None Remove="Evento\Commands\FinalizarEvento\" />
+    <None Remove="StatusContratacao\StatusContratacao\" />
+    <None Remove="Status\" />
+    <None Remove="Evento\Commands\AlterarStatusEvento\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.Util\Event.Uau.Comum.Util.csproj" />

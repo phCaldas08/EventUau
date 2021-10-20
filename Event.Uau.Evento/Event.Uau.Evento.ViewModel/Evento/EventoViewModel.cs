@@ -36,6 +36,17 @@ namespace Event.Uau.Evento.ViewModel.Evento
 
         public StatusViewModel Status { get; set; }
 
+        public string StatusLabel
+        {
+            get
+            {
+                if ((Status.Id.Equals("CRIADO", StringComparison.CurrentCultureIgnoreCase) || Status.Id.Equals("CONTRATANDO", StringComparison.CurrentCultureIgnoreCase)) && DataInicio <= DateTime.Now)
+                    return "Em Andamento";
+                else
+                    return Status.Descricao;
+            }
+        }
+
 
         public List<FuncionarioEventoViewModel> FuncionariosContratados
         {

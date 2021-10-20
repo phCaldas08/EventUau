@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
+using Event.Uau.Evento.Core.Evento.Commands.AlterarStatusEvento;
 using Event.Uau.Evento.Core.Proposta.Queries.BuscarPropostaPorId;
 using Event.Uau.Evento.Infrastructure.Integracoes.Interfaces;
 using Event.Uau.Evento.ViewModel.Evento;
@@ -38,11 +39,7 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario
 
             try
             {
-                await propostaIntegracao.EnviarPropostaParaCarteira(request.IdEvento, request.Usuario.Id, request.Salario, request.Token);
-
-                var query = new BuscaProspostaPorIdQuery { IdEvento = request.IdEvento, IdUsuarioLogado = request.Usuario.Id, Token = request.Token };
-
-                return  await mediator.Send(query);
+                await propostaIntegracao.EnviarPropostaParaCarteira(request.IdEvento, request.Usuario.Id, request.Salario, request.Token);   
             }
             catch
             {
@@ -51,6 +48,31 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario
 
                 throw;
             }
+
+            await AlterarStatusParaContratando(request);
+
+            var query = new BuscaProspostaPorIdQuery
+            {
+                IdEvento = request.IdEvento,
+                IdUsuarioLogado = request.Usuario.Id,
+                Token = request.Token
+            };
+
+            return await mediator.Send(query);
+        }
+
+
+        private async Task AlterarStatusParaContratando(EnviarPropostaFuncionarioCommand request)
+        {
+            var atualizarCommand = new AlterarStatusEventoCommand
+            {
+                IdEvento = request.IdEvento,
+                IdUsuarioLogado = request.IdUsuarioLogado,
+                Token = request.Token,
+                Status = Domain.Enums.StatusEnum.CONTRATANDO
+            };
+
+            await mediator.Send(atualizarCommand);
         }
     }
 }

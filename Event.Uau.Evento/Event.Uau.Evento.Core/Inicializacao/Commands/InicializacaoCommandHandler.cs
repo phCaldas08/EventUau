@@ -28,6 +28,9 @@ namespace Event.Uau.Evento.Core.Inicializacao.Commands
             if (!await context.StatusContratacoes.AnyAsync())
                 await mediator.CarregarDadosStatusContratacao();
 
+            if (!await context.Status.AnyAsync())
+                await mediator.CarregarDadosStatus();
+
 
             rodado = true;
 

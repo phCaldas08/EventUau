@@ -36,5 +36,23 @@ namespace Event.Uau.Evento.Infrastructure.Integracoes.Carteira
                 _ => throw new Exception("Erro interno ao persistir proposta na carteira."),
             };
         }
+
+        public async Task<bool> FinalizarPropostasEvento(int idEvento, string token)
+        {
+            var body = new
+            {
+            };
+
+            var requestResult = await $"{url}/eventos/{idEvento}/propostas/finalizar"
+                .WithOAuthBearerToken(token)
+                .PutJsonAsync(body);
+
+            return requestResult.StatusCode switch
+            {
+                200 => true,
+                400 => throw await requestResult.GetJsonAsync<EventUauBadRequestException>(),
+                _ => throw new Exception("Erro interno ao persistir proposta na carteira."),
+            };
+        }
     }
 }

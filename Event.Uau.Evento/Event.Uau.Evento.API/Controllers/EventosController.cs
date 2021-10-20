@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Event.Uau.Evento.Core.Evento.Commands.CriarEvento;
+using Event.Uau.Evento.Core.Evento.Commands.FinalizarEvento;
 using Event.Uau.Evento.Core.Evento.Queries.BuscaEventoPorId;
 using Event.Uau.Evento.Core.Evento.Queries.ListarEventos;
 using Microsoft.AspNetCore.Cors;
@@ -48,6 +49,18 @@ namespace Event.Uau.Evento.API.Controllers
             var createdEvent = await Mediator.Send(command);
 
             return Created(string.Empty, createdEvent);
+        }
+
+        [HttpPut("{idEvento}/finalizar")]
+        public async Task<IActionResult> ActionResult([FromRoute] int idEvento, [FromBody] FinalizarEventoCommand command)
+        {
+            command.IdEvento = idEvento;
+            command.IdUsuarioLogado = IdUsuarioLogado;
+            command.Token = Token;
+
+            var result = await Mediator.Send(command);
+
+            return Ok(result);
         }
 
     }

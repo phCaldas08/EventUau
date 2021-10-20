@@ -35,6 +35,10 @@ namespace Event.Uau.Evento.Core.Helpers.AutoMapper
             CreateMap<StatusContratacao.Commands.CadastrarStatusContratacao.CadastrarStatusContratacaoCommand, Domain.Entities.StatusContratacao>();
 
             CreateMap<Domain.Entities.StatusContratacao, ViewModel.Evento.StatusContratacaoViewModel>();
+
+            CreateMap<Domain.Entities.Status, ViewModel.Evento.StatusViewModel>();
+
+            CreateMap<Status.Commands.CadastrarStatus.CadastrarStatusCommand, Domain.Entities.Status>();
                 
         }
     }

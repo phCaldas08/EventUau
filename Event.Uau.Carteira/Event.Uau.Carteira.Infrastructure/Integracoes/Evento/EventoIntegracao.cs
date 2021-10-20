@@ -14,6 +14,22 @@ namespace Event.Uau.Carteira.Infrastructure.Integracoes.Evento
             this.url = url;
         }
 
+        public async Task<bool> VerificarEventoFinalizadoExistente(int idEvento, string token)
+        {
+            var requestResult = await $"{url}/eventos/{idEvento}"
+                .WithOAuthBearerToken(token)
+                .GetAsync();
+
+            if (requestResult.StatusCode == 200)
+            {
+                dynamic json = await requestResult.GetJsonAsync();
+
+                return json.status.id == "FINALIZADO";
+            }
+            else
+                return false;
+        }
+
         public async Task<bool> VerificarIdExistente(int idEvento, string token)
         {
             var requestResult = await $"{url}/eventos/{idEvento}"
