@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Event.Uau.Comum.Util.Mediator;
 
 namespace Event.Uau.Evento.Core.Inicializacao.Commands
