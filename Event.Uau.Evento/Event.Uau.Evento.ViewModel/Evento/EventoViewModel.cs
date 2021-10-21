@@ -36,15 +36,26 @@ namespace Event.Uau.Evento.ViewModel.Evento
 
         public StatusViewModel Status { get; set; }
 
+        public string StatusLabel
+        {
+            get
+            {
+                if ((Status.Id.Equals("CRIADO", StringComparison.CurrentCultureIgnoreCase) || Status.Id.Equals("CONTRATANDO", StringComparison.CurrentCultureIgnoreCase)) && DataInicio <= DateTime.Now)
+                    return "Em Andamento";
+                else
+                    return Status.Descricao;
+            }
+        }
+
 
         public List<FuncionarioEventoViewModel> FuncionariosContratados
         {
-            get => FuncionariosEvento?.Where(i => i.Contratado).ToList() ?? null;
+            get => FuncionariosEvento?.Where(i => i.StatusContratacao.Id.Equals("AC", StringComparison.CurrentCultureIgnoreCase)).ToList() ?? null;
         }
 
         public List<FuncionarioEventoViewModel> FuncionarioMatch
         {
-            get => FuncionariosEvento?.Where(i => !i.Contratado).ToList() ?? null;
+            get => FuncionariosEvento?.Where(i => i.StatusContratacao.Id.Equals("PEN", StringComparison.CurrentCultureIgnoreCase)).ToList() ?? null;
         }
     }
 }

@@ -9,10 +9,12 @@
     <None Remove="MediatR" />
     <None Remove="Extensoes\" />
     <None Remove="FluentValidation.AspNetCore" />
+    <None Remove="Exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Mediator\" />
     <Folder Include="Extensoes\" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MediatR" Version="9.0.0" />

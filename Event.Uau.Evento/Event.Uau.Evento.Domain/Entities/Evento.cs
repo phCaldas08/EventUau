@@ -31,11 +31,9 @@ namespace Event.Uau.Evento.Domain.Entities
 
         public bool EstaVisivel { get; set; }
 
-        public int IdStatus { get; set; }
+        public string IdStatus { get; set; }
 
         public virtual Status Status { get; set; }
-
-        public virtual StatusContratacao StatusContratacao { get; set; }
 
         public virtual Endereco Endereco { get; set; }
 

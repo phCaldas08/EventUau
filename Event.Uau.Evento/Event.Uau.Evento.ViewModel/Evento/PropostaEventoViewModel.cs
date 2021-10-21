@@ -22,5 +22,7 @@ namespace Event.Uau.Evento.ViewModel.Evento
         public string Observacao { get; set; }
 
         public decimal ValorProposta { get; set; }
+
+        public StatusContratacaoViewModel StatusContratacao { get; set; }
     }
 }

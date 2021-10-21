@@ -25,7 +25,7 @@ namespace Event.Uau.Comum.Configuracao.Startup
 {
     public static class StartupConfig
     {
-        public static void ConfigureServices<TContext>(IServiceCollection services, Profile profile, string inMemoryDatabaseName)
+        public static void ConfigureServices<TContext>(IServiceCollection services, Profile profile, string inMemoryDatabaseName, Type typeMediator)
                 where TContext : DbContext 
         {
             var mapperConfig = new MapperConfiguration(mc =>
@@ -35,7 +35,7 @@ namespace Event.Uau.Comum.Configuracao.Startup
 
             IMapper mapper = mapperConfig.CreateMapper();
             services.AddSingleton(mapper);
-            services.AddMediatR();
+            services.AddMediatR(typeMediator);
 
             services.AddDbContext<TContext>(options =>
                 options.UseInMemoryDatabase(inMemoryDatabaseName));

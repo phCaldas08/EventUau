@@ -40,9 +40,11 @@ namespace Event.Uau.Evento.API
             Comum.Configuracao.Startup.StartupConfig.ConfigureServices<EventUauDbContext>(
                 services,
                 new MappingProfile(),
-                "EventUauDBEvento");
+                "EventUauDBEvento",
+                typeof(Core.Evento.Commands.CriarEvento.CriarEventoCommand));
 
-            services.ConfigureIntegracoesAutenticacao(Configuration);
+            services.ConfigureIntegracoesAutenticacao(Configuration)
+                .ConfigureCarteiraIntegrations(Configuration);
 
         }
 

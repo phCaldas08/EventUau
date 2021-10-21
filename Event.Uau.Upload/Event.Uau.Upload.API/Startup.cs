@@ -30,7 +30,8 @@ namespace Event.Uau.Upload.API
             Comum.Configuracao.Startup.StartupConfig.ConfigureServices<EventUauDbContext>(
                 services,
                 new MappingProfile(),
-                "EventUauDBUpload");
+                "EventUauDBUpload",
+                typeof(Core.Arquivo.Commands.DeletarArquivo.DeletarArquivoCommand));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

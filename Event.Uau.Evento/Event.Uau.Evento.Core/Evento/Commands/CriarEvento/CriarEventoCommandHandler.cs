@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
+using Event.Uau.Evento.Core.Evento.Commands.AlterarStatusEvento;
 using Event.Uau.Evento.Persistence;
 using Event.Uau.Evento.ViewModel.Evento;
 using FluentValidation;
@@ -33,11 +34,15 @@ namespace Event.Uau.Evento.Core.Evento.Commands.CriarEvento
 
             await eventUauDbContext.SaveChangesAsync(cancellationToken);
 
-            return await mediator.Send(new Queries.BuscaEventoPorId.BuscaEventoPorIdQuery {
+            var atualizarCommand = new AlterarStatusEventoCommand
+            {
                 IdEvento = newEvent.Id,
                 IdUsuarioLogado = request.IdUsuarioLogado,
-                Token = request.Token
-            });
+                Token = request.Token,
+                Status = Domain.Enums.StatusEnum.CRIADO
+            };
+
+            return await mediator.Send(atualizarCommand);
 
         }
     }

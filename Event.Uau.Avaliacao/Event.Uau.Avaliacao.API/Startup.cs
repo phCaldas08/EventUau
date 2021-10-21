@@ -29,7 +29,8 @@ namespace Event.Uau.Avaliacao.API
         {
             StartupConfig.ConfigureServices<DbContext>(services,
                 null,
-                "AvaliacoesDb");
+                "AvaliacoesDb",
+                typeof(int));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
