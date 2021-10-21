@@ -50,8 +50,6 @@
     <Folder Include="TiposEnderecos\Queries\" />
     <Folder Include="TiposEnderecos\Commands\CadastrarTipoEndereco\" />
     <Folder Include="TiposEnderecos\Queries\BuscarTipoEnderecoPorId\" />
-    <Folder Include="Helpers\" />
-    <Folder Include="Helpers\DadosFakes\" />
     <Folder Include="Helpers\AutoMapper\" />
     <Folder Include="Enderecos\Commands\ExcluirEndereco\" />
   </ItemGroup>

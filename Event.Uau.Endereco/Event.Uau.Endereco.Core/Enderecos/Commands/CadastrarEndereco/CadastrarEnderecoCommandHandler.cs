@@ -34,7 +34,7 @@ namespace Event.Uau.Endereco.Core.Enderecos.Commands.CadastrarEndereco
             validator.ValidateAndThrow(request);
 
             var endereco = mapper.Map<Domain.Entities.Endereco>(request);
-
+            
             endereco.TipoEndereco = await context.TiposEnderecos.FirstOrDefaultAsync(i => i.Descricao.Equals(request.TipoEndereco.Descricao, StringComparison.CurrentCultureIgnoreCase));
 
             var cep = await cepIntegracao.BuscarEnderecoPorCep(request.Cep);
@@ -43,7 +43,7 @@ namespace Event.Uau.Endereco.Core.Enderecos.Commands.CadastrarEndereco
             endereco.Cidade = cep.Cidade;
             endereco.Logradouro = cep.Endereco;
             endereco.Estado = cep.Estado;
-
+            
             await context.Enderecos.AddAsync(endereco, cancellationToken);
 
             await context.SaveChangesAsync(cancellationToken);
