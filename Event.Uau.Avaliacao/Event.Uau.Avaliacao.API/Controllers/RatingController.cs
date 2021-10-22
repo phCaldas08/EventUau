@@ -50,35 +50,5 @@ namespace Event.Uau.Endereco.API.Controllers
             return Ok(result);
         }
 
-        //[HttpPut("{idEndereco}")]
-        //public async Task<ActionResult> AtualizarEndereco([FromRoute] string tipoEndereco, [FromRoute] int idExterno, [FromRoute] int idEndereco, [FromBody] AtualizarEnderecoCommand body)
-        //{
-        //    body.TipoEndereco = new TipoEnderecoViewModel { Descricao = tipoEndereco };
-        //    body.Token = Token;
-        //    body.IdUsuarioLogado = IdUsuarioLogado;
-        //    body.IdEndereco = idEndereco;
-        //    body.IdExterno = idExterno;
-
-        //    var result = await Mediator.Send(body);
-
-        //    return Ok(result);
-        //}
-
-        //[HttpDelete("{idEndereco}")]
-        //public async Task<ActionResult> ExcluirEndereco([FromRoute] string tipoEndereco, [FromRoute] int idExterno, [FromRoute] int idEndereco)
-        //{
-        //    var command = new ExcluirEnderecoCommand
-        //    {
-        //        IdEndereco = idEndereco,
-        //        IdExterno = idExterno,
-        //        IdUsuarioLogado = IdUsuarioLogado,
-        //        TipoEndereco = tipoEndereco,
-        //        Token = Token,
-        //    };
-
-        //    var result = await Mediator.Send(command);
-
-        //    return Ok(result);
-        //}
     }
 }
