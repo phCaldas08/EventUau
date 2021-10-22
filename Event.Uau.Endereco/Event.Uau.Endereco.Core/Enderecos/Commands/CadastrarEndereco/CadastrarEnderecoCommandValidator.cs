@@ -44,7 +44,9 @@ namespace Event.Uau.Endereco.Core.Enderecos.Commands.CadastrarEndereco
 
             RuleFor(i => i.Cep)
                 .MustAsync((cep, c) => Task.Run(async () => await cepIntegracao.BuscarEnderecoPorCep(cep) != null))
+                .When(i => i.Bairro != null || i.Logradouro != null || i.Cidade != null || i.Estado != null)
                 .WithMessage("CEP não encontrado.");
+
         }
     }
 }

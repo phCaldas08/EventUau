@@ -24,6 +24,9 @@ namespace Event.Uau.Endereco.Core.Inicializacao.Commands.CarregarDados
             if (!await context.TiposEnderecos.AnyAsync())
                 await mediator.CarregarDadosTipoEndereco();
 
+            if (!await context.Enderecos.AnyAsync())
+                await mediator.CarregarDadosEnderecos();
+
             return 0;
         }
     }

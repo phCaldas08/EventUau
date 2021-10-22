@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using Event.Uau.Endereco.Infrastructure.Cep.Interfaces;
 using Flurl.Http;
+using Newtonsoft.Json;
 
 namespace Event.Uau.Endereco.Infrastructure.Cep.Integracao
 {
@@ -16,25 +19,55 @@ namespace Event.Uau.Endereco.Infrastructure.Cep.Integracao
 
         public async Task<Models.Saida.EnderecoModel> BuscarEnderecoPorCep(string cep)
         {
-            var result = await $"{this.urlApi}{cep}.json".GetAsync();
+            var tentativas = 5;
 
-            if(result.StatusCode == 200)
+            for (int i = 0; i < tentativas; i++)
             {
-                dynamic endereco = await result.GetJsonAsync();
+                var result = await $"{this.urlApi}{cep}.json".GetAsync();
 
-                if (endereco.ok)
+                if (result.StatusCode == 200)
                 {
-                    var enderecoModel = new Models.Saida.EnderecoModel
-                    {
-                        Bairro = endereco.district,
-                        Cidade = endereco.city,
-                        Endereco = endereco.address,
-                        Estado = endereco.state
-                    };
+                    var httpClient = new HttpClient();
+                    var content = await httpClient.GetStringAsync($"{this.urlApi}{cep}.json");
+                    var endereco = JsonConvert.DeserializeObject<Models.Retorno.EnderecoRetornoModel>(content);
 
-                    return enderecoModel;
+                    if (endereco.ok)
+                    {
+                        var enderecoModel = new Models.Saida.EnderecoModel
+                        {
+                            Bairro = endereco.district,
+                            Cidade = endereco.city,
+                            Endereco = endereco.address,
+                            Estado = endereco.state
+                        };
+
+                        return enderecoModel;
+                    }
                 }
+
+                //espera 10 segundos até a próxima tentativa
+                Thread.Sleep(10000);
             }
+
+            //var result = await $"{this.urlApi}{cep}.json".GetAsync();
+
+            //if(result.StatusCode == 200)
+            //{
+            //    dynamic endereco = await result.GetJsonAsync();
+
+            //    if (endereco.ok)
+            //    {
+            //        var enderecoModel = new Models.Saida.EnderecoModel
+            //        {
+            //            Bairro = endereco.district,
+            //            Cidade = endereco.city,
+            //            Endereco = endereco.address,
+            //            Estado = endereco.state
+            //        };
+
+            //        return enderecoModel;
+            //    }
+            //}
 
             return null;
         }

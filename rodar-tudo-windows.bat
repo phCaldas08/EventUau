@@ -8,11 +8,11 @@ dotnet build
 start cmd /k dotnet run
 cd ..
 cd ..
-cd .\Event.Uau.Endereco\Event.Uau.Endereco.API\
-dotnet build
-start cmd /k dotnet run
-cd ..
-cd ..
+#cd .\Event.Uau.Endereco\Event.Uau.Endereco.API\
+#dotnet build
+#start cmd /k dotnet run
+#cd ..
+#cd ..
 cd .\Event.Uau.Carteira\Event.Uau.Carteira.API\
 dotnet build
 start cmd /k dotnet run

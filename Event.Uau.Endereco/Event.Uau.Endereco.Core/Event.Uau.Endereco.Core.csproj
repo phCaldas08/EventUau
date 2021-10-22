@@ -35,9 +35,6 @@
     <None Remove="Enderecos\Commands\ExcluirEndereco\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Enderecos\" />
-    <Folder Include="Enderecos\Commands\" />
-    <Folder Include="Enderecos\Commands\CadastrarEndereco\" />
     <Folder Include="Enderecos\Queries\" />
     <Folder Include="Enderecos\Queries\BuscarEnderecoPorId\" />
     <Folder Include="Enderecos\Queries\BuscarEnderecos\" />
@@ -50,8 +47,6 @@
     <Folder Include="TiposEnderecos\Queries\" />
     <Folder Include="TiposEnderecos\Commands\CadastrarTipoEndereco\" />
     <Folder Include="TiposEnderecos\Queries\BuscarTipoEnderecoPorId\" />
-    <Folder Include="Helpers\" />
-    <Folder Include="Helpers\DadosFakes\" />
     <Folder Include="Helpers\AutoMapper\" />
     <Folder Include="Enderecos\Commands\ExcluirEndereco\" />
   </ItemGroup>

@@ -37,12 +37,21 @@ namespace Event.Uau.Endereco.Core.Enderecos.Commands.CadastrarEndereco
 
             endereco.TipoEndereco = await context.TiposEnderecos.FirstOrDefaultAsync(i => i.Descricao.Equals(request.TipoEndereco.Descricao, StringComparison.CurrentCultureIgnoreCase));
 
-            var cep = await cepIntegracao.BuscarEnderecoPorCep(request.Cep);
+            if (request.Bairro == null || request.Logradouro == null || request.Cidade == null || request.Estado == null)
+            {
+                var cep = await cepIntegracao.BuscarEnderecoPorCep(request.Cep);
 
-            endereco.Bairro = cep.Bairro;
-            endereco.Cidade = cep.Cidade;
-            endereco.Logradouro = cep.Endereco;
-            endereco.Estado = cep.Estado;
+                endereco.Bairro = cep.Bairro;
+                endereco.Cidade = cep.Cidade;
+                endereco.Logradouro = cep.Endereco;
+                endereco.Estado = cep.Estado;
+            } else
+            {
+                endereco.Bairro = request.Bairro;
+                endereco.Cidade = request.Cidade;
+                endereco.Logradouro = request.Logradouro;
+                endereco.Estado = request.Estado;
+            }
 
             await context.Enderecos.AddAsync(endereco, cancellationToken);
 
