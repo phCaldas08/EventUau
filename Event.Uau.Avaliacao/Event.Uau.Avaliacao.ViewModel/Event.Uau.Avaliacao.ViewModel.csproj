@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Avaliacao\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.ViewModel\Event.Uau.Comum.ViewModel.csproj" />
+  </ItemGroup>
+</Project>

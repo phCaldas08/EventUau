@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Event.Uau.Avaliacao.Core.Helpers.AutoMapper;
+using Event.Uau.Avaliacao.Persistence;
 using Event.Uau.Comum.Configuracao.Startup;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,10 +29,10 @@ namespace Event.Uau.Avaliacao.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            StartupConfig.ConfigureServices<DbContext>(services,
-                null,
-                "AvaliacoesDb",
-                typeof(int));
+            StartupConfig.ConfigureServices<EventUauDbContext>(
+                services,
+                new MappingProfile(),
+                "AvaliacoesDB");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
