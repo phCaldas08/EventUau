@@ -11,5 +11,7 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario
         public decimal Salario { get; set; }
 
         public int IdEvento { get; set; }
+
+        public ViewModel.Autenticacao.EspecialidadeViewModel Especialidade { get; set; }
     }
 }

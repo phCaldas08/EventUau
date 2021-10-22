@@ -23,12 +23,14 @@ namespace Event.Uau.Evento.Core.Helpers.AutoMapper
 
             CreateMap<EnviarPropostaFuncionarioCommand, Domain.Entities.FuncionarioEvento>()
                 .ForMember(i => i.IdUsuario, opt => opt.MapFrom(i => i.Usuario.Id))
+                .ForMember(i => i.IdEspecialidade, opt => opt.MapFrom(i => i.Especialidade.Id))
                 .ForMember(i => i.IdStatusContratacao, opt => opt.MapFrom(i => "PEN"));
 
             CreateMap<Domain.Entities.FuncionarioEvento, ViewModel.Evento.FuncionarioEventoViewModel>();
 
             CreateMap<Domain.Entities.FuncionarioEvento, ViewModel.Evento.PropostaEventoViewModel>()
-                .ForMember(i => i.ValorProposta, opt => opt.MapFrom(i => i.Salario));
+                .ForMember(i => i.ValorProposta, opt => opt.MapFrom(i => i.Salario))
+                .ForMember(i => i.Status, opt => opt.MapFrom(i => i.Evento.Status));
 
             CreateMap<Domain.Entities.Evento, ViewModel.Evento.PropostaEventoViewModel>();
 
