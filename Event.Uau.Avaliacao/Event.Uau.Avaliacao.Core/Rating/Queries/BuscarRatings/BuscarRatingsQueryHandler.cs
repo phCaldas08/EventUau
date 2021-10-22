@@ -9,7 +9,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using Event.Uau.Avaliacao.ViewModel.Rating;
 
 namespace Event.Uau.Avaliacao.Core.Rating.Queries.BuscarRatings
 {
@@ -46,32 +45,6 @@ namespace Event.Uau.Avaliacao.Core.Rating.Queries.BuscarRatings
                 Total = tamanhoTotal,
                 Resultados = ratingsViewModel
             };
-
-
-            /*
-            var pular = request.Indice * request.TamanhoPagina;
-            var tamanho = request.TamanhoPagina;
-
-            var eventosQuery = context.Eventos.Where(i => i.IdUsuario == request.IdUsuarioLogado);
-
-            var tamanhoTotal = eventosQuery.Count();
-
-            var eventos = await eventosQuery.Skip(pular)
-                .Take(tamanho)
-                .ToListAsync();
-
-            var eventosViewModel = mapper.Map<List<ResumoEventoViewModel>>(eventos);
-
-            await BuscarFuncionarios(eventosViewModel, request.Token);
-
-            return new ListaEventoViewModel
-            {
-                Indice = request.Indice,
-                TamanhoPagina = eventos.Count,
-                Total = tamanhoTotal,
-                Resultados = eventosViewModel
-            }; 
-             */
         }
     }
 }
