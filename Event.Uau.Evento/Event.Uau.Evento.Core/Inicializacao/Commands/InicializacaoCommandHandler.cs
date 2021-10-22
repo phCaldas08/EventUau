@@ -30,8 +30,9 @@ namespace Event.Uau.Evento.Core.Inicializacao.Commands
 
             if (!await context.Status.AnyAsync())
                 await mediator.CarregarDadosStatus();
-
-
+                
+            if (!await context.Eventos.AnyAsync())
+                await mediator.CarregarEventosAsync();
             rodado = true;
 
             return 0;

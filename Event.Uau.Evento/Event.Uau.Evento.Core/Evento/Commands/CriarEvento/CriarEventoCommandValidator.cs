@@ -20,8 +20,8 @@ namespace Event.Uau.Evento.Core.Evento.Commands.CriarEvento
             */
 
             RuleFor(i => new { i.DataTermino, i.DataInicio })
-                .Must(obj => obj.DataTermino > obj.DataInicio)
-                .WithMessage("A data de início deve ser menor que a data do término.");
+                .Must(obj => obj.DataTermino >= obj.DataInicio)
+                .WithMessage("A data de início não pode ser maior que a data de término do evento.");
 
         }
     }
