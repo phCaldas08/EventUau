@@ -24,14 +24,13 @@
     <Folder Include="Inicializacao\" />
     <Folder Include="Inicializacao\Commands\" />
     <Folder Include="Helpers\DadosFakes\" />
-    <Folder Include="Parceiro\" />
-    <Folder Include="Parceiro\Commands\" />
     <Folder Include="Parceiro\Commands\CadastrarParceiro\" />
     <Folder Include="Parceiro\Queries\" />
     <Folder Include="Parceiro\Queries\BuscarParceiroPorIdUsuario\" />
     <Folder Include="Parceiro\Queries\BuscarParceiros\" />
     <Folder Include="Usuario\Commands\AtualizarUsuario\" />
     <Folder Include="Especialidade\Queries\BuscarEspecialidades\" />
+    <Folder Include="Usuario\Queries\BuscarUsuarios\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Helpers\AutoMapper\" />
@@ -53,10 +52,12 @@
     <None Remove="Parceiro\Queries\BuscarParceiros\" />
     <None Remove="Usuario\Commands\AtualizarUsuario\" />
     <None Remove="Especialidade\Queries\BuscarEspecialidades\" />
+    <None Remove="Usuario\Queries\BuscarUsuarios\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Compartilhado\Event.Uau.Comum.Util\Event.Uau.Comum.Util.csproj" />
     <ProjectReference Include="..\Event.Uau.Autentificacao.Persistence\Event.Uau.Autenticacao.Persistence.csproj" />
     <ProjectReference Include="..\Event.Uau.Autenticacao.ViewModel\Event.Uau.Autenticacao.ViewModel.csproj" />
+    <ProjectReference Include="..\Event.Uau.Autenticacao.Infrastructure\Event.Uau.Autenticacao.Infrastructure.csproj" />
   </ItemGroup>
 </Project>

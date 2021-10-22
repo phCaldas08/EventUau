@@ -9,8 +9,10 @@ namespace Event.Uau.Evento.Domain.Entities
 
         public decimal Salario { get; set; }
 
-        public bool Contratado { get; set; }
+        public string IdStatusContratacao { get; set; }
 
         public virtual Evento Evento { get; set; }
+
+        public virtual StatusContratacao StatusContratacao { get; set; }
     }
 }

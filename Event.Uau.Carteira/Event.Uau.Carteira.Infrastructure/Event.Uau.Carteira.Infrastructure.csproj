@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Integracoes\" />
+    <None Remove="Integracoes\Carteira\" />
+    <None Remove="Integracoes\Interfaces\" />
+    <None Remove="Flurl" />
+    <None Remove="Flurl.Http" />
+    <None Remove="Integracoes\Evento\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Integracoes\" />
+    <Folder Include="Integracoes\Autenticacao\" />
+    <Folder Include="Integracoes\Interfaces\" />
+    <Folder Include="Integracoes\Evento\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Flurl" Version="3.0.2" />
+    <PackageReference Include="Flurl.Http" Version="3.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Event.Uau.Carteira.ViewModel\Event.Uau.Carteira.ViewModel.csproj" />
+  </ItemGroup>
+</Project>

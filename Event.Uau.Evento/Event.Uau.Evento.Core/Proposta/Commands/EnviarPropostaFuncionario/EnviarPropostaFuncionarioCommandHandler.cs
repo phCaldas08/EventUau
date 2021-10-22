@@ -1,8 +1,8 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
-using Event.Uau.Evento.Infrastructure.Integracoes.Autenticacao;
+using Event.Uau.Evento.Core.Evento.Commands.AlterarStatusEvento;
+using Event.Uau.Evento.Core.Proposta.Queries.BuscarPropostaPorId;
 using Event.Uau.Evento.Infrastructure.Integracoes.Interfaces;
 using Event.Uau.Evento.ViewModel.Evento;
 using FluentValidation;
@@ -14,14 +14,16 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario
     {
         private Persistence.EventUauDbContext context;
         private IMapper mapper;
-        private IParceiroIntegracao parceiroIntegracao;
+        private readonly IPropostaIntegracao propostaIntegracao;
+        private readonly IMediator mediator;
         private readonly EnviarPropostaFuncionarioCommandValidator validator;
 
-        public EnviarPropostaFuncionarioCommandHandler(Persistence.EventUauDbContext context, IMapper mapper, IParceiroIntegracao parceiroIntegracao)
+        public EnviarPropostaFuncionarioCommandHandler(Persistence.EventUauDbContext context, IMapper mapper, IParceiroIntegracao parceiroIntegracao, IPropostaIntegracao propostaIntegracao, IMediator mediator)
         {
             this.context = context;
             this.mapper = mapper;
-            this.parceiroIntegracao = parceiroIntegracao;
+            this.propostaIntegracao = propostaIntegracao;
+            this.mediator = mediator;
             this.validator = new EnviarPropostaFuncionarioCommandValidator(context, parceiroIntegracao);
         }
 
@@ -35,13 +37,42 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario
 
             await context.SaveChangesAsync(cancellationToken);
 
-            var funcionarioViewModel = mapper.Map<FuncionarioEventoViewModel>(funcionario);
+            try
+            {
+                await propostaIntegracao.EnviarPropostaParaCarteira(request.IdEvento, request.Usuario.Id, request.Salario, request.Token);   
+            }
+            catch
+            {
+                context.Funcionarios.Remove(funcionario);
+                await context.SaveChangesAsync();
 
-            var parceiro = await parceiroIntegracao.BuscarParceiroPorIdUsuario(request.Usuario.Id, request.Token);
+                throw;
+            }
 
-            funcionarioViewModel.Funcionario = parceiro.Usuario;
+            await AlterarStatusParaContratando(request);
 
-            return funcionarioViewModel;
+            var query = new BuscaProspostaPorIdQuery
+            {
+                IdEvento = request.IdEvento,
+                IdUsuarioLogado = request.Usuario.Id,
+                Token = request.Token
+            };
+
+            return await mediator.Send(query);
+        }
+
+
+        private async Task AlterarStatusParaContratando(EnviarPropostaFuncionarioCommand request)
+        {
+            var atualizarCommand = new AlterarStatusEventoCommand
+            {
+                IdEvento = request.IdEvento,
+                IdUsuarioLogado = request.IdUsuarioLogado,
+                Token = request.Token,
+                Status = Domain.Enums.StatusEnum.CONTRATANDO
+            };
+
+            await mediator.Send(atualizarCommand);
         }
     }
 }
