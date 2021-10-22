@@ -23,3 +23,8 @@ dotnet build
 start cmd /k dotnet run
 cd ..
 cd ..
+cd .\Event.Uau.Avaliacao\Event.Uau.Avaliacao.API\
+dotnet build
+start cmd /k dotnet run
+cd ..
+cd ..
