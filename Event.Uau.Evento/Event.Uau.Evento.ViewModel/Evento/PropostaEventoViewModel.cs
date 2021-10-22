@@ -24,5 +24,18 @@ namespace Event.Uau.Evento.ViewModel.Evento
         public decimal ValorProposta { get; set; }
 
         public StatusContratacaoViewModel StatusContratacao { get; set; }
+
+        public StatusViewModel Status { get; set; }
+
+        public string StatusLabel
+        {
+            get
+            {
+                if ((Status.Id.Equals("CRIADO", StringComparison.CurrentCultureIgnoreCase) || Status.Id.Equals("CONTRATANDO", StringComparison.CurrentCultureIgnoreCase)) && DataInicio <= DateTime.Now)
+                    return "Em Andamento";
+                else
+                    return Status.Descricao;
+            }
+        }
     }
 }
