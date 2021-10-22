@@ -14,6 +14,7 @@ namespace Event.Uau.Evento.API.Configurations.Integrations
 
             services.AddSingleton<IUsuarioIntegracao>(new UsuarioIntegracao(url));
             services.AddSingleton<IParceiroIntegracao>(new ParceiroIntegracao(url));
+            services.AddSingleton<IEspecialidadeIntegracao>(new EspecialidadeIntegracao(url));
 
             return services;
         }

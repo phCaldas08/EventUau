@@ -14,5 +14,10 @@ namespace Event.Uau.Evento.ViewModel.Evento
 
         public StatusContratacaoViewModel StatusContratacao { get; set; }
 
+        [JsonIgnore]
+        public int IdEspecialidade { get; set; }
+
+        public Autenticacao.EspecialidadeViewModel Especialidade { get; set; }
+
     }
 }

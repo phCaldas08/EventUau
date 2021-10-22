@@ -7,6 +7,8 @@ namespace Event.Uau.Evento.Domain.Entities
 
         public int IdUsuario { get; set; }
 
+        public int IdEspecialidade { get; set; }
+
         public decimal Salario { get; set; }
 
         public string IdStatusContratacao { get; set; }

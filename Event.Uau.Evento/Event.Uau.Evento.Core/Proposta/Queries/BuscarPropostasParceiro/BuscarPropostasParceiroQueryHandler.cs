@@ -32,7 +32,7 @@ namespace Event.Uau.Evento.Core.Proposta.Queries.BuscarPropostasParceiro
             var tamanho = request.TamanhoPagina;
 
             var propostasQuery = context.Funcionarios
-                .Where(i => i.IdUsuario == request.IdUsuarioLogado && i.Evento.DataInicio > DateTime.Now);
+                .Where(i => i.IdUsuario == request.IdUsuarioLogado);
 
             if (!string.IsNullOrWhiteSpace(request.StatusContratacao))
                 propostasQuery = propostasQuery.Where(i => i.StatusContratacao.Descricao.Equals(request.StatusContratacao, StringComparison.CurrentCultureIgnoreCase));
@@ -52,6 +52,8 @@ namespace Event.Uau.Evento.Core.Proposta.Queries.BuscarPropostasParceiro
                 var vm = mapper.Map<PropostaEventoViewModel>(p);
                 vm = mapper.Map(p.Evento, vm);
 
+                vm.Especialidade = parceiro.Especialidades.FirstOrDefault(i => i.Id == p.IdEspecialidade);
+                
                 propostasViewModel.Add(vm);
             });
 

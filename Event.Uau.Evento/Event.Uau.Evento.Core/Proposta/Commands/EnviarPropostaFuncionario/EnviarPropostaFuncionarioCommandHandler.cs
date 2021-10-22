@@ -18,13 +18,13 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario
         private readonly IMediator mediator;
         private readonly EnviarPropostaFuncionarioCommandValidator validator;
 
-        public EnviarPropostaFuncionarioCommandHandler(Persistence.EventUauDbContext context, IMapper mapper, IParceiroIntegracao parceiroIntegracao, IPropostaIntegracao propostaIntegracao, IMediator mediator)
+        public EnviarPropostaFuncionarioCommandHandler(Persistence.EventUauDbContext context, IMapper mapper, IParceiroIntegracao parceiroIntegracao, IPropostaIntegracao propostaIntegracao, IEspecialidadeIntegracao especialidadeIntegracao, IMediator mediator)
         {
             this.context = context;
             this.mapper = mapper;
             this.propostaIntegracao = propostaIntegracao;
             this.mediator = mediator;
-            this.validator = new EnviarPropostaFuncionarioCommandValidator(context, parceiroIntegracao);
+            this.validator = new EnviarPropostaFuncionarioCommandValidator(context, parceiroIntegracao, especialidadeIntegracao);
         }
 
         public async Task<FuncionarioEventoViewModel> Handle(EnviarPropostaFuncionarioCommand request, CancellationToken cancellationToken)

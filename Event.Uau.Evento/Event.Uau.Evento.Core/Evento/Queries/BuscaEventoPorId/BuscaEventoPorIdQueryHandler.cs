@@ -17,13 +17,15 @@ namespace Event.Uau.Evento.Core.Evento.Queries.BuscaEventoPorId
         private readonly EventUauDbContext context;
         private readonly IMapper mapper;
         private readonly IUsuarioIntegracao usuarioIntegracao;
+        private readonly IEspecialidadeIntegracao especialidadeIntegracao;
         private readonly BuscaEventoPorIdQueryValidator validator;
 
-        public BuscaEventoPorIdQueryHandler(EventUauDbContext context, IMapper mapper, IUsuarioIntegracao usuarioIntegracao)
+        public BuscaEventoPorIdQueryHandler(EventUauDbContext context, IMapper mapper, IUsuarioIntegracao usuarioIntegracao, IEspecialidadeIntegracao especialidadeIntegracao)
         {
             this.context = context;
             this.mapper = mapper;
             this.usuarioIntegracao = usuarioIntegracao;
+            this.especialidadeIntegracao = especialidadeIntegracao;
             this.validator = new BuscaEventoPorIdQueryValidator(context);
         }
 
@@ -36,6 +38,8 @@ namespace Event.Uau.Evento.Core.Evento.Queries.BuscaEventoPorId
             var eventoViewModel = mapper.Map<EventoViewModel>(evento);
 
             await BuscaUsuarios(eventoViewModel, evento, request.Token);
+
+            await BuscarEspecialidades(eventoViewModel, evento, request.Token);
 
             return eventoViewModel;
         }
@@ -50,6 +54,17 @@ namespace Event.Uau.Evento.Core.Evento.Queries.BuscaEventoPorId
 
                 foreach (var funcionario in usuarios?.Resultados)
                     eventoViewModel.FuncionariosEvento.FirstOrDefault(i => i.IdUsuario == funcionario.Id).Funcionario = funcionario;
+            }
+        }
+
+        private async Task BuscarEspecialidades(EventoViewModel eventoViewModel, Domain.Entities.Evento evento, string token)
+        {
+
+            if (evento.Funcionarios?.Any() ?? false)
+            {
+                var especialidades = await especialidadeIntegracao.BuscarEspecialidades(token);
+
+                eventoViewModel.FuncionariosEvento.ForEach(i => i.Especialidade = especialidades.FirstOrDefault(e => e.Id == i.IdEspecialidade));
             }
         }
     }
