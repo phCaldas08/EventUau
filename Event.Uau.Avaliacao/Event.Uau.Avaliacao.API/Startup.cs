@@ -29,10 +29,11 @@ namespace Event.Uau.Avaliacao.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            StartupConfig.ConfigureServices<EventUauDbContext>(
+            Comum.Configuracao.Startup.StartupConfig.ConfigureServices<EventUauDbContext>(
                 services,
                 new MappingProfile(),
-                "AvaliacoesDB");
+                "AvaliacoesDB",
+                typeof(Core.Inicializacao.Commands.InicializacaoCommand));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
