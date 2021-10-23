@@ -9,11 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Uau.Upload.API", "..\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Uau.Evento.API", "..\Event.Uau.Evento\Event.Uau.Evento.API\Event.Uau.Evento.API.csproj", "{341C3A5D-B007-41C2-B0D7-64387F6A2F91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Uau.Autenticacao.API", "..\Event.Uau.Autenticacao\Event.Uau.Autentificacao.API\Event.Uau.Autenticacao.API.csproj", "{FAB1F8FB-347C-40BF-86E5-30FE73D84BD7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Uau.Avaliacao.API", "..\Event.Uau.Avaliacao\Event.Uau.Avaliacao.API\Event.Uau.Avaliacao.API.csproj", "{1EB9B83A-9082-46E8-9E11-4FA2D945CD31}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Uau.Carteira.API", "..\Event.Uau.Carteira\Event.Uau.Carteira.API\Event.Uau.Carteira.API.csproj", "{D432F636-8CCF-4484-AAD0-1DD76FF4ED91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Uau.Autenticacao.API", "..\Event.Uau.Autenticacao\Event.Uau.Autentificacao.API\Event.Uau.Autenticacao.API.csproj", "{13611069-09A9-4D36-9141-D6CAE8F139D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +33,6 @@ Global
 		{341C3A5D-B007-41C2-B0D7-64387F6A2F91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{341C3A5D-B007-41C2-B0D7-64387F6A2F91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{341C3A5D-B007-41C2-B0D7-64387F6A2F91}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FAB1F8FB-347C-40BF-86E5-30FE73D84BD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FAB1F8FB-347C-40BF-86E5-30FE73D84BD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FAB1F8FB-347C-40BF-86E5-30FE73D84BD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FAB1F8FB-347C-40BF-86E5-30FE73D84BD7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1EB9B83A-9082-46E8-9E11-4FA2D945CD31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1EB9B83A-9082-46E8-9E11-4FA2D945CD31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EB9B83A-9082-46E8-9E11-4FA2D945CD31}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{D432F636-8CCF-4484-AAD0-1DD76FF4ED91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D432F636-8CCF-4484-AAD0-1DD76FF4ED91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D432F636-8CCF-4484-AAD0-1DD76FF4ED91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13611069-09A9-4D36-9141-D6CAE8F139D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13611069-09A9-4D36-9141-D6CAE8F139D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13611069-09A9-4D36-9141-D6CAE8F139D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13611069-09A9-4D36-9141-D6CAE8F139D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
