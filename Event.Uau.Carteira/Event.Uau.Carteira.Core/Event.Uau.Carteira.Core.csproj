@@ -45,6 +45,7 @@
     <None Remove="PropostaEvento\Commands\CriarOperacaoEvento\" />
     <None Remove="PropostaEvento\Commands\FinalizarPropostasEvento\" />
     <None Remove="PropostaEvento\Commands\AceitarPropostaEvento\" />
+    <None Remove="PropostaEvento\Commands\RecusarPropostaEvento\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\" />
@@ -72,5 +73,6 @@
     <Folder Include="PropostaEvento\Commands\CriarOperacaoEvento\" />
     <Folder Include="PropostaEvento\Commands\FinalizarPropostasEvento\" />
     <Folder Include="PropostaEvento\Commands\AceitarPropostaEvento\" />
+    <Folder Include="PropostaEvento\Commands\RecusarPropostaEvento\" />
   </ItemGroup>
 </Project>

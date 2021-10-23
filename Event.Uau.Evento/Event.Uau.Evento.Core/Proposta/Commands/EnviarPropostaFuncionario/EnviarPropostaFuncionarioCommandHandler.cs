@@ -1,4 +1,6 @@
-﻿using System.Threading;
+﻿using System;
+using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using Event.Uau.Evento.Core.Evento.Commands.AlterarStatusEvento;
@@ -7,6 +9,7 @@ using Event.Uau.Evento.Infrastructure.Integracoes.Interfaces;
 using Event.Uau.Evento.ViewModel.Evento;
 using FluentValidation;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario
 {
@@ -32,6 +35,8 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario
             validator.ValidateAndThrow(request);
 
             var funcionario = mapper.Map<Domain.Entities.FuncionarioEvento>(request);
+
+            await RemoverPropostaRecusadasNoEvento(request);
 
             await context.Funcionarios.AddAsync(funcionario, cancellationToken);
 
@@ -59,6 +64,18 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario
             };
 
             return await mediator.Send(query);
+        }
+
+        private async Task RemoverPropostaRecusadasNoEvento(EnviarPropostaFuncionarioCommand request)
+        {
+            if (await context.Funcionarios.AnyAsync(i => i.IdEvento == request.IdEvento && i.IdUsuario == request.Usuario.Id && i.IdStatusContratacao.Equals("REC", StringComparison.CurrentCultureIgnoreCase)))
+            {
+                var funcionarios = await context.Funcionarios.Where(i => i.IdEvento == request.IdEvento && i.IdUsuario == request.Usuario.Id && i.IdStatusContratacao.Equals("REC", StringComparison.CurrentCultureIgnoreCase))
+                    .ToListAsync();
+
+                context.Funcionarios.RemoveRange(funcionarios);
+                await context.SaveChangesAsync();
+            }
         }
 
 

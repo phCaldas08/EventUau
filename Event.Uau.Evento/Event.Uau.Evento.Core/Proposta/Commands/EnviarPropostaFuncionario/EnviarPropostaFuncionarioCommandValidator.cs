@@ -53,7 +53,7 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario
                 .WithMessage("O parceiro já foi contratado para outra festa neste período.");
 
             RuleFor(i => new { i.IdEvento, i.Usuario.Id })
-                .Must(obj => !context.Funcionarios.Any(i => i.IdEvento == obj.IdEvento && i.IdUsuario == obj.Id))
+                .Must(obj => !context.Funcionarios.Any(i => i.IdEvento == obj.IdEvento && i.IdUsuario == obj.Id && !i.IdStatusContratacao.Equals("REC", StringComparison.CurrentCultureIgnoreCase)))
                 .WithMessage("Já existe uma proposta para este evento.");
 
         }
