@@ -12,7 +12,7 @@
     "Event.Uau.Autenticacao.API": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:15603;http://localhost:27700",
+      "applicationUrl": "https://localhost:47109;http://localhost:37976",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

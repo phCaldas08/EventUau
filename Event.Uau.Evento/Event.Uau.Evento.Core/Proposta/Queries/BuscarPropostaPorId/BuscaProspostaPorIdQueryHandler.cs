@@ -17,12 +17,14 @@ namespace Event.Uau.Evento.Core.Proposta.Queries.BuscarPropostaPorId
         private readonly EventUauDbContext context;
         private readonly BuscaProspostaPorIdQueryValidator validator;
         private readonly IParceiroIntegracao parceiroIntegracao;
+        private readonly IEspecialidadeIntegracao especialidadeIntegracao;
 
-        public BuscaProspostaPorIdQueryHandler(EventUauDbContext context, IMapper mapper, IParceiroIntegracao parceiroIntegracao)
+        public BuscaProspostaPorIdQueryHandler(EventUauDbContext context, IMapper mapper, IParceiroIntegracao parceiroIntegracao, IEspecialidadeIntegracao especialidadeIntegracao)
         {
             this.mapper = mapper;
             this.context = context;
             this.parceiroIntegracao = parceiroIntegracao;
+            this.especialidadeIntegracao = especialidadeIntegracao;
             this.validator = new BuscaProspostaPorIdQueryValidator(context);
         }
 
@@ -38,7 +40,10 @@ namespace Event.Uau.Evento.Core.Proposta.Queries.BuscarPropostaPorId
 
             var parceiro = await parceiroIntegracao.BuscarParceiroPorIdUsuario(request.IdUsuarioLogado, request.Token);
 
+            var especialidade = await especialidadeIntegracao.BuscarEspecialidadePorId(funcionarioEvento.IdEspecialidade, request.Token);
+
             funcionarioEventoViewModel.Funcionario = parceiro.Usuario;
+            funcionarioEventoViewModel.Especialidade = especialidade;
 
             return funcionarioEventoViewModel;
         }

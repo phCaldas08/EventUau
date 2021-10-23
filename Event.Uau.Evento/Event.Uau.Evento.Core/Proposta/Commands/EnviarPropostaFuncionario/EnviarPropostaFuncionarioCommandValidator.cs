@@ -9,11 +9,25 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario
 {
     public class EnviarPropostaFuncionarioCommandValidator : AbstractValidator<EnviarPropostaFuncionarioCommand>
     {
-        public EnviarPropostaFuncionarioCommandValidator(EventUauDbContext context, IParceiroIntegracao parceiroIntegracao)
+        public EnviarPropostaFuncionarioCommandValidator(EventUauDbContext context, IParceiroIntegracao parceiroIntegracao, IEspecialidadeIntegracao especialidadeIntegracao)
         {
             RuleFor(i => new { i.Usuario.Id, i.Token })
                 .MustAsync((obj, c) => Task.Run(async () => (await parceiroIntegracao.BuscarParceiroPorIdUsuario(obj.Id, obj.Token)) != null))
                 .WithMessage("Parceiro não encontrado.");
+
+            RuleFor(i => new { i.Especialidade.Id, i.Token })
+                .MustAsync((obj, c) => Task.Run(async () => (await especialidadeIntegracao.BuscarEspecialidadePorId(obj.Id, obj.Token)) != null))
+                .When(i => i.Especialidade != null)
+                .WithMessage("Especialidade não cadastrada no sistema.");
+
+            RuleFor(i => new { IdUsuario = i.Usuario.Id, IdEspecialidade = i.Especialidade.Id, i.Token })
+                .MustAsync((obj, c) => Task.Run(async () => (await parceiroIntegracao.BuscarParceiroPorIdUsuario(obj.IdUsuario, obj.Token))?.Especialidades?.Any(i => i.Id == obj.IdEspecialidade) ?? false))
+                .When(i => i.Especialidade != null)
+                .WithMessage("Especialidade não encontrada para o parceiro.");
+
+            RuleFor(i => i.Especialidade)
+                .NotEmpty()
+                .WithMessage("Informe a especialidade do parceiro.");
 
             RuleFor(i => i.Salario)
                 .InclusiveBetween(10, 10000)

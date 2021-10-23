@@ -52,6 +52,8 @@ namespace Event.Uau.Evento.Core.Proposta.Queries.BuscarPropostasParceiro
                 var vm = mapper.Map<PropostaEventoViewModel>(p);
                 vm = mapper.Map(p.Evento, vm);
 
+                vm.Especialidade = parceiro.Especialidades.FirstOrDefault(i => i.Id == p.IdEspecialidade);
+                
                 propostasViewModel.Add(vm);
             });
 

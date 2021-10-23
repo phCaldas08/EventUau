@@ -1,4 +1,6 @@
 ﻿using System;
+using Event.Uau.Evento.ViewModel.Autenticacao;
+
 namespace Event.Uau.Evento.ViewModel.Evento
 {
     public class PropostaEventoViewModel
@@ -37,5 +39,7 @@ namespace Event.Uau.Evento.ViewModel.Evento
                     return Status.Descricao;
             }
         }
+
+        public EspecialidadeViewModel Especialidade { get; set; }
     }
 }

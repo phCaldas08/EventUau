@@ -35,6 +35,7 @@ namespace Event.Uau.Autenticacao.API.Controllers
             return Ok(especialidade);
         }
 
+        [HttpGet]
         public async Task<ActionResult> BuscarEspecialidades([FromQuery] BuscarEspecialidadesQuery query)
         {
             query.Token = Token;
