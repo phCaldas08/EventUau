@@ -29,8 +29,17 @@ namespace Event.Uau.Carteira.Core.PropostaEvento.Commands.FinalizarPropostasEven
 
             foreach(var proposta in propostasEvento)
             {
-                proposta.Recebimento.TipoOperacao = await context.TiposOperacoes.FirstOrDefaultAsync(i => i.Id.Equals("RE", StringComparison.CurrentCultureIgnoreCase));
-                proposta.Pagamento.TipoOperacao = await context.TiposOperacoes.FirstOrDefaultAsync(i => i.Id.Equals("PAG", StringComparison.CurrentCultureIgnoreCase));
+                if (proposta.Recebimento.TipoOperacao.Id.Equals("RRE"))
+                {
+                    context.OperacoesEventos.Remove(proposta);
+                    context.Operacoes.Remove(proposta.Pagamento);
+                    context.Operacoes.Remove(proposta.Recebimento);
+                }
+                else
+                {
+                    proposta.Recebimento.TipoOperacao = await context.TiposOperacoes.FirstOrDefaultAsync(i => i.Id.Equals("RE", StringComparison.CurrentCultureIgnoreCase));
+                    proposta.Pagamento.TipoOperacao = await context.TiposOperacoes.FirstOrDefaultAsync(i => i.Id.Equals("PAG", StringComparison.CurrentCultureIgnoreCase));
+                }
             }
 
             await context.SaveChangesAsync();

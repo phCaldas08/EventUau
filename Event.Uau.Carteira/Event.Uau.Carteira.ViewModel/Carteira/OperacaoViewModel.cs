@@ -16,7 +16,6 @@ namespace Event.Uau.Carteira.ViewModel.Carteira
 
         public decimal Valor { get => ValorInicial * (TipoOperacao.Multplicador > 0 ? 1 : -1); }
 
-        [JsonIgnore]
         public TipoOperacaoViewModel TipoOperacao { get; set; }
 
         [JsonIgnore]

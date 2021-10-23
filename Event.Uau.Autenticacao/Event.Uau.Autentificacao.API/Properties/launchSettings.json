@@ -9,6 +9,14 @@
   },
   "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
+    "Event.Uau.Autenticacao.API": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:15603;http://localhost:27700",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
     "Event.Uau.Autentificacao.API": {
       "commandName": "Project",
       "launchUrl": "weatherforecast",

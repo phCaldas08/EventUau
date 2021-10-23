@@ -11,8 +11,7 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.AceitarProposta
         {
             RuleFor(i => new { i.IdEvento, i.IdUsuarioLogado })
                 .Must(obj => context.Eventos.Any(i => i.Id == obj.IdEvento
-                                                    && i.IdUsuario == obj.IdUsuarioLogado
-                                                    && i.DataInicio.AddHours(-2) > DateTime.Now
+                                                    //&& i.DataInicio.AddHours(-2) > DateTime.Now
                                                     && (i.Status.Id.Equals("CRIADO", StringComparison.CurrentCultureIgnoreCase) || i.Status.Id.Equals("CONTRATANDO", StringComparison.CurrentCultureIgnoreCase))))
                 .WithMessage("Nenhum evento encontrado.");
 

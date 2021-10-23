@@ -13,6 +13,8 @@ namespace Event.Uau.Carteira.Domain.Entities
 
         public bool EhDisponivel { get; set; }
 
+        public bool EhVisivel { get; set; }
+
         public virtual List<Operacao> Operacoes { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Event.Uau.Evento.Core.Evento.Commands.AlterarStatusEvento;
@@ -30,7 +31,14 @@ namespace Event.Uau.Evento.Core.Evento.Commands.FinalizarEvento
         {
             validator.ValidateAndThrow(request);
 
-            var evento = await AlterarStatus(request, Domain.Enums.StatusEnum.FINALIZADO);
+            var evento = await context.Eventos.FirstOrDefaultAsync(i => i.Id == request.IdEvento);
+
+            foreach (var funcionario in evento.Funcionarios.Where(i => i.StatusContratacao.Id.Equals("PEN", StringComparison.CurrentCultureIgnoreCase)))
+                funcionario.StatusContratacao = await context.StatusContratacoes.FirstOrDefaultAsync(i => i.Id.Equals("REC", StringComparison.CurrentCultureIgnoreCase));
+
+            await context.SaveChangesAsync();
+
+            var eventoViewModel = await AlterarStatus(request, Domain.Enums.StatusEnum.FINALIZADO);
 
             try
             {
@@ -43,7 +51,7 @@ namespace Event.Uau.Evento.Core.Evento.Commands.FinalizarEvento
                 throw;
             }
 
-            return evento;
+            return eventoViewModel;
         }
 
         private async Task<EventoViewModel> AlterarStatus(FinalizarEventoCommand request, Domain.Enums.StatusEnum status)
