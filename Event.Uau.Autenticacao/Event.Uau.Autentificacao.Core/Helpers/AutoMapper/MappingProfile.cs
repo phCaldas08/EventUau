@@ -24,8 +24,7 @@ namespace Event.Uau.Autenticacao.Core.Helpers.AutoMapper
 
             CreateMap<Domain.Entities.Parceiro, ViewModel.Autenticacao.ParceiroViewModel>();
 
-            CreateMap<Domain.Entities.Parceiro, ViewModel.Autenticacao.ParceiroResumoViewModel>()
-                .ForMember(i => i.Nome, opt => opt.MapFrom(i => i.Usuario.Nome));                
+            CreateMap<Domain.Entities.Parceiro, ViewModel.Autenticacao.ParceiroResumoViewModel>();                
             
             CreateMap<Domain.Entities.Especialidade, ViewModel.Autenticacao.EspecialidadeViewModel>();
 
