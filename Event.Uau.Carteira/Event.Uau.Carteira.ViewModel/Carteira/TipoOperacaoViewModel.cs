@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Event.Uau.Carteira.ViewModel.Carteira
 {
@@ -12,5 +13,8 @@ namespace Event.Uau.Carteira.ViewModel.Carteira
         public int Multplicador { get; set; }
 
         public bool EhDisponivel { get; set; }
+
+        [JsonIgnore]
+        public bool EhVisivel { get; set; }
     }
 }

@@ -15,6 +15,24 @@ namespace Event.Uau.Evento.Infrastructure.Integracoes.Carteira
             this.url = url;
         }
 
+        public async Task<bool> AceitarPropostaEvento(int idEvento, string token)
+        {
+            var body = new
+            {
+            };
+
+            var requestResult = await $"{url}/eventos/{idEvento}/propostas/aceitar"
+                .WithOAuthBearerToken(token)
+                .PutJsonAsync(body);
+
+            return requestResult.StatusCode switch
+            {
+                200 => true,
+                400 => throw await requestResult.GetJsonAsync<EventUauBadRequestException>(),
+                _ => throw new Exception("Erro interno ao aceitar proposta na carteira."),
+            };
+        }
+
         public async Task<bool> EnviarPropostaParaCarteira(int idEvento, int idParceiro, decimal valor, string token)
         {
             var body = new

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Event.Uau.Carteira.Core.PropostaEvento.Commands.AceitarPropostaEvento;
 using Event.Uau.Carteira.Core.PropostaEvento.Commands.FinalizarPropostasEvento;
 using Event.Uau.Carteira.Core.ProspostaEvento.Commands.CriarOperacaoEvento;
 using Microsoft.AspNetCore.Cors;
@@ -37,6 +38,18 @@ namespace Event.Uau.Carteira.API.Controllers
 
             return Ok(result);
         }
-        
+
+        [HttpPut("aceitar")]
+        public async Task<ActionResult> AceitarProposta([FromRoute] int idEvento, [FromBody] AceitarPropostaEventoCommand body)
+        {
+            body.IdUsuarioLogado = IdUsuarioLogado;
+            body.IdEvento = idEvento;
+            body.Token = Token;
+
+            var result = await Mediator.Send(body);
+
+            return Ok(result);
+        }
+
     }
 }

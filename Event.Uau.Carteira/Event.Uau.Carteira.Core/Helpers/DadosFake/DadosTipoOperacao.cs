@@ -17,6 +17,7 @@ namespace Event.Uau.Carteira.Core.Helpers.DadosFake
                     Descricao = "DEPOSITO",
                     Id = "DEP",
                     EhDisponivel = true,
+                    EhVisivel = true,
                     Multplicador = 1,
                 },
                 new CadastrarTipoOperacaoCommand
@@ -24,6 +25,7 @@ namespace Event.Uau.Carteira.Core.Helpers.DadosFake
                     Descricao = "SAQUE",
                     Id = "SAQ",
                     EhDisponivel = true,
+                    EhVisivel = true,
                     Multplicador = -1,
                 },
                 new CadastrarTipoOperacaoCommand
@@ -31,6 +33,7 @@ namespace Event.Uau.Carteira.Core.Helpers.DadosFake
                     Descricao = "RESERVA_PAGAMENTO",
                     Id = "RPAG",
                     EhDisponivel = true,
+                    EhVisivel = true,
                     Multplicador = -1
                 },
                 new CadastrarTipoOperacaoCommand
@@ -38,6 +41,15 @@ namespace Event.Uau.Carteira.Core.Helpers.DadosFake
                     Descricao = "RESERVA_RECEBIMENTO",
                     Id = "RRE",
                     EhDisponivel = false,
+                    EhVisivel = false,
+                    Multplicador = 1
+                },
+                new CadastrarTipoOperacaoCommand
+                {
+                    Descricao = "RECEBIMENTO_PENDENTE",
+                    Id = "RPE",
+                    EhDisponivel = false,
+                    EhVisivel = true,
                     Multplicador = 1
                 },
                 new CadastrarTipoOperacaoCommand
@@ -45,6 +57,7 @@ namespace Event.Uau.Carteira.Core.Helpers.DadosFake
                     Descricao = "PAGAMENTO",
                     Id = "PAG",
                     EhDisponivel = true,
+                    EhVisivel = true,
                     Multplicador = -1
                 },
                 new CadastrarTipoOperacaoCommand
@@ -52,6 +65,7 @@ namespace Event.Uau.Carteira.Core.Helpers.DadosFake
                     Descricao = "RECEBIMENTO",
                     Id = "RE",
                     EhDisponivel = true,
+                    EhVisivel = true,
                     Multplicador = 1
                 },
             };

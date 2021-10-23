@@ -13,5 +13,7 @@ namespace Event.Uau.Carteira.Core.TipoOperacao.Commands.CadastrarTipoOperacao
         public int Multplicador { get; set; }
 
         public bool EhDisponivel { get; set; }
+
+        public bool EhVisivel { get; set; }
     }
 }
