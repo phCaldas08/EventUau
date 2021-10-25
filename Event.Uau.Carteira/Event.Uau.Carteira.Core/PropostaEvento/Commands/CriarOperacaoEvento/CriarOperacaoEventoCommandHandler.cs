@@ -52,7 +52,7 @@ namespace Event.Uau.Carteira.Core.ProspostaEvento.Commands.CriarOperacaoEvento
                     IdUsuario = request.IdFuncionario,
                     DataHora = dataHora,
                     TipoOperacao = tipoRecebimento,
-                    Valor = request.Valor
+                    Valor = request.Valor * 0.87m
                 }
             };
 

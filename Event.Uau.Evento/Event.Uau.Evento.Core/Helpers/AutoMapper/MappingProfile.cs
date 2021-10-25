@@ -24,7 +24,8 @@ namespace Event.Uau.Evento.Core.Helpers.AutoMapper
             CreateMap<EnviarPropostaFuncionarioCommand, Domain.Entities.FuncionarioEvento>()
                 .ForMember(i => i.IdUsuario, opt => opt.MapFrom(i => i.Usuario.Id))
                 .ForMember(i => i.IdEspecialidade, opt => opt.MapFrom(i => i.Especialidade.Id))
-                .ForMember(i => i.IdStatusContratacao, opt => opt.MapFrom(i => "PEN"));
+                .ForMember(i => i.IdStatusContratacao, opt => opt.MapFrom(i => "PEN"))
+                .ForMember(i => i.Salario, opt => opt.MapFrom(i => i.SalarioComTaxa));
 
             CreateMap<Domain.Entities.FuncionarioEvento, ViewModel.Evento.FuncionarioEventoViewModel>();
 
