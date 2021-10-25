@@ -56,6 +56,10 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.EnviarPropostaFuncionario
                 .Must(obj => !context.Funcionarios.Any(i => i.IdEvento == obj.IdEvento && i.IdUsuario == obj.Id && !i.IdStatusContratacao.Equals("REC", StringComparison.CurrentCultureIgnoreCase)))
                 .WithMessage("Já existe uma proposta para este evento.");
 
+            RuleFor(i => i)
+                .Must(request => !context.Eventos.Any(i => i.Id == request.IdEvento && i.IdUsuario == request.IdUsuarioLogado && i.Status.Id.Equals("CANCELADO", StringComparison.CurrentCultureIgnoreCase)))
+                .WithMessage("Não é possível enviar uma proposta para um evento cancelado.");
+
         }
     }
 }

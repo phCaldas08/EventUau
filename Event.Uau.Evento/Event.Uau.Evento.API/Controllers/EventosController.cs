@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Event.Uau.Evento.Core.Evento.Commands.CancelarEvento;
 using Event.Uau.Evento.Core.Evento.Commands.CriarEvento;
 using Event.Uau.Evento.Core.Evento.Commands.FinalizarEvento;
 using Event.Uau.Evento.Core.Evento.Queries.BuscaEventoPorId;
@@ -52,11 +53,26 @@ namespace Event.Uau.Evento.API.Controllers
         }
 
         [HttpPut("{idEvento}/finalizar")]
-        public async Task<IActionResult> ActionResult([FromRoute] int idEvento, [FromBody] FinalizarEventoCommand command)
+        public async Task<IActionResult> FinalizarEvento([FromRoute] int idEvento, [FromBody] FinalizarEventoCommand command)
         {
             command.IdEvento = idEvento;
             command.IdUsuarioLogado = IdUsuarioLogado;
             command.Token = Token;
+
+            var result = await Mediator.Send(command);
+
+            return Ok(result);
+        }
+
+        [HttpDelete("{idEvento}")]
+        public async Task<IActionResult> CancelarEvento([FromRoute] int idEvento)
+        {
+            var command = new CancelarEventoCommand
+            {
+                IdEvento = idEvento,
+                IdUsuarioLogado = IdUsuarioLogado,
+                Token = Token
+            };
 
             var result = await Mediator.Send(command);
 
