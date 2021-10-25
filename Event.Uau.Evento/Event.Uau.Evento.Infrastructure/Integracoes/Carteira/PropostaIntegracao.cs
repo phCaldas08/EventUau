@@ -33,6 +33,20 @@ namespace Event.Uau.Evento.Infrastructure.Integracoes.Carteira
             };
         }
 
+        public async Task<bool> CancelarEvento(int idEvento, string token)
+        {
+            var requestResult = await $"{url}/eventos/{idEvento}/propostas/cancelar"
+                   .WithOAuthBearerToken(token)
+                   .DeleteAsync();
+
+            return requestResult.StatusCode switch
+            {
+                200 => true,
+                400 => throw await requestResult.GetJsonAsync<EventUauBadRequestException>(),
+                _ => throw new Exception("Erro interno ao cancelar propostas na carteira."),
+            };
+        }
+
         public async Task<bool> EnviarPropostaParaCarteira(int idEvento, int idParceiro, decimal valor, string token)
         {
             var body = new

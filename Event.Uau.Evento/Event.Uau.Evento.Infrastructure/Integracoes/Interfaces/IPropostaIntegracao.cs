@@ -12,5 +12,7 @@ namespace Event.Uau.Evento.Infrastructure.Integracoes.Interfaces
         public Task<bool> AceitarPropostaEvento(int idEvento, string token);
 
         public Task<bool> RecusarPropostaEvento(int idEvento, string token);
+
+        public Task<bool> CancelarEvento(int idEvento, string token);
     }
 }

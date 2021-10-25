@@ -18,6 +18,10 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.AceitarProposta
             RuleFor(i => i)
                 .Must(request => context.Funcionarios.Any(i => i.IdEvento == request.IdEvento && i.IdUsuario == request.IdUsuarioLogado && i.IdStatusContratacao.Equals("PEN", StringComparison.CurrentCultureIgnoreCase)))
                 .WithMessage("Funcionário não encontrado para o evento.");
+
+            RuleFor(i => i)
+                .Must(request => !context.Eventos.Any(i => i.Id == request.IdEvento && i.IdUsuario == request.IdUsuarioLogado && i.Status.Id.Equals("CANCELADO", StringComparison.CurrentCultureIgnoreCase)))
+                .WithMessage("Não é possível aceita uma proposta de um evento cancelado.");
         }
     }
 }

@@ -20,6 +20,10 @@ namespace Event.Uau.Evento.Core.Proposta.Commands.RecusarProposta
             RuleFor(i => i)
                 .Must(request => !context.Funcionarios.Any(i => i.IdEvento == request.IdEvento && i.IdUsuario == request.IdUsuarioLogado && i.Evento.Status.Id.Equals("FINALIZADO", StringComparison.CurrentCultureIgnoreCase)))
                 .WithMessage("Não é possível recusar uma proposta após o evento ser encerrado.");
+
+            RuleFor(i => i)
+                .Must(request => !context.Eventos.Any(i => i.Id == request.IdEvento && i.IdUsuario == request.IdUsuarioLogado && i.Status.Id.Equals("CANCELADO", StringComparison.CurrentCultureIgnoreCase)))
+                .WithMessage("Não é possível recusar uma proposta de um evento cancelado.");
         }
     }
 }
