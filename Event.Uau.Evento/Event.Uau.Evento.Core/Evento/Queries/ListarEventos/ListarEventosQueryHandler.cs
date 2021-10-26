@@ -17,12 +17,14 @@ namespace Event.Uau.Evento.Core.Evento.Queries.ListarEventos
         private readonly EventUauDbContext context;
         private readonly IMapper mapper;
         private readonly IUsuarioIntegracao usuarioIntegracao;
+        private readonly IEspecialidadeIntegracao especialidadeIntegracao;
 
-        public ListarEventosQueryHandler(EventUauDbContext context, IMapper mapper, IUsuarioIntegracao usuarioIntegracao)
+        public ListarEventosQueryHandler(EventUauDbContext context, IMapper mapper, IUsuarioIntegracao usuarioIntegracao, IEspecialidadeIntegracao especialidadeIntegracao)
         {
             this.context = context;
             this.mapper = mapper;
             this.usuarioIntegracao = usuarioIntegracao;
+            this.especialidadeIntegracao = especialidadeIntegracao;
         }
 
         public async Task<ListaEventoViewModel> Handle(ListarEventosQuery request, CancellationToken cancellationToken)
@@ -53,10 +55,15 @@ namespace Event.Uau.Evento.Core.Evento.Queries.ListarEventos
 
         private async Task BuscarFuncionarios(List<ResumoEventoViewModel> eventos, string token)
         {
+            var especialidades = await especialidadeIntegracao.BuscarEspecialidades(token);
+
             foreach (var e in eventos)
-                if(e.Funcionarios?.Any() ?? false)
+                if (e.Funcionarios?.Any() ?? false)
                     foreach (var f in e.Funcionarios)
+                    {
                         f.Funcionario = await usuarioIntegracao.BuscaUsuarioPorId(f.IdUsuario, token);
+                        f.Especialidade = especialidades.FirstOrDefault(i => i.Id == f.IdEspecialidade);
+                    }
         }
     }
 }
